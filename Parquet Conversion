@@ -1,0 +1,39 @@
+import os
+import time
+from pyspark.sql import SparkSession
+
+log_path   = "/data/parquet_conversion_monitor.log"
+input_path = "/data/august.week4.csv.uniqblacklistremoved"
+output_path = "/data/parquet/august_week4"
+
+spark = (
+    SparkSession.builder
+    .appName("Convert_August_Week4_To_Parquet")
+    .config("spark.sql.files.maxPartitionBytes", "256m")
+    .config("spark.sql.shuffle.partitions", "256")
+    .config("spark.sql.adaptive.enabled", "true")
+    .getOrCreate()
+)
+
+def write_log(msg):
+    line = f"{time.strftime('%Y-%m-%d %H:%M:%S')} | {msg}"
+    print(line, flush=True)
+    with open(log_path, "a") as log:
+        log.write(line + "\n")
+        log.flush()
+
+try:
+    write_log("START conversion")
+    input_size = os.path.getsize(input_path) / (1024 ** 3)
+    write_log(f"Input file size: {input_size:.2f} GB")
+    df = spark.read.option("header", "false").csv(input_path)
+    write_log("CSV loaded by Spark")
+    df.write.mode("overwrite").parquet(output_path)
+    write_log("Parquet write completed")
+    write_log("END conversion SUCCESS")
+except Exception as e:
+    write_log(f"ERROR: {str(e)}")
+    raise
+finally:
+    spark.stop()
+    write_log("Spark stopped")
