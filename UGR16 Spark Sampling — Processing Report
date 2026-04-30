@@ -1,0 +1,62 @@
+UGR16 Spark Sampling — Processing Report
+========================================
+
+Job name: UGR16_Reproducible_Sampling_Corrected
+Version: corrected_v1
+Start time: 2026-04-30T05:31:38.627577
+End time: 2026-04-30T05:34:34.741007
+Processing time: 2.94 minutes
+
+Input path: /data/parquet
+Output path: /data/llm_samples
+
+Dataset summary
+----------------
+Total records: 862,526,861
+Suspect records: 108,139,105 (12.5375%)
+Final sample: 5,000
+Sample from full dataset: 0.000580%
+Sample from suspect pool: 0.004624%
+
+Selection rules
+----------------
+- total_pkts > 1000 => high_packet_count
+- total_bytes > 1000000 => high_bytes
+- dst_port in [22, 23, 445, 3389] => sensitive_port
+- protocol == ICMP => icmp_traffic
+
+Nested sample counts
+--------------------
+sample_1000: 1,000
+sample_3000: 3,000
+sample_5000: 5,000
+
+Label distribution — sample_5000
+--------------------------------
+background: 4,999
+blacklist: 1
+
+Integrity checks
+----------------
+Unique record IDs: 5,000
+Duplicate record IDs: 0
+Output line-count validation: PASSED
+
+Output files
+------------
+sample_1000_api.jsonl | lines=1,000 | size_mb=0.3086
+sample_3000_api.jsonl | lines=3,000 | size_mb=0.9281
+sample_5000_api.jsonl | lines=5,000 | size_mb=1.5476
+sample_1000_eval.jsonl | lines=1,000 | size_mb=0.361
+sample_3000_eval.jsonl | lines=3,000 | size_mb=1.0851
+sample_5000_eval.jsonl | lines=5,000 | size_mb=1.8094
+
+Stage times seconds
+-------------------
+load_rename_cast_validate: 3.47
+suspect_filter_and_count: 36.65
+random_sampling_and_count: 96.95
+create_nested_samples: 0.24
+class_balance_check: 37.06
+write_jsonl_files: 0.72
+build_report: 0.01
