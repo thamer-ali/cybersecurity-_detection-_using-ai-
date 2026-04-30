@@ -1,0 +1,838 @@
+# ============================================================
+# UGR16 → Suspect Selection → Sampling → JSONL + Report
+# Production / Research-Quality Version 7
+#
+# Changes in v7:
+#  18. Step 1 split into three sub-steps:
+#      1a. toDF() — renames positional/_c0 columns to semantic
+#          names immediately after spark.read.parquet()
+#      1b. .select() with explicit casts — runs before suspect
+#          filter so dst_port.isin(), total_pkts >, total_bytes >
+#          comparisons work correctly on typed columns
+#      1c. schema validation — unchanged, now runs after rename
+#          and cast so column names are guaranteed clean
+#  19. total_pkts and total_bytes cast to long (bigint) not int.
+#      int overflows at 2,147,483,647 bytes — UGR16 long-duration
+#      flows can exceed this, producing silent wrong comparisons.
+# ============================================================
+
+import os
+import glob
+import shutil
+import time
+import json
+from datetime import datetime
+
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import (
+    col,
+    when,
+    lit,
+    rand,
+    row_number,
+    sha2,
+    concat_ws,
+    to_json,
+    struct,
+    array,
+    array_remove,
+    array_join,
+    coalesce,
+    count as spark_count
+)
+from pyspark.sql.window import Window
+
+
+# ============================================================
+# Paths — edit these for your cluster
+# ============================================================
+
+INPUT_PATH  = "/data/parquet"
+OUTPUT_BASE = "/data/llm_samples"
+
+os.makedirs(OUTPUT_BASE, exist_ok=True)
+
+
+# ============================================================
+# Constants
+# ============================================================
+#
+# ── How to run on Azure (8 CPU / 64 GB / 1.8 TB) ────────────
+#
+#   Memory settings inside SparkSession.builder are IGNORED by
+#   spark-submit — the JVM is already started before Python runs.
+#   Pass memory at launch time instead:
+#
+#   /opt/spark/bin/spark-submit \
+#     --driver-memory  10g \
+#     --executor-memory 42g \
+#     /data/ugr16_pipeline_v6.py
+#
+#   (Leaves ~12 GB for OS, Azure agent, JVM overhead.)
+# ─────────────────────────────────────────────────────────────
+
+RANDOM_SEED        = 42
+SAMPLE_SIZES       = [1000, 3000, 5000]
+
+# Azure single-node: 8 CPU / 64 GB RAM / 1.8 TB storage.
+# shuffle.partitions = 3 × core count = 24.
+# The Spark default (200) creates 200 tasks on 8 cores:
+# 25 serial scheduling rounds with zero throughput benefit.
+SHUFFLE_PARTITIONS = 24
+
+# Set True  → label_distribution() also runs on the FULL suspect
+#             pool (can be millions of rows — one extra shuffle).
+#             Produces the most complete thesis report.
+# Set False → label_distribution() runs only on the 3 cached
+#             samples (≤ 5000 rows each — fast, near-zero cost).
+#             Use this for iteration / debugging runs.
+COMPUTE_SUSPECT_POOL_DISTRIBUTION = True
+
+SUSPECT_RULES = [
+    "total_pkts > 1000 => high_packet_count",
+    "total_bytes > 1000000 => high_bytes",
+    "dst_port in [22, 23, 445, 3389] => sensitive_port",
+    "protocol == ICMP => icmp_traffic"
+]
+
+REQUIRED_COLUMNS = [
+    "timestamp", "duration",
+    "src_ip", "dst_ip",
+    "src_port", "dst_port",
+    "protocol", "flags",
+    "fwd_pkts", "bwd_pkts",
+    "total_pkts", "total_bytes",
+    "label"
+]
+
+# Columns sent to the LLM (no label, no suspect_reason — prevents leakage)
+API_COLUMNS = [
+    "record_id",
+    "sample_rank",
+    "timestamp",
+    "duration",
+    "src_ip",
+    "dst_ip",
+    "src_port",
+    "dst_port",
+    "protocol",
+    "flags",
+    "fwd_pkts",
+    "bwd_pkts",
+    "total_pkts",
+    "total_bytes"
+]
+
+# Columns kept for post-LLM metric calculation
+EVAL_COLUMNS = API_COLUMNS + ["suspect_reason", "label"]
+
+
+# ============================================================
+# Helper: write a Spark DataFrame as a single clean JSONL file
+# ============================================================
+
+def write_single_jsonl(df, temp_dir, final_file):
+    """
+    Coalesces df to 1 partition, writes as text, then moves the
+    single part file to final_file.
+
+    Raises RuntimeError (chained from original) on any failure so
+    the full Spark/Java stack trace is preserved in the job log.
+    """
+    try:
+        if os.path.exists(temp_dir):
+            shutil.rmtree(temp_dir)
+        if os.path.exists(final_file):
+            os.remove(final_file)
+
+        df.coalesce(1).write.mode("overwrite").text(temp_dir)
+
+        part_files = glob.glob(os.path.join(temp_dir, "part-*"))
+
+        if not part_files:
+            raise RuntimeError(
+                f"No part file in {temp_dir} — DataFrame may be empty."
+            )
+
+        shutil.move(part_files[0], final_file)
+        shutil.rmtree(temp_dir)
+
+    except Exception as exc:
+        # Raise with chaining so the original exception type and Java
+        # traceback (if Spark-originated) remain visible in the log.
+        raise RuntimeError(
+            f"write_single_jsonl failed for {final_file}"
+        ) from exc
+
+
+# ============================================================
+# Helper: safe ratio — avoids ZeroDivisionError
+# ============================================================
+
+def safe_pct(numerator, denominator, decimals=6):
+    if not denominator:
+        return 0.0
+    return round((numerator / denominator) * 100, decimals)
+
+
+# ============================================================
+# Helper: label distribution for a DataFrame
+# ============================================================
+
+def label_distribution(df):
+    """Returns {label_value: count} dict, sorted descending by count."""
+    rows = (
+        df.groupBy("label")
+          .agg(spark_count("*").alias("n"))
+          .orderBy(col("n").desc())
+          .collect()
+    )
+    return {str(r["label"]): int(r["n"]) for r in rows}
+
+
+# ============================================================
+# Helper: to_jsonl transform
+# ============================================================
+
+def to_jsonl(df_in, columns):
+    return df_in.select(
+        to_json(struct(*[col(c) for c in columns])).alias("value")
+    )
+
+
+# ============================================================
+# Initialise report skeleton
+# ============================================================
+
+job_start = time.time()
+
+report = {
+    "job_name":          "UGR16_Reproducible_Sampling_v7",
+    "version":           "7.0",
+    "start_time":        datetime.now().isoformat(),
+    "input_path":        INPUT_PATH,
+    "output_base":       OUTPUT_BASE,
+
+    # Methodology metadata for PhD documentation
+    "methodology": {
+        "suspect_selection_rules": SUSPECT_RULES,
+        "random_seed":             RANDOM_SEED,
+        "sample_design":           "Nested samples: 1000 ⊂ 3000 ⊂ 5000",
+        "sampling_algorithm":      (
+            "rand(seed) column assigned first, then row_number() ordered by "
+            "(_rand, record_id). Deterministic given identical Spark "
+            "infrastructure (version, executor count, shuffle partitions)."
+        ),
+        "reproducibility_preconditions": {
+            "spark_shuffle_partitions": SHUFFLE_PARTITIONS,
+            "note": (
+                "Results are reproducible only when Spark version, executor "
+                "count, and shuffle partition count are identical across runs. "
+                "Record these from spark.version and sc.defaultParallelism "
+                "before claiming cross-environment reproducibility."
+            )
+        },
+        "label_policy": (
+            "API files: no label, no suspect_reason. "
+            "Eval files: label + suspect_reason included."
+        ),
+        "leakage_note": (
+            "suspect_reason is excluded from API files because its values "
+            "(e.g. 'high_packet_count,sensitive_port') partially encode "
+            "attack-indicative signal and would bias LLM detection accuracy."
+        )
+    },
+
+    "stage_times_seconds": {}
+}
+
+
+# ============================================================
+# Spark session — everything runs inside try/finally so
+# spark.stop() always fires even on unhandled exceptions.
+# ============================================================
+
+spark = (
+    SparkSession.builder
+    .appName("UGR16_Reproducible_Sampling_v7")
+    # NOTE: spark.driver.memory and spark.executor.memory are
+    # intentionally NOT set here. When launched via spark-submit,
+    # the JVM is already allocated before Python starts — any
+    # memory config inside SparkSession.builder is silently ignored.
+    # Pass --driver-memory and --executor-memory to spark-submit
+    # instead (see the spark-submit command in the Constants block).
+    .config("spark.sql.shuffle.partitions",      str(SHUFFLE_PARTITIONS))
+    .config("spark.sql.files.maxPartitionBytes", "128m")
+    .getOrCreate()
+)
+
+# Log infrastructure metadata for reproducibility record
+report["methodology"]["reproducibility_preconditions"]["spark_version"] = (
+    spark.version
+)
+report["methodology"]["reproducibility_preconditions"]["default_parallelism"] = (
+    spark.sparkContext.defaultParallelism
+)
+
+print("=== Spark started ===")
+print(f"    Version            : {spark.version}")
+print(f"    Default parallelism: {spark.sparkContext.defaultParallelism}")
+print(f"    Shuffle partitions : {SHUFFLE_PARTITIONS}")
+
+
+try:
+
+    # ============================================================
+    # Step 1 — Load Parquet, rename columns, cast types, validate
+    #
+    # Sub-step 1a: toDF()
+    #   UGR16 Parquet files are exported from NetFlow tools and
+    #   often carry positional names (_c0, _c1 ...) or
+    #   tool-specific names. toDF() assigns the correct semantic
+    #   names so every downstream col() reference is unambiguous.
+    #   Must run before schema validation.
+    #
+    # Sub-step 1b: type casting
+    #   Must run before the suspect filter (Step 2) because:
+    #   - dst_port.isin(22, 23, 445, 3389) compares integers.
+    #     If dst_port is still a string, isin() finds no matches
+    #     and the filter silently returns zero suspect records.
+    #   - total_pkts > 1000 and total_bytes > 1000000 are numeric
+    #     comparisons that also fail silently on string columns.
+    #   total_pkts and total_bytes are cast to long (bigint), not
+    #   int, because long-duration UGR16 flows can exceed 2.1 GB
+    #   (int overflow at 2,147,483,647 bytes) and produce wrong
+    #   suspect-filter results with no error or warning.
+    # ============================================================
+
+    t0 = time.time()
+
+    df = spark.read.parquet(INPUT_PATH)
+
+    # ── 1a: rename columns to standard semantic names ─────────
+    df = df.toDF(
+        "timestamp",
+        "duration",
+        "src_ip",
+        "dst_ip",
+        "src_port",
+        "dst_port",
+        "protocol",
+        "flags",
+        "fwd_pkts",
+        "bwd_pkts",
+        "total_pkts",
+        "total_bytes",
+        "label"
+    )
+
+    # ── 1b: cast to correct types ─────────────────────────────
+    df = df.select(
+        col("timestamp"),
+        col("duration").cast("double"),
+        col("src_ip"),
+        col("dst_ip"),
+        col("src_port").cast("int"),
+        col("dst_port").cast("int"),
+        col("protocol"),
+        col("flags"),
+        col("fwd_pkts").cast("int"),
+        col("bwd_pkts").cast("int"),
+        col("total_pkts").cast("long"),    # long, not int — overflow risk
+        col("total_bytes").cast("long"),   # long, not int — overflow risk
+        col("label")
+    )
+
+    # ── 1c: schema validation ─────────────────────────────────
+    # Runs after rename + cast so column names are guaranteed clean.
+    missing_cols = [c for c in REQUIRED_COLUMNS if c not in df.columns]
+    if missing_cols:
+        raise ValueError(
+            f"Source Parquet is missing required columns: {missing_cols}"
+        )
+
+    total_records = df.count()
+
+    report["total_records"] = total_records
+    report["stage_times_seconds"]["load_rename_cast_validate"] = (
+        round(time.time() - t0, 2)
+    )
+
+    print(f"\nTotal records in full dataset: {total_records:,}")
+
+
+    # ============================================================
+    # Step 2 — Suspect selection
+    #
+    # A record can match multiple rules simultaneously.
+    # All matching rule names are joined as a comma-separated string.
+    # Example: "high_packet_count,sensitive_port"
+    # ============================================================
+
+    t0 = time.time()
+
+    suspect_df = (
+        df.withColumn(
+            "suspect_reason",
+            array_join(
+                array_remove(
+                    array(
+                        when(col("total_pkts") > 1000,
+                             lit("high_packet_count")),
+                        when(col("total_bytes") > 1000000,
+                             lit("high_bytes")),
+                        when(col("dst_port").isin(22, 23, 445, 3389),
+                             lit("sensitive_port")),
+                        when(col("protocol") == "ICMP",
+                             lit("icmp_traffic"))
+                    ),
+                    None
+                ),
+                ","
+            )
+        )
+        .filter(col("suspect_reason") != "")
+    )
+
+    suspect_count = suspect_df.count()
+
+    report["suspect_records"]       = suspect_count
+    report["suspect_ratio_percent"] = safe_pct(suspect_count, total_records)
+    report["stage_times_seconds"]["suspect_filter_and_count"] = (
+        round(time.time() - t0, 2)
+    )
+
+    print(f"Suspect records            : {suspect_count:,}")
+    print(f"Suspect ratio              : {report['suspect_ratio_percent']:.4f}%")
+
+
+    # ============================================================
+    # Step 3 — Stable record ID (null-safe SHA-256)
+    #
+    # All fields are coalesced to the string "NULL" before hashing
+    # so that two records with different null patterns cannot produce
+    # the same hash (concat_ws skips nulls, creating collisions).
+    # ============================================================
+
+    suspect_df = suspect_df.withColumn(
+        "record_id",
+        sha2(
+            concat_ws(
+                "|",
+                coalesce(col("timestamp").cast("string"),  lit("NULL")),
+                coalesce(col("src_ip").cast("string"),     lit("NULL")),
+                coalesce(col("dst_ip").cast("string"),     lit("NULL")),
+                coalesce(col("src_port").cast("string"),   lit("NULL")),
+                coalesce(col("dst_port").cast("string"),   lit("NULL")),
+                coalesce(col("protocol").cast("string"),   lit("NULL")),
+                coalesce(col("duration").cast("string"),   lit("NULL")),
+                coalesce(col("total_pkts").cast("string"), lit("NULL")),
+                coalesce(col("total_bytes").cast("string"),lit("NULL"))
+            ),
+            256
+        )
+    )
+
+    # No stage timer here — this is a lazy transform.
+    # Its cost is paid during the Step 4 action below.
+
+
+    # ============================================================
+    # Step 4 — Reproducible random sampling  (v5 rewrite)
+    #
+    # Why orderBy().limit() instead of Window.orderBy():
+    #
+    #   Old approach (v4):
+    #     Window.orderBy(rand, record_id) over ALL suspect rows
+    #     → Spark must globally sort millions of rows across
+    #       all partitions, then filter to rank <= 5000.
+    #     → Full dataset sort: O(N log N) shuffle on N suspects.
+    #
+    #   New approach (v5):
+    #     orderBy(rand, record_id).limit(5000)
+    #     → Spark sorts and limits in one pass, pushing the
+    #       cutoff down to each partition first (partial sort),
+    #       then merges only the top-5000 candidates.
+    #     → Row_number() then ranks only 5000 rows: trivial cost.
+    #
+    #   On Azure 8-CPU / 64 GB with a large suspect pool this
+    #   can reduce Step 4 time by 60–80%.
+    #
+    # Determinism:
+    #   orderBy(_rand, record_id) is fully deterministic given
+    #   the same seed and infrastructure (see methodology note).
+    #   The limit(5000) always selects the same top-5000 rows.
+    # ============================================================
+
+    t0 = time.time()
+
+    suspect_df = suspect_df.withColumn("_rand", rand(seed=RANDOM_SEED))
+
+    # ── Pass 1: select the 5000 lowest-ranked records ─────────
+    # orderBy + limit is a partial sort — far cheaper than a full
+    # global Window rank over the entire suspect pool.
+    sample_5000_raw = (
+        suspect_df
+        .orderBy(col("_rand"), col("record_id"))
+        .limit(5000)
+        .cache()
+    )
+    sample_5000_raw.count()   # materialise the cache immediately
+
+    # ── Pass 2: assign stable rank to only those 5000 rows ────
+    # Window.orderBy on 5000 rows is cheap — this is the key saving.
+    rank_window = Window.orderBy(col("_rand"), col("record_id"))
+
+    sample_5000 = (
+        sample_5000_raw
+        .withColumn("sample_rank", row_number().over(rank_window))
+        .drop("_rand")
+        .cache()
+    )
+
+    final_count = sample_5000.count()   # materialises sample_5000 cache
+
+    # Intermediate cache no longer needed — free executor memory now
+    sample_5000_raw.unpersist()
+
+    # ── record_id uniqueness check (warning, not hard error) ──
+    # Duplicate record_ids can legitimately occur when the same
+    # network flow appears in multiple UGR16 capture files.
+    # This is a data quality observation, not a pipeline bug.
+    # We log it and continue rather than crashing the job.
+    t_uid = time.time()
+    unique_record_ids  = sample_5000.select("record_id").distinct().count()
+    duplicate_record_ids = final_count - unique_record_ids
+
+    report["unique_record_ids_sample_5000"]    = unique_record_ids
+    report["duplicate_record_ids_sample_5000"] = duplicate_record_ids
+    report["stage_times_seconds"]["record_id_uniqueness_check"] = (
+        round(time.time() - t_uid, 2)
+    )
+
+    if duplicate_record_ids > 0:
+        print(
+            f"WARNING: {duplicate_record_ids:,} duplicate record_id value(s) found "
+            f"in sample_5000. This likely means the same flow appears in multiple "
+            f"UGR16 capture files. Logged to report — pipeline continues."
+        )
+    else:
+        print(f"record_id uniqueness check : PASSED ({unique_record_ids:,} unique IDs)")
+
+    report["final_sample_count"] = final_count
+    report["sample_ratio_from_full_percent"]    = safe_pct(final_count, total_records)
+    report["sample_ratio_from_suspect_percent"] = safe_pct(final_count, suspect_count)
+    report["stage_times_seconds"]["random_sampling_and_count"] = (
+        round(time.time() - t0, 2)
+    )
+
+    print(f"\nFinal sample count (5000)  : {final_count:,}")
+
+
+    # ============================================================
+    # Step 5 — Nested sub-samples  (1000 ⊂ 3000 ⊂ 5000)
+    # ============================================================
+
+    t0 = time.time()
+
+    sample_1000 = sample_5000.filter(col("sample_rank") <= 1000).cache()
+    sample_3000 = sample_5000.filter(col("sample_rank") <= 3000).cache()
+
+    count_1000 = sample_1000.count()   # materialises cache
+    count_3000 = sample_3000.count()   # materialises cache
+    count_5000 = final_count           # reuse — no extra Spark action
+
+    report["nested_sample_counts"] = {
+        "sample_1000": count_1000,
+        "sample_3000": count_3000,
+        "sample_5000": count_5000
+    }
+    report["stage_times_seconds"]["create_nested_samples"] = (
+        round(time.time() - t0, 2)
+    )
+
+    print(f"  sample_1000 count          : {count_1000:,}")
+    print(f"  sample_3000 count          : {count_3000:,}")
+    print(f"  sample_5000 count          : {count_5000:,}")
+
+
+    # ============================================================
+    # Step 6 — Label distribution (class balance check)
+    #
+    # The three cached samples (≤ 5000 rows each) are always fast.
+    #
+    # The suspect pool distribution is controlled by the flag
+    # COMPUTE_SUSPECT_POOL_DISTRIBUTION at the top of the file:
+    #   True  → full groupBy on suspect_df (millions of rows,
+    #            one extra shuffle — use for final thesis run)
+    #   False → skipped; report entry set to "skipped"
+    #            (use for fast iteration / debugging)
+    # ============================================================
+
+    t0 = time.time()
+
+    class_balance = {
+        "sample_5000": label_distribution(sample_5000),
+        "sample_3000": label_distribution(sample_3000),
+        "sample_1000": label_distribution(sample_1000),
+    }
+
+    if COMPUTE_SUSPECT_POOL_DISTRIBUTION:
+        print("Computing label distribution for full suspect pool "
+              "(COMPUTE_SUSPECT_POOL_DISTRIBUTION=True) ...")
+        class_balance["suspect_pool"] = label_distribution(suspect_df)
+    else:
+        class_balance["suspect_pool"] = "skipped (COMPUTE_SUSPECT_POOL_DISTRIBUTION=False)"
+        print("Skipping suspect pool label distribution "
+              "(COMPUTE_SUSPECT_POOL_DISTRIBUTION=False).")
+
+    report["class_balance"] = class_balance
+    report["stage_times_seconds"]["class_balance_check"] = (
+        round(time.time() - t0, 2)
+    )
+
+    print("\nLabel distribution in sample_5000:")
+    for lbl, n in report["class_balance"]["sample_5000"].items():
+        print(f"  {lbl:<30}: {n:>6,}  ({safe_pct(n, count_5000, 2):.2f}%)")
+
+
+    # ============================================================
+    # Step 7 — Build JSONL DataFrames
+    #
+    # API  : no label, no suspect_reason (prevents leakage)
+    # Eval : includes label + suspect_reason (for metric calculation)
+    # ============================================================
+
+    api_1000  = to_jsonl(sample_1000, API_COLUMNS)
+    api_3000  = to_jsonl(sample_3000, API_COLUMNS)
+    api_5000  = to_jsonl(sample_5000, API_COLUMNS)
+
+    eval_1000 = to_jsonl(sample_1000, EVAL_COLUMNS)
+    eval_3000 = to_jsonl(sample_3000, EVAL_COLUMNS)
+    eval_5000 = to_jsonl(sample_5000, EVAL_COLUMNS)
+
+
+    # ============================================================
+    # Step 8 — Write JSONL output files
+    # ============================================================
+
+    t0 = time.time()
+
+    output_specs = [
+        (api_1000,  "tmp_api_1000",  "sample_1000_api.jsonl"),
+        (api_3000,  "tmp_api_3000",  "sample_3000_api.jsonl"),
+        (api_5000,  "tmp_api_5000",  "sample_5000_api.jsonl"),
+        (eval_1000, "tmp_eval_1000", "sample_1000_eval.jsonl"),
+        (eval_3000, "tmp_eval_3000", "sample_3000_eval.jsonl"),
+        (eval_5000, "tmp_eval_5000", "sample_5000_eval.jsonl"),
+    ]
+
+    output_paths = []
+    for df_out, tmp_name, file_name in output_specs:
+        tmp_path   = os.path.join(OUTPUT_BASE, tmp_name)
+        final_path = os.path.join(OUTPUT_BASE, file_name)
+        write_single_jsonl(df_out, tmp_path, final_path)
+        output_paths.append(final_path)
+        print(f"  Written: {final_path}")
+
+    report["stage_times_seconds"]["write_jsonl_files"] = (
+        round(time.time() - t0, 2)
+    )
+
+
+    # ============================================================
+    # Step 9 — Free executor memory
+    # ============================================================
+
+    sample_1000.unpersist()
+    sample_3000.unpersist()
+    sample_5000.unpersist()
+
+
+    # ============================================================
+    # Step 10 — Build processing report
+    # ============================================================
+
+    t0 = time.time()
+
+    # Inspect written files; detect any that are missing
+    file_info    = {}
+    missing_outs = []
+
+    for file_path in output_paths:
+        if os.path.exists(file_path):
+            with open(file_path, "r") as fh:
+                line_count = sum(1 for _ in fh)
+            file_info[file_path] = {
+                "size_bytes": os.path.getsize(file_path),
+                "size_mb":    round(os.path.getsize(file_path) / (1024 * 1024), 4),
+                "line_count": line_count
+            }
+        else:
+            missing_outs.append(file_path)
+
+    report["output_files"] = file_info
+
+    if missing_outs:
+        report["missing_output_files"] = missing_outs
+        print(f"\nWARNING — missing output files: {missing_outs}")
+
+    # ── Output line-count validation ──────────────────────────
+    # Confirms every JSONL file contains exactly the expected
+    # number of lines. A mismatch means coalesce/write silently
+    # dropped or duplicated rows — a critical data integrity error.
+    expected_lines = {
+        "sample_1000_api.jsonl":  count_1000,
+        "sample_3000_api.jsonl":  count_3000,
+        "sample_5000_api.jsonl":  count_5000,
+        "sample_1000_eval.jsonl": count_1000,
+        "sample_3000_eval.jsonl": count_3000,
+        "sample_5000_eval.jsonl": count_5000,
+    }
+    line_count_errors = []
+    for path, info in file_info.items():
+        name = os.path.basename(path)
+        expected = expected_lines.get(name)
+        actual   = info["line_count"]
+        info["expected_lines"] = expected
+        info["line_count_ok"]  = (actual == expected)
+        if expected is not None and actual != expected:
+            line_count_errors.append(
+                f"{name}: expected {expected:,}, got {actual:,}"
+            )
+    if line_count_errors:
+        raise ValueError(
+            "Output line-count mismatch — files may be corrupt:\n  "
+            + "\n  ".join(line_count_errors)
+        )
+    report["output_line_count_validation"] = "PASSED"
+    print("\nOutput line-count validation : PASSED")
+
+    report["end_time"]                   = datetime.now().isoformat()
+    report["processing_time_seconds"]    = round(time.time() - job_start, 2)
+    report["processing_time_minutes"]    = round((time.time() - job_start) / 60, 2)
+    report["stage_times_seconds"]["build_report"] = round(time.time() - t0, 2)
+
+
+    # ── JSON report ──────────────────────────────────────────
+
+    json_report_path = os.path.join(OUTPUT_BASE, "processing_report.json")
+    with open(json_report_path, "w") as fh:
+        json.dump(report, fh, indent=4)
+
+
+    # ── Human-readable TXT report ────────────────────────────
+
+    txt_report_path = os.path.join(OUTPUT_BASE, "processing_report.txt")
+    with open(txt_report_path, "w") as fh:
+        W = fh.write
+
+        W("UGR16 Spark Sampling — Processing Report (v7)\n")
+        W("=" * 54 + "\n\n")
+
+        W(f"Job name        : {report['job_name']}\n")
+        W(f"Version         : {report['version']}\n")
+        W(f"Start time      : {report['start_time']}\n")
+        W(f"End time        : {report['end_time']}\n")
+        W(f"Processing time : {report['processing_time_minutes']} minutes\n\n")
+
+        W(f"Input path      : {INPUT_PATH}\n")
+        W(f"Output path     : {OUTPUT_BASE}\n\n")
+
+        W("Infrastructure (reproducibility record)\n")
+        W("-" * 40 + "\n")
+        rp = report["methodology"]["reproducibility_preconditions"]
+        W(f"  Spark version      : {rp.get('spark_version', 'unknown')}\n")
+        W(f"  Default parallelism: {rp.get('default_parallelism', 'unknown')}\n")
+        W(f"  Shuffle partitions : {rp['spark_shuffle_partitions']}\n")
+        W(f"  Random seed        : {RANDOM_SEED}\n")
+        W(f"  Suspect pool dist. : "
+          f"{'computed' if COMPUTE_SUSPECT_POOL_DISTRIBUTION else 'skipped (flag=False)'}\n\n")
+
+        W("Dataset summary\n")
+        W("-" * 40 + "\n")
+        W(f"  Total records      : {total_records:,}\n")
+        W(f"  Suspect records    : {suspect_count:,} "
+          f"({report['suspect_ratio_percent']:.4f}%)\n")
+        W(f"  Final sample (5000): {final_count:,} "
+          f"({report['sample_ratio_from_full_percent']:.4f}% of full)\n")
+        W(f"  Sample from suspect: "
+          f"{report['sample_ratio_from_suspect_percent']:.4f}%\n\n")
+
+        W("Suspect selection rules\n")
+        W("-" * 40 + "\n")
+        for rule in SUSPECT_RULES:
+            W(f"  - {rule}\n")
+        W("\n")
+
+        W("Sampling method\n")
+        W("-" * 40 + "\n")
+        W(f"  {report['methodology']['sampling_algorithm']}\n\n")
+
+        W("Label handling\n")
+        W("-" * 40 + "\n")
+        W(f"  {report['methodology']['label_policy']}\n")
+        W(f"  {report['methodology']['leakage_note']}\n\n")
+
+        W("Class balance — sample_5000\n")
+        W("-" * 40 + "\n")
+        for lbl, n in report["class_balance"]["sample_5000"].items():
+            pct = safe_pct(n, count_5000, 2)
+            W(f"  {lbl:<30}: {n:>6,}  ({pct:.2f}%)\n")
+        W("\n")
+
+        W("Integrity checks\n")
+        W("-" * 40 + "\n")
+        uid  = report.get("unique_record_ids_sample_5000", "N/A")
+        dups = report.get("duplicate_record_ids_sample_5000", 0)
+        uid_str = f"{uid:,}" if isinstance(uid, int) else str(uid)
+        dup_status = "PASSED" if dups == 0 else f"WARNING — {dups:,} duplicate(s)"
+        W(f"  record_id uniqueness (sample_5000) : {uid_str} unique IDs — {dup_status}\n")
+        W(f"  Output line-count validation       : "
+          f"{report.get('output_line_count_validation', 'N/A')}\n\n")
+
+        W("Nested sample counts\n")
+        W("-" * 40 + "\n")
+        for key, val in report["nested_sample_counts"].items():
+            W(f"  {key}: {val:,}\n")
+        W("\n")
+
+        W("Stage processing times\n")
+        W("-" * 40 + "\n")
+        for stage, secs in report["stage_times_seconds"].items():
+            W(f"  {stage:<45}: {secs} s\n")
+        W("\n")
+
+        W("Output files\n")
+        W("-" * 40 + "\n")
+        for path, info in file_info.items():
+            W(f"  {os.path.basename(path)}\n")
+            W(f"    Lines   : {info['line_count']:,}\n")
+            W(f"    Size MB : {info['size_mb']}\n")
+        if missing_outs:
+            W("\nMISSING OUTPUT FILES (check logs):\n")
+            for p in missing_outs:
+                W(f"  !! {p}\n")
+        W("\n")
+
+
+    # ── Summary to console ───────────────────────────────────
+
+    print("\n=== Output files ===")
+    for p in output_paths:
+        print(f"  {p}")
+
+    print("\n=== Reports ===")
+    print(f"  {txt_report_path}")
+    print(f"  {json_report_path}")
+    print(f"\nTotal processing time: {report['processing_time_minutes']} minutes")
+
+
+# ============================================================
+# Always stop Spark — even on unhandled exceptions
+# ============================================================
+
+finally:
+    spark.stop()
+    print("\n=== Spark stopped ===")
+    print("=== Done ===")
