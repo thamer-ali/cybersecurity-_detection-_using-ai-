@@ -1,0 +1,1151 @@
+====================================================================================================
+UGR16 LLM EVALUATION MONITORING LOG — V6
+====================================================================================================
+Started at       : 2026-05-03T16:42:43
+Models           : chatgpt, deepseek, claude
+API file         : /data/ugr16/llm_samples_v10/sample_1000_api.jsonl
+Eval file        : /data/ugr16/llm_samples_v10/sample_1000_eval.jsonl
+Output dir       : /data/ugr16/llm_eval_results_150
+Effective records: 150
+Loaded API records: 150
+Aligned ground truth: 13 attack, 137 normal
+[RECORD_START] index=1/150 pct=0.7 record_id=9187da1b7b6b22551c4567197e0fb9cead96e9eb5d2b708d7d405fffab8dfd62
+[CALL] record_index=1 record_id=9187da1b7b6b22551c4567197e0fb9cead96e9eb5d2b708d7d405fffab8dfd62 model=chatgpt
+[OK] record_index=1 record_id=9187da1b7b6b22551c4567197e0fb9cead96e9eb5d2b708d7d405fffab8dfd62 model=chatgpt prediction=attack confidence=0.9 latency_s=2.244
+[CALL] record_index=1 record_id=9187da1b7b6b22551c4567197e0fb9cead96e9eb5d2b708d7d405fffab8dfd62 model=deepseek
+[OK] record_index=1 record_id=9187da1b7b6b22551c4567197e0fb9cead96e9eb5d2b708d7d405fffab8dfd62 model=deepseek prediction=attack confidence=0.9 latency_s=1.265
+[CALL] record_index=1 record_id=9187da1b7b6b22551c4567197e0fb9cead96e9eb5d2b708d7d405fffab8dfd62 model=claude
+[OK] record_index=1 record_id=9187da1b7b6b22551c4567197e0fb9cead96e9eb5d2b708d7d405fffab8dfd62 model=claude prediction=attack confidence=0.75 latency_s=1.123
+[RECORD_START] index=2/150 pct=1.3 record_id=dd36790a07118d430e69e84a7f444b83073e2b39221a07871762c09fa744a90f
+[CALL] record_index=2 record_id=dd36790a07118d430e69e84a7f444b83073e2b39221a07871762c09fa744a90f model=chatgpt
+[OK] record_index=2 record_id=dd36790a07118d430e69e84a7f444b83073e2b39221a07871762c09fa744a90f model=chatgpt prediction=attack confidence=0.9 latency_s=1.956
+[CALL] record_index=2 record_id=dd36790a07118d430e69e84a7f444b83073e2b39221a07871762c09fa744a90f model=deepseek
+[OK] record_index=2 record_id=dd36790a07118d430e69e84a7f444b83073e2b39221a07871762c09fa744a90f model=deepseek prediction=attack confidence=0.7 latency_s=1.091
+[CALL] record_index=2 record_id=dd36790a07118d430e69e84a7f444b83073e2b39221a07871762c09fa744a90f model=claude
+[OK] record_index=2 record_id=dd36790a07118d430e69e84a7f444b83073e2b39221a07871762c09fa744a90f model=claude prediction=attack confidence=0.75 latency_s=1.205
+[RECORD_START] index=3/150 pct=2.0 record_id=d7ad57de34dfb295f72565977a6487e26ec057031b6837906fde0887ea8f60dc
+[CALL] record_index=3 record_id=d7ad57de34dfb295f72565977a6487e26ec057031b6837906fde0887ea8f60dc model=chatgpt
+[OK] record_index=3 record_id=d7ad57de34dfb295f72565977a6487e26ec057031b6837906fde0887ea8f60dc model=chatgpt prediction=attack confidence=0.9 latency_s=2.266
+[CALL] record_index=3 record_id=d7ad57de34dfb295f72565977a6487e26ec057031b6837906fde0887ea8f60dc model=deepseek
+[OK] record_index=3 record_id=d7ad57de34dfb295f72565977a6487e26ec057031b6837906fde0887ea8f60dc model=deepseek prediction=attack confidence=0.9 latency_s=1.204
+[CALL] record_index=3 record_id=d7ad57de34dfb295f72565977a6487e26ec057031b6837906fde0887ea8f60dc model=claude
+[OK] record_index=3 record_id=d7ad57de34dfb295f72565977a6487e26ec057031b6837906fde0887ea8f60dc model=claude prediction=normal confidence=0.7 latency_s=0.931
+[RECORD_START] index=4/150 pct=2.7 record_id=f891a3645b3214b5918564bad62134a5fe09f3aac6865fa4f6e72bc2b7963e5d
+[CALL] record_index=4 record_id=f891a3645b3214b5918564bad62134a5fe09f3aac6865fa4f6e72bc2b7963e5d model=chatgpt
+[OK] record_index=4 record_id=f891a3645b3214b5918564bad62134a5fe09f3aac6865fa4f6e72bc2b7963e5d model=chatgpt prediction=attack confidence=0.9 latency_s=2.111
+[CALL] record_index=4 record_id=f891a3645b3214b5918564bad62134a5fe09f3aac6865fa4f6e72bc2b7963e5d model=deepseek
+[OK] record_index=4 record_id=f891a3645b3214b5918564bad62134a5fe09f3aac6865fa4f6e72bc2b7963e5d model=deepseek prediction=normal confidence=0.9 latency_s=0.973
+[CALL] record_index=4 record_id=f891a3645b3214b5918564bad62134a5fe09f3aac6865fa4f6e72bc2b7963e5d model=claude
+[OK] record_index=4 record_id=f891a3645b3214b5918564bad62134a5fe09f3aac6865fa4f6e72bc2b7963e5d model=claude prediction=attack confidence=0.75 latency_s=1.029
+[RECORD_START] index=5/150 pct=3.3 record_id=d0a7f7efc6b083978a6335e5783e318191fbad57026d1352a4f6610c54dd3df5
+[CALL] record_index=5 record_id=d0a7f7efc6b083978a6335e5783e318191fbad57026d1352a4f6610c54dd3df5 model=chatgpt
+[OK] record_index=5 record_id=d0a7f7efc6b083978a6335e5783e318191fbad57026d1352a4f6610c54dd3df5 model=chatgpt prediction=attack confidence=0.9 latency_s=1.083
+[CALL] record_index=5 record_id=d0a7f7efc6b083978a6335e5783e318191fbad57026d1352a4f6610c54dd3df5 model=deepseek
+[OK] record_index=5 record_id=d0a7f7efc6b083978a6335e5783e318191fbad57026d1352a4f6610c54dd3df5 model=deepseek prediction=attack confidence=0.9 latency_s=1.018
+[CALL] record_index=5 record_id=d0a7f7efc6b083978a6335e5783e318191fbad57026d1352a4f6610c54dd3df5 model=claude
+[OK] record_index=5 record_id=d0a7f7efc6b083978a6335e5783e318191fbad57026d1352a4f6610c54dd3df5 model=claude prediction=attack confidence=0.75 latency_s=1.136
+[RECORD_START] index=6/150 pct=4.0 record_id=75e8f1a5caef5ebad19eca0bc3e614a2b2385be3e41cbf29973161a58f3f7fd8
+[CALL] record_index=6 record_id=75e8f1a5caef5ebad19eca0bc3e614a2b2385be3e41cbf29973161a58f3f7fd8 model=chatgpt
+[OK] record_index=6 record_id=75e8f1a5caef5ebad19eca0bc3e614a2b2385be3e41cbf29973161a58f3f7fd8 model=chatgpt prediction=attack confidence=0.9 latency_s=1.495
+[CALL] record_index=6 record_id=75e8f1a5caef5ebad19eca0bc3e614a2b2385be3e41cbf29973161a58f3f7fd8 model=deepseek
+[OK] record_index=6 record_id=75e8f1a5caef5ebad19eca0bc3e614a2b2385be3e41cbf29973161a58f3f7fd8 model=deepseek prediction=attack confidence=0.9 latency_s=1.049
+[CALL] record_index=6 record_id=75e8f1a5caef5ebad19eca0bc3e614a2b2385be3e41cbf29973161a58f3f7fd8 model=claude
+[OK] record_index=6 record_id=75e8f1a5caef5ebad19eca0bc3e614a2b2385be3e41cbf29973161a58f3f7fd8 model=claude prediction=attack confidence=0.75 latency_s=1.465
+[RECORD_START] index=7/150 pct=4.7 record_id=97dfc4cba62894f9a2d27bcdc24f9970ab27a7c4c55e1ad8192412c2cc12f44d
+[CALL] record_index=7 record_id=97dfc4cba62894f9a2d27bcdc24f9970ab27a7c4c55e1ad8192412c2cc12f44d model=chatgpt
+[OK] record_index=7 record_id=97dfc4cba62894f9a2d27bcdc24f9970ab27a7c4c55e1ad8192412c2cc12f44d model=chatgpt prediction=attack confidence=0.9 latency_s=1.219
+[CALL] record_index=7 record_id=97dfc4cba62894f9a2d27bcdc24f9970ab27a7c4c55e1ad8192412c2cc12f44d model=deepseek
+[OK] record_index=7 record_id=97dfc4cba62894f9a2d27bcdc24f9970ab27a7c4c55e1ad8192412c2cc12f44d model=deepseek prediction=attack confidence=0.9 latency_s=1.065
+[CALL] record_index=7 record_id=97dfc4cba62894f9a2d27bcdc24f9970ab27a7c4c55e1ad8192412c2cc12f44d model=claude
+[OK] record_index=7 record_id=97dfc4cba62894f9a2d27bcdc24f9970ab27a7c4c55e1ad8192412c2cc12f44d model=claude prediction=normal confidence=0.7 latency_s=1.171
+[RECORD_START] index=8/150 pct=5.3 record_id=1530597df968693d787e8e342aff920c5869500e40753f4cad43aed8abe75e0a
+[CALL] record_index=8 record_id=1530597df968693d787e8e342aff920c5869500e40753f4cad43aed8abe75e0a model=chatgpt
+[OK] record_index=8 record_id=1530597df968693d787e8e342aff920c5869500e40753f4cad43aed8abe75e0a model=chatgpt prediction=normal confidence=0.7 latency_s=1.628
+[CALL] record_index=8 record_id=1530597df968693d787e8e342aff920c5869500e40753f4cad43aed8abe75e0a model=deepseek
+[OK] record_index=8 record_id=1530597df968693d787e8e342aff920c5869500e40753f4cad43aed8abe75e0a model=deepseek prediction=normal confidence=0.9 latency_s=1.114
+[CALL] record_index=8 record_id=1530597df968693d787e8e342aff920c5869500e40753f4cad43aed8abe75e0a model=claude
+[OK] record_index=8 record_id=1530597df968693d787e8e342aff920c5869500e40753f4cad43aed8abe75e0a model=claude prediction=normal confidence=0.7 latency_s=1.073
+[RECORD_START] index=9/150 pct=6.0 record_id=b7ea9349e676567b01765c497def4e315ccc4611c991df38221fab15ee8f220e
+[CALL] record_index=9 record_id=b7ea9349e676567b01765c497def4e315ccc4611c991df38221fab15ee8f220e model=chatgpt
+[OK] record_index=9 record_id=b7ea9349e676567b01765c497def4e315ccc4611c991df38221fab15ee8f220e model=chatgpt prediction=attack confidence=0.9 latency_s=1.547
+[CALL] record_index=9 record_id=b7ea9349e676567b01765c497def4e315ccc4611c991df38221fab15ee8f220e model=deepseek
+[OK] record_index=9 record_id=b7ea9349e676567b01765c497def4e315ccc4611c991df38221fab15ee8f220e model=deepseek prediction=attack confidence=0.7 latency_s=1.238
+[CALL] record_index=9 record_id=b7ea9349e676567b01765c497def4e315ccc4611c991df38221fab15ee8f220e model=claude
+[OK] record_index=9 record_id=b7ea9349e676567b01765c497def4e315ccc4611c991df38221fab15ee8f220e model=claude prediction=attack confidence=0.75 latency_s=1.232
+[RECORD_START] index=10/150 pct=6.7 record_id=7d3af6aab4a70499d347b7f4548e535c12b33d889470f7b46f87240aee98d945
+[CALL] record_index=10 record_id=7d3af6aab4a70499d347b7f4548e535c12b33d889470f7b46f87240aee98d945 model=chatgpt
+[OK] record_index=10 record_id=7d3af6aab4a70499d347b7f4548e535c12b33d889470f7b46f87240aee98d945 model=chatgpt prediction=attack confidence=0.9 latency_s=2.061
+[CALL] record_index=10 record_id=7d3af6aab4a70499d347b7f4548e535c12b33d889470f7b46f87240aee98d945 model=deepseek
+[OK] record_index=10 record_id=7d3af6aab4a70499d347b7f4548e535c12b33d889470f7b46f87240aee98d945 model=deepseek prediction=attack confidence=0.9 latency_s=0.992
+[CALL] record_index=10 record_id=7d3af6aab4a70499d347b7f4548e535c12b33d889470f7b46f87240aee98d945 model=claude
+[OK] record_index=10 record_id=7d3af6aab4a70499d347b7f4548e535c12b33d889470f7b46f87240aee98d945 model=claude prediction=normal confidence=0.7 latency_s=1.095
+[RECORD_START] index=11/150 pct=7.3 record_id=e8f727b0e364d871a2a86eb4092db8693ee301f0e7f27da9593f4b21f5c58deb
+[CALL] record_index=11 record_id=e8f727b0e364d871a2a86eb4092db8693ee301f0e7f27da9593f4b21f5c58deb model=chatgpt
+[OK] record_index=11 record_id=e8f727b0e364d871a2a86eb4092db8693ee301f0e7f27da9593f4b21f5c58deb model=chatgpt prediction=attack confidence=0.9 latency_s=1.404
+[CALL] record_index=11 record_id=e8f727b0e364d871a2a86eb4092db8693ee301f0e7f27da9593f4b21f5c58deb model=deepseek
+[OK] record_index=11 record_id=e8f727b0e364d871a2a86eb4092db8693ee301f0e7f27da9593f4b21f5c58deb model=deepseek prediction=attack confidence=0.7 latency_s=0.999
+[CALL] record_index=11 record_id=e8f727b0e364d871a2a86eb4092db8693ee301f0e7f27da9593f4b21f5c58deb model=claude
+[OK] record_index=11 record_id=e8f727b0e364d871a2a86eb4092db8693ee301f0e7f27da9593f4b21f5c58deb model=claude prediction=normal confidence=0.7 latency_s=1.118
+[RECORD_START] index=12/150 pct=8.0 record_id=3acbecab65e20c9559555ff7edff83d17010192c7d282281adaeb2580940237a
+[CALL] record_index=12 record_id=3acbecab65e20c9559555ff7edff83d17010192c7d282281adaeb2580940237a model=chatgpt
+[OK] record_index=12 record_id=3acbecab65e20c9559555ff7edff83d17010192c7d282281adaeb2580940237a model=chatgpt prediction=attack confidence=0.9 latency_s=2.062
+[CALL] record_index=12 record_id=3acbecab65e20c9559555ff7edff83d17010192c7d282281adaeb2580940237a model=deepseek
+[OK] record_index=12 record_id=3acbecab65e20c9559555ff7edff83d17010192c7d282281adaeb2580940237a model=deepseek prediction=attack confidence=0.7 latency_s=1.07
+[CALL] record_index=12 record_id=3acbecab65e20c9559555ff7edff83d17010192c7d282281adaeb2580940237a model=claude
+[OK] record_index=12 record_id=3acbecab65e20c9559555ff7edff83d17010192c7d282281adaeb2580940237a model=claude prediction=attack confidence=0.75 latency_s=1.09
+[RECORD_START] index=13/150 pct=8.7 record_id=43f4910b60f9e58169238802a89296728258298faf48e84e84beb4b22551a968
+[CALL] record_index=13 record_id=43f4910b60f9e58169238802a89296728258298faf48e84e84beb4b22551a968 model=chatgpt
+[OK] record_index=13 record_id=43f4910b60f9e58169238802a89296728258298faf48e84e84beb4b22551a968 model=chatgpt prediction=attack confidence=0.9 latency_s=2.959
+[CALL] record_index=13 record_id=43f4910b60f9e58169238802a89296728258298faf48e84e84beb4b22551a968 model=deepseek
+[OK] record_index=13 record_id=43f4910b60f9e58169238802a89296728258298faf48e84e84beb4b22551a968 model=deepseek prediction=attack confidence=0.7 latency_s=0.923
+[CALL] record_index=13 record_id=43f4910b60f9e58169238802a89296728258298faf48e84e84beb4b22551a968 model=claude
+[OK] record_index=13 record_id=43f4910b60f9e58169238802a89296728258298faf48e84e84beb4b22551a968 model=claude prediction=attack confidence=0.75 latency_s=1.079
+[RECORD_START] index=14/150 pct=9.3 record_id=6704bc4e76caec9d715820725d31efe267fab3db85c3e59a2dbae4d0d3a0ca7d
+[CALL] record_index=14 record_id=6704bc4e76caec9d715820725d31efe267fab3db85c3e59a2dbae4d0d3a0ca7d model=chatgpt
+[OK] record_index=14 record_id=6704bc4e76caec9d715820725d31efe267fab3db85c3e59a2dbae4d0d3a0ca7d model=chatgpt prediction=attack confidence=0.9 latency_s=1.464
+[CALL] record_index=14 record_id=6704bc4e76caec9d715820725d31efe267fab3db85c3e59a2dbae4d0d3a0ca7d model=deepseek
+[OK] record_index=14 record_id=6704bc4e76caec9d715820725d31efe267fab3db85c3e59a2dbae4d0d3a0ca7d model=deepseek prediction=attack confidence=0.7 latency_s=1.338
+[CALL] record_index=14 record_id=6704bc4e76caec9d715820725d31efe267fab3db85c3e59a2dbae4d0d3a0ca7d model=claude
+[OK] record_index=14 record_id=6704bc4e76caec9d715820725d31efe267fab3db85c3e59a2dbae4d0d3a0ca7d model=claude prediction=attack confidence=0.75 latency_s=1.317
+[RECORD_START] index=15/150 pct=10.0 record_id=f2403bab2e355ae46ab759c90683514b01d6121f835fefcee4bcd47f9e6cc9c1
+[CALL] record_index=15 record_id=f2403bab2e355ae46ab759c90683514b01d6121f835fefcee4bcd47f9e6cc9c1 model=chatgpt
+[OK] record_index=15 record_id=f2403bab2e355ae46ab759c90683514b01d6121f835fefcee4bcd47f9e6cc9c1 model=chatgpt prediction=attack confidence=0.9 latency_s=1.392
+[CALL] record_index=15 record_id=f2403bab2e355ae46ab759c90683514b01d6121f835fefcee4bcd47f9e6cc9c1 model=deepseek
+[OK] record_index=15 record_id=f2403bab2e355ae46ab759c90683514b01d6121f835fefcee4bcd47f9e6cc9c1 model=deepseek prediction=attack confidence=0.9 latency_s=1.082
+[CALL] record_index=15 record_id=f2403bab2e355ae46ab759c90683514b01d6121f835fefcee4bcd47f9e6cc9c1 model=claude
+[OK] record_index=15 record_id=f2403bab2e355ae46ab759c90683514b01d6121f835fefcee4bcd47f9e6cc9c1 model=claude prediction=normal confidence=0.7 latency_s=1.243
+[RECORD_START] index=16/150 pct=10.7 record_id=0729b6e24364740b449d7ecd13d30726d3065848144c4d6de1de97dc312a2d6c
+[CALL] record_index=16 record_id=0729b6e24364740b449d7ecd13d30726d3065848144c4d6de1de97dc312a2d6c model=chatgpt
+[OK] record_index=16 record_id=0729b6e24364740b449d7ecd13d30726d3065848144c4d6de1de97dc312a2d6c model=chatgpt prediction=attack confidence=0.9 latency_s=1.382
+[CALL] record_index=16 record_id=0729b6e24364740b449d7ecd13d30726d3065848144c4d6de1de97dc312a2d6c model=deepseek
+[OK] record_index=16 record_id=0729b6e24364740b449d7ecd13d30726d3065848144c4d6de1de97dc312a2d6c model=deepseek prediction=attack confidence=0.9 latency_s=0.974
+[CALL] record_index=16 record_id=0729b6e24364740b449d7ecd13d30726d3065848144c4d6de1de97dc312a2d6c model=claude
+[OK] record_index=16 record_id=0729b6e24364740b449d7ecd13d30726d3065848144c4d6de1de97dc312a2d6c model=claude prediction=attack confidence=0.75 latency_s=2.018
+[RECORD_START] index=17/150 pct=11.3 record_id=99be74f4e9dc8e14c0848c53a7e8123cd3e178cbb5292f98d033672f86c81a6f
+[CALL] record_index=17 record_id=99be74f4e9dc8e14c0848c53a7e8123cd3e178cbb5292f98d033672f86c81a6f model=chatgpt
+[OK] record_index=17 record_id=99be74f4e9dc8e14c0848c53a7e8123cd3e178cbb5292f98d033672f86c81a6f model=chatgpt prediction=attack confidence=0.9 latency_s=1.593
+[CALL] record_index=17 record_id=99be74f4e9dc8e14c0848c53a7e8123cd3e178cbb5292f98d033672f86c81a6f model=deepseek
+[OK] record_index=17 record_id=99be74f4e9dc8e14c0848c53a7e8123cd3e178cbb5292f98d033672f86c81a6f model=deepseek prediction=attack confidence=0.7 latency_s=1.387
+[CALL] record_index=17 record_id=99be74f4e9dc8e14c0848c53a7e8123cd3e178cbb5292f98d033672f86c81a6f model=claude
+[OK] record_index=17 record_id=99be74f4e9dc8e14c0848c53a7e8123cd3e178cbb5292f98d033672f86c81a6f model=claude prediction=attack confidence=0.75 latency_s=1.1
+[RECORD_START] index=18/150 pct=12.0 record_id=2e81cfb5989db80c3b2fe353415640960e539c5c5bf2e07e00640618adafdc1a
+[CALL] record_index=18 record_id=2e81cfb5989db80c3b2fe353415640960e539c5c5bf2e07e00640618adafdc1a model=chatgpt
+[OK] record_index=18 record_id=2e81cfb5989db80c3b2fe353415640960e539c5c5bf2e07e00640618adafdc1a model=chatgpt prediction=attack confidence=0.9 latency_s=1.721
+[CALL] record_index=18 record_id=2e81cfb5989db80c3b2fe353415640960e539c5c5bf2e07e00640618adafdc1a model=deepseek
+[OK] record_index=18 record_id=2e81cfb5989db80c3b2fe353415640960e539c5c5bf2e07e00640618adafdc1a model=deepseek prediction=attack confidence=0.7 latency_s=1.131
+[CALL] record_index=18 record_id=2e81cfb5989db80c3b2fe353415640960e539c5c5bf2e07e00640618adafdc1a model=claude
+[OK] record_index=18 record_id=2e81cfb5989db80c3b2fe353415640960e539c5c5bf2e07e00640618adafdc1a model=claude prediction=attack confidence=0.75 latency_s=1.358
+[RECORD_START] index=19/150 pct=12.7 record_id=4ec200b7e29b7485f77564758055817c0a7d932de3b4506f71c00f28c1304247
+[CALL] record_index=19 record_id=4ec200b7e29b7485f77564758055817c0a7d932de3b4506f71c00f28c1304247 model=chatgpt
+[OK] record_index=19 record_id=4ec200b7e29b7485f77564758055817c0a7d932de3b4506f71c00f28c1304247 model=chatgpt prediction=attack confidence=0.9 latency_s=1.54
+[CALL] record_index=19 record_id=4ec200b7e29b7485f77564758055817c0a7d932de3b4506f71c00f28c1304247 model=deepseek
+[OK] record_index=19 record_id=4ec200b7e29b7485f77564758055817c0a7d932de3b4506f71c00f28c1304247 model=deepseek prediction=attack confidence=0.9 latency_s=1.002
+[CALL] record_index=19 record_id=4ec200b7e29b7485f77564758055817c0a7d932de3b4506f71c00f28c1304247 model=claude
+[OK] record_index=19 record_id=4ec200b7e29b7485f77564758055817c0a7d932de3b4506f71c00f28c1304247 model=claude prediction=attack confidence=0.75 latency_s=1.079
+[RECORD_START] index=20/150 pct=13.3 record_id=900e14d0cd2fdd60bbec21f64dff577bb677098bdb381d3c97d1a13d20eabf20
+[CALL] record_index=20 record_id=900e14d0cd2fdd60bbec21f64dff577bb677098bdb381d3c97d1a13d20eabf20 model=chatgpt
+[OK] record_index=20 record_id=900e14d0cd2fdd60bbec21f64dff577bb677098bdb381d3c97d1a13d20eabf20 model=chatgpt prediction=attack confidence=0.7 latency_s=2.044
+[CALL] record_index=20 record_id=900e14d0cd2fdd60bbec21f64dff577bb677098bdb381d3c97d1a13d20eabf20 model=deepseek
+[OK] record_index=20 record_id=900e14d0cd2fdd60bbec21f64dff577bb677098bdb381d3c97d1a13d20eabf20 model=deepseek prediction=normal confidence=0.9 latency_s=0.779
+[CALL] record_index=20 record_id=900e14d0cd2fdd60bbec21f64dff577bb677098bdb381d3c97d1a13d20eabf20 model=claude
+[OK] record_index=20 record_id=900e14d0cd2fdd60bbec21f64dff577bb677098bdb381d3c97d1a13d20eabf20 model=claude prediction=normal confidence=0.7 latency_s=1.192
+[RECORD_START] index=21/150 pct=14.0 record_id=dcea9a6f809501894649adf0d0dfe32e9899c376559950340ab77d4d3610b3f8
+[CALL] record_index=21 record_id=dcea9a6f809501894649adf0d0dfe32e9899c376559950340ab77d4d3610b3f8 model=chatgpt
+[OK] record_index=21 record_id=dcea9a6f809501894649adf0d0dfe32e9899c376559950340ab77d4d3610b3f8 model=chatgpt prediction=attack confidence=0.9 latency_s=1.29
+[CALL] record_index=21 record_id=dcea9a6f809501894649adf0d0dfe32e9899c376559950340ab77d4d3610b3f8 model=deepseek
+[OK] record_index=21 record_id=dcea9a6f809501894649adf0d0dfe32e9899c376559950340ab77d4d3610b3f8 model=deepseek prediction=attack confidence=0.7 latency_s=1.056
+[CALL] record_index=21 record_id=dcea9a6f809501894649adf0d0dfe32e9899c376559950340ab77d4d3610b3f8 model=claude
+[OK] record_index=21 record_id=dcea9a6f809501894649adf0d0dfe32e9899c376559950340ab77d4d3610b3f8 model=claude prediction=attack confidence=0.75 latency_s=1.111
+[RECORD_START] index=22/150 pct=14.7 record_id=8a765e77ea80a911f2c5df894bbee97f9be9ab43d1621fe136f498fdd9be3ea0
+[CALL] record_index=22 record_id=8a765e77ea80a911f2c5df894bbee97f9be9ab43d1621fe136f498fdd9be3ea0 model=chatgpt
+[OK] record_index=22 record_id=8a765e77ea80a911f2c5df894bbee97f9be9ab43d1621fe136f498fdd9be3ea0 model=chatgpt prediction=attack confidence=0.9 latency_s=1.367
+[CALL] record_index=22 record_id=8a765e77ea80a911f2c5df894bbee97f9be9ab43d1621fe136f498fdd9be3ea0 model=deepseek
+[OK] record_index=22 record_id=8a765e77ea80a911f2c5df894bbee97f9be9ab43d1621fe136f498fdd9be3ea0 model=deepseek prediction=attack confidence=0.9 latency_s=0.893
+[CALL] record_index=22 record_id=8a765e77ea80a911f2c5df894bbee97f9be9ab43d1621fe136f498fdd9be3ea0 model=claude
+[OK] record_index=22 record_id=8a765e77ea80a911f2c5df894bbee97f9be9ab43d1621fe136f498fdd9be3ea0 model=claude prediction=attack confidence=0.75 latency_s=1.99
+[RECORD_START] index=23/150 pct=15.3 record_id=25bea378420a0ef05d9cae1a167aa5ae5c8888912fbf57db592a8a5e93042fba
+[CALL] record_index=23 record_id=25bea378420a0ef05d9cae1a167aa5ae5c8888912fbf57db592a8a5e93042fba model=chatgpt
+[OK] record_index=23 record_id=25bea378420a0ef05d9cae1a167aa5ae5c8888912fbf57db592a8a5e93042fba model=chatgpt prediction=attack confidence=0.9 latency_s=1.406
+[CALL] record_index=23 record_id=25bea378420a0ef05d9cae1a167aa5ae5c8888912fbf57db592a8a5e93042fba model=deepseek
+[OK] record_index=23 record_id=25bea378420a0ef05d9cae1a167aa5ae5c8888912fbf57db592a8a5e93042fba model=deepseek prediction=attack confidence=0.9 latency_s=0.938
+[CALL] record_index=23 record_id=25bea378420a0ef05d9cae1a167aa5ae5c8888912fbf57db592a8a5e93042fba model=claude
+[OK] record_index=23 record_id=25bea378420a0ef05d9cae1a167aa5ae5c8888912fbf57db592a8a5e93042fba model=claude prediction=attack confidence=0.75 latency_s=1.086
+[RECORD_START] index=24/150 pct=16.0 record_id=b8036d86e75daaf4f0f49e91444f7dae13f293e070967891bbc5d175ff8c1184
+[CALL] record_index=24 record_id=b8036d86e75daaf4f0f49e91444f7dae13f293e070967891bbc5d175ff8c1184 model=chatgpt
+[OK] record_index=24 record_id=b8036d86e75daaf4f0f49e91444f7dae13f293e070967891bbc5d175ff8c1184 model=chatgpt prediction=attack confidence=0.9 latency_s=1.488
+[CALL] record_index=24 record_id=b8036d86e75daaf4f0f49e91444f7dae13f293e070967891bbc5d175ff8c1184 model=deepseek
+[OK] record_index=24 record_id=b8036d86e75daaf4f0f49e91444f7dae13f293e070967891bbc5d175ff8c1184 model=deepseek prediction=attack confidence=0.7 latency_s=1.129
+[CALL] record_index=24 record_id=b8036d86e75daaf4f0f49e91444f7dae13f293e070967891bbc5d175ff8c1184 model=claude
+[OK] record_index=24 record_id=b8036d86e75daaf4f0f49e91444f7dae13f293e070967891bbc5d175ff8c1184 model=claude prediction=normal confidence=0.7 latency_s=1.189
+[RECORD_START] index=25/150 pct=16.7 record_id=702c19df0d284d827c2e9b9ca163355508c279c313a872b0d5f5c7c87aaafe7f
+[CALL] record_index=25 record_id=702c19df0d284d827c2e9b9ca163355508c279c313a872b0d5f5c7c87aaafe7f model=chatgpt
+[OK] record_index=25 record_id=702c19df0d284d827c2e9b9ca163355508c279c313a872b0d5f5c7c87aaafe7f model=chatgpt prediction=attack confidence=0.9 latency_s=1.251
+[CALL] record_index=25 record_id=702c19df0d284d827c2e9b9ca163355508c279c313a872b0d5f5c7c87aaafe7f model=deepseek
+[OK] record_index=25 record_id=702c19df0d284d827c2e9b9ca163355508c279c313a872b0d5f5c7c87aaafe7f model=deepseek prediction=attack confidence=0.7 latency_s=1.22
+[CALL] record_index=25 record_id=702c19df0d284d827c2e9b9ca163355508c279c313a872b0d5f5c7c87aaafe7f model=claude
+[OK] record_index=25 record_id=702c19df0d284d827c2e9b9ca163355508c279c313a872b0d5f5c7c87aaafe7f model=claude prediction=attack confidence=0.75 latency_s=1.294
+
+====================================================================================================
+CHECKPOINT: 25/150 [████░░░░░░░░░░░░░░░░░░░░░░░░░░] 16.7%
+Elapsed   : 0:01:39
+ETA       : 0:08:18
+----------------------------------------------------------------------------------------------------
+Model            Calls  Errors  Skipped   Attack   Normal  AvgConf      InTok   OutTok    Cost($)   AvgLat
+----------------------------------------------------------------------------------------------------
+chatgpt             25       0        0       24        1    0.884      9,903      724   0.001920    1.679
+deepseek            25       0        0       22        3    0.812     10,587      654   0.001665    1.077
+claude              25       0        0       17        8    0.734     10,953    1,042   0.012930    1.229
+----------------------------------------------------------------------------------------------------
+Current estimated total cost: $0.016515
+====================================================================================================
+[RECORD_START] index=26/150 pct=17.3 record_id=bb21906ee781d20c259bab58b151ed67349e6f00806d896a9fc88303b400a871
+[CALL] record_index=26 record_id=bb21906ee781d20c259bab58b151ed67349e6f00806d896a9fc88303b400a871 model=chatgpt
+[OK] record_index=26 record_id=bb21906ee781d20c259bab58b151ed67349e6f00806d896a9fc88303b400a871 model=chatgpt prediction=attack confidence=0.9 latency_s=1.569
+[CALL] record_index=26 record_id=bb21906ee781d20c259bab58b151ed67349e6f00806d896a9fc88303b400a871 model=deepseek
+[OK] record_index=26 record_id=bb21906ee781d20c259bab58b151ed67349e6f00806d896a9fc88303b400a871 model=deepseek prediction=attack confidence=0.7 latency_s=0.945
+[CALL] record_index=26 record_id=bb21906ee781d20c259bab58b151ed67349e6f00806d896a9fc88303b400a871 model=claude
+[OK] record_index=26 record_id=bb21906ee781d20c259bab58b151ed67349e6f00806d896a9fc88303b400a871 model=claude prediction=normal confidence=0.7 latency_s=1.216
+[RECORD_START] index=27/150 pct=18.0 record_id=b047dc1d381c26c03985a04b5bfeb0cf9dc3370b945ea7319216d1810b87dbdf
+[CALL] record_index=27 record_id=b047dc1d381c26c03985a04b5bfeb0cf9dc3370b945ea7319216d1810b87dbdf model=chatgpt
+[OK] record_index=27 record_id=b047dc1d381c26c03985a04b5bfeb0cf9dc3370b945ea7319216d1810b87dbdf model=chatgpt prediction=attack confidence=0.9 latency_s=1.461
+[CALL] record_index=27 record_id=b047dc1d381c26c03985a04b5bfeb0cf9dc3370b945ea7319216d1810b87dbdf model=deepseek
+[OK] record_index=27 record_id=b047dc1d381c26c03985a04b5bfeb0cf9dc3370b945ea7319216d1810b87dbdf model=deepseek prediction=attack confidence=0.9 latency_s=0.996
+[CALL] record_index=27 record_id=b047dc1d381c26c03985a04b5bfeb0cf9dc3370b945ea7319216d1810b87dbdf model=claude
+[OK] record_index=27 record_id=b047dc1d381c26c03985a04b5bfeb0cf9dc3370b945ea7319216d1810b87dbdf model=claude prediction=attack confidence=0.85 latency_s=1.232
+[RECORD_START] index=28/150 pct=18.7 record_id=d0c31b7da24dd0af4fe5939b949b8eb6320fc62445000bfec5ac8eebbd92bfcd
+[CALL] record_index=28 record_id=d0c31b7da24dd0af4fe5939b949b8eb6320fc62445000bfec5ac8eebbd92bfcd model=chatgpt
+[OK] record_index=28 record_id=d0c31b7da24dd0af4fe5939b949b8eb6320fc62445000bfec5ac8eebbd92bfcd model=chatgpt prediction=attack confidence=0.9 latency_s=1.617
+[CALL] record_index=28 record_id=d0c31b7da24dd0af4fe5939b949b8eb6320fc62445000bfec5ac8eebbd92bfcd model=deepseek
+[OK] record_index=28 record_id=d0c31b7da24dd0af4fe5939b949b8eb6320fc62445000bfec5ac8eebbd92bfcd model=deepseek prediction=attack confidence=0.7 latency_s=1.032
+[CALL] record_index=28 record_id=d0c31b7da24dd0af4fe5939b949b8eb6320fc62445000bfec5ac8eebbd92bfcd model=claude
+[OK] record_index=28 record_id=d0c31b7da24dd0af4fe5939b949b8eb6320fc62445000bfec5ac8eebbd92bfcd model=claude prediction=attack confidence=0.75 latency_s=1.268
+[RECORD_START] index=29/150 pct=19.3 record_id=99dadb719f5a9c8bf6df2cb37dd6f123e8ef4f45ea015ec98dc4efeb9db5b7b4
+[CALL] record_index=29 record_id=99dadb719f5a9c8bf6df2cb37dd6f123e8ef4f45ea015ec98dc4efeb9db5b7b4 model=chatgpt
+[OK] record_index=29 record_id=99dadb719f5a9c8bf6df2cb37dd6f123e8ef4f45ea015ec98dc4efeb9db5b7b4 model=chatgpt prediction=attack confidence=0.9 latency_s=1.313
+[CALL] record_index=29 record_id=99dadb719f5a9c8bf6df2cb37dd6f123e8ef4f45ea015ec98dc4efeb9db5b7b4 model=deepseek
+[OK] record_index=29 record_id=99dadb719f5a9c8bf6df2cb37dd6f123e8ef4f45ea015ec98dc4efeb9db5b7b4 model=deepseek prediction=attack confidence=0.9 latency_s=1.043
+[CALL] record_index=29 record_id=99dadb719f5a9c8bf6df2cb37dd6f123e8ef4f45ea015ec98dc4efeb9db5b7b4 model=claude
+[OK] record_index=29 record_id=99dadb719f5a9c8bf6df2cb37dd6f123e8ef4f45ea015ec98dc4efeb9db5b7b4 model=claude prediction=attack confidence=0.75 latency_s=1.32
+[RECORD_START] index=30/150 pct=20.0 record_id=70fc456c247f6c51f456843a203296e76d244d6c485fd479ee9110933e5d361d
+[CALL] record_index=30 record_id=70fc456c247f6c51f456843a203296e76d244d6c485fd479ee9110933e5d361d model=chatgpt
+[OK] record_index=30 record_id=70fc456c247f6c51f456843a203296e76d244d6c485fd479ee9110933e5d361d model=chatgpt prediction=attack confidence=0.9 latency_s=1.322
+[CALL] record_index=30 record_id=70fc456c247f6c51f456843a203296e76d244d6c485fd479ee9110933e5d361d model=deepseek
+[OK] record_index=30 record_id=70fc456c247f6c51f456843a203296e76d244d6c485fd479ee9110933e5d361d model=deepseek prediction=attack confidence=0.9 latency_s=1.0
+[CALL] record_index=30 record_id=70fc456c247f6c51f456843a203296e76d244d6c485fd479ee9110933e5d361d model=claude
+[OK] record_index=30 record_id=70fc456c247f6c51f456843a203296e76d244d6c485fd479ee9110933e5d361d model=claude prediction=normal confidence=0.7 latency_s=1.183
+[RECORD_START] index=31/150 pct=20.7 record_id=abc974671be099b4e736fa98374b2f2e2c0bdd80d524710578f29d3e20dcdcc3
+[CALL] record_index=31 record_id=abc974671be099b4e736fa98374b2f2e2c0bdd80d524710578f29d3e20dcdcc3 model=chatgpt
+[OK] record_index=31 record_id=abc974671be099b4e736fa98374b2f2e2c0bdd80d524710578f29d3e20dcdcc3 model=chatgpt prediction=attack confidence=0.9 latency_s=2.273
+[CALL] record_index=31 record_id=abc974671be099b4e736fa98374b2f2e2c0bdd80d524710578f29d3e20dcdcc3 model=deepseek
+[OK] record_index=31 record_id=abc974671be099b4e736fa98374b2f2e2c0bdd80d524710578f29d3e20dcdcc3 model=deepseek prediction=attack confidence=0.9 latency_s=0.955
+[CALL] record_index=31 record_id=abc974671be099b4e736fa98374b2f2e2c0bdd80d524710578f29d3e20dcdcc3 model=claude
+[OK] record_index=31 record_id=abc974671be099b4e736fa98374b2f2e2c0bdd80d524710578f29d3e20dcdcc3 model=claude prediction=normal confidence=0.7 latency_s=1.176
+[RECORD_START] index=32/150 pct=21.3 record_id=074a7075f28c83c39cd3048e9297d187de97288cb33ca877cda108b4d5317c68
+[CALL] record_index=32 record_id=074a7075f28c83c39cd3048e9297d187de97288cb33ca877cda108b4d5317c68 model=chatgpt
+[OK] record_index=32 record_id=074a7075f28c83c39cd3048e9297d187de97288cb33ca877cda108b4d5317c68 model=chatgpt prediction=attack confidence=0.9 latency_s=1.971
+[CALL] record_index=32 record_id=074a7075f28c83c39cd3048e9297d187de97288cb33ca877cda108b4d5317c68 model=deepseek
+[OK] record_index=32 record_id=074a7075f28c83c39cd3048e9297d187de97288cb33ca877cda108b4d5317c68 model=deepseek prediction=attack confidence=0.9 latency_s=0.915
+[CALL] record_index=32 record_id=074a7075f28c83c39cd3048e9297d187de97288cb33ca877cda108b4d5317c68 model=claude
+[OK] record_index=32 record_id=074a7075f28c83c39cd3048e9297d187de97288cb33ca877cda108b4d5317c68 model=claude prediction=attack confidence=0.85 latency_s=1.276
+[RECORD_START] index=33/150 pct=22.0 record_id=716d5cacdd269999518ec220b5b030b800a82643f55583c515e60385e7bfcdfa
+[CALL] record_index=33 record_id=716d5cacdd269999518ec220b5b030b800a82643f55583c515e60385e7bfcdfa model=chatgpt
+[OK] record_index=33 record_id=716d5cacdd269999518ec220b5b030b800a82643f55583c515e60385e7bfcdfa model=chatgpt prediction=attack confidence=0.9 latency_s=2.144
+[CALL] record_index=33 record_id=716d5cacdd269999518ec220b5b030b800a82643f55583c515e60385e7bfcdfa model=deepseek
+[OK] record_index=33 record_id=716d5cacdd269999518ec220b5b030b800a82643f55583c515e60385e7bfcdfa model=deepseek prediction=attack confidence=0.9 latency_s=1.3
+[CALL] record_index=33 record_id=716d5cacdd269999518ec220b5b030b800a82643f55583c515e60385e7bfcdfa model=claude
+[OK] record_index=33 record_id=716d5cacdd269999518ec220b5b030b800a82643f55583c515e60385e7bfcdfa model=claude prediction=attack confidence=0.75 latency_s=1.235
+[RECORD_START] index=34/150 pct=22.7 record_id=2c4f0bfd068694303362eebbddf68eb150e707684bd3bbf62c35d0ac8d935854
+[CALL] record_index=34 record_id=2c4f0bfd068694303362eebbddf68eb150e707684bd3bbf62c35d0ac8d935854 model=chatgpt
+[OK] record_index=34 record_id=2c4f0bfd068694303362eebbddf68eb150e707684bd3bbf62c35d0ac8d935854 model=chatgpt prediction=attack confidence=0.9 latency_s=1.392
+[CALL] record_index=34 record_id=2c4f0bfd068694303362eebbddf68eb150e707684bd3bbf62c35d0ac8d935854 model=deepseek
+[OK] record_index=34 record_id=2c4f0bfd068694303362eebbddf68eb150e707684bd3bbf62c35d0ac8d935854 model=deepseek prediction=attack confidence=0.9 latency_s=0.912
+[CALL] record_index=34 record_id=2c4f0bfd068694303362eebbddf68eb150e707684bd3bbf62c35d0ac8d935854 model=claude
+[OK] record_index=34 record_id=2c4f0bfd068694303362eebbddf68eb150e707684bd3bbf62c35d0ac8d935854 model=claude prediction=attack confidence=0.85 latency_s=1.052
+[RECORD_START] index=35/150 pct=23.3 record_id=7c53df6f6a202859abf6c7163570a56ca6cce9ba0f190d8f568bc76e2721db68
+[CALL] record_index=35 record_id=7c53df6f6a202859abf6c7163570a56ca6cce9ba0f190d8f568bc76e2721db68 model=chatgpt
+[OK] record_index=35 record_id=7c53df6f6a202859abf6c7163570a56ca6cce9ba0f190d8f568bc76e2721db68 model=chatgpt prediction=attack confidence=0.9 latency_s=1.573
+[CALL] record_index=35 record_id=7c53df6f6a202859abf6c7163570a56ca6cce9ba0f190d8f568bc76e2721db68 model=deepseek
+[OK] record_index=35 record_id=7c53df6f6a202859abf6c7163570a56ca6cce9ba0f190d8f568bc76e2721db68 model=deepseek prediction=attack confidence=0.7 latency_s=0.934
+[CALL] record_index=35 record_id=7c53df6f6a202859abf6c7163570a56ca6cce9ba0f190d8f568bc76e2721db68 model=claude
+[OK] record_index=35 record_id=7c53df6f6a202859abf6c7163570a56ca6cce9ba0f190d8f568bc76e2721db68 model=claude prediction=attack confidence=0.75 latency_s=1.162
+[RECORD_START] index=36/150 pct=24.0 record_id=88d2b023163ed82a9c419c2afebab04c8406fc76891c818c15619b60cefd1d38
+[CALL] record_index=36 record_id=88d2b023163ed82a9c419c2afebab04c8406fc76891c818c15619b60cefd1d38 model=chatgpt
+[OK] record_index=36 record_id=88d2b023163ed82a9c419c2afebab04c8406fc76891c818c15619b60cefd1d38 model=chatgpt prediction=attack confidence=0.9 latency_s=1.706
+[CALL] record_index=36 record_id=88d2b023163ed82a9c419c2afebab04c8406fc76891c818c15619b60cefd1d38 model=deepseek
+[OK] record_index=36 record_id=88d2b023163ed82a9c419c2afebab04c8406fc76891c818c15619b60cefd1d38 model=deepseek prediction=attack confidence=0.7 latency_s=0.998
+[CALL] record_index=36 record_id=88d2b023163ed82a9c419c2afebab04c8406fc76891c818c15619b60cefd1d38 model=claude
+[OK] record_index=36 record_id=88d2b023163ed82a9c419c2afebab04c8406fc76891c818c15619b60cefd1d38 model=claude prediction=attack confidence=0.75 latency_s=1.09
+[RECORD_START] index=37/150 pct=24.7 record_id=990798b6c7865cca25d4fad111e02afcc397f542644b06b92700b66b3011718c
+[CALL] record_index=37 record_id=990798b6c7865cca25d4fad111e02afcc397f542644b06b92700b66b3011718c model=chatgpt
+[OK] record_index=37 record_id=990798b6c7865cca25d4fad111e02afcc397f542644b06b92700b66b3011718c model=chatgpt prediction=attack confidence=0.9 latency_s=1.619
+[CALL] record_index=37 record_id=990798b6c7865cca25d4fad111e02afcc397f542644b06b92700b66b3011718c model=deepseek
+[OK] record_index=37 record_id=990798b6c7865cca25d4fad111e02afcc397f542644b06b92700b66b3011718c model=deepseek prediction=normal confidence=0.9 latency_s=1.108
+[CALL] record_index=37 record_id=990798b6c7865cca25d4fad111e02afcc397f542644b06b92700b66b3011718c model=claude
+[OK] record_index=37 record_id=990798b6c7865cca25d4fad111e02afcc397f542644b06b92700b66b3011718c model=claude prediction=normal confidence=0.7 latency_s=1.149
+[RECORD_START] index=38/150 pct=25.3 record_id=0e5b9002f371ddd222ec3892586bb17672a689bee3d9bd7e9df3ecb0a7f5f491
+[CALL] record_index=38 record_id=0e5b9002f371ddd222ec3892586bb17672a689bee3d9bd7e9df3ecb0a7f5f491 model=chatgpt
+[OK] record_index=38 record_id=0e5b9002f371ddd222ec3892586bb17672a689bee3d9bd7e9df3ecb0a7f5f491 model=chatgpt prediction=attack confidence=0.9 latency_s=1.656
+[CALL] record_index=38 record_id=0e5b9002f371ddd222ec3892586bb17672a689bee3d9bd7e9df3ecb0a7f5f491 model=deepseek
+[OK] record_index=38 record_id=0e5b9002f371ddd222ec3892586bb17672a689bee3d9bd7e9df3ecb0a7f5f491 model=deepseek prediction=attack confidence=0.9 latency_s=1.014
+[CALL] record_index=38 record_id=0e5b9002f371ddd222ec3892586bb17672a689bee3d9bd7e9df3ecb0a7f5f491 model=claude
+[OK] record_index=38 record_id=0e5b9002f371ddd222ec3892586bb17672a689bee3d9bd7e9df3ecb0a7f5f491 model=claude prediction=attack confidence=0.75 latency_s=1.194
+[RECORD_START] index=39/150 pct=26.0 record_id=62ad92e5027e6be7787bbbfd98496d656ba25264db275bf853f66c09a19469c5
+[CALL] record_index=39 record_id=62ad92e5027e6be7787bbbfd98496d656ba25264db275bf853f66c09a19469c5 model=chatgpt
+[OK] record_index=39 record_id=62ad92e5027e6be7787bbbfd98496d656ba25264db275bf853f66c09a19469c5 model=chatgpt prediction=attack confidence=0.9 latency_s=1.378
+[CALL] record_index=39 record_id=62ad92e5027e6be7787bbbfd98496d656ba25264db275bf853f66c09a19469c5 model=deepseek
+[OK] record_index=39 record_id=62ad92e5027e6be7787bbbfd98496d656ba25264db275bf853f66c09a19469c5 model=deepseek prediction=attack confidence=0.9 latency_s=1.073
+[CALL] record_index=39 record_id=62ad92e5027e6be7787bbbfd98496d656ba25264db275bf853f66c09a19469c5 model=claude
+[OK] record_index=39 record_id=62ad92e5027e6be7787bbbfd98496d656ba25264db275bf853f66c09a19469c5 model=claude prediction=normal confidence=0.7 latency_s=1.026
+[RECORD_START] index=40/150 pct=26.7 record_id=e92da5f66d7b8ea770efc43ede8f1e1a672e17b7b0c6bf8545d79cbacc402e2f
+[CALL] record_index=40 record_id=e92da5f66d7b8ea770efc43ede8f1e1a672e17b7b0c6bf8545d79cbacc402e2f model=chatgpt
+[OK] record_index=40 record_id=e92da5f66d7b8ea770efc43ede8f1e1a672e17b7b0c6bf8545d79cbacc402e2f model=chatgpt prediction=attack confidence=0.7 latency_s=1.719
+[CALL] record_index=40 record_id=e92da5f66d7b8ea770efc43ede8f1e1a672e17b7b0c6bf8545d79cbacc402e2f model=deepseek
+[OK] record_index=40 record_id=e92da5f66d7b8ea770efc43ede8f1e1a672e17b7b0c6bf8545d79cbacc402e2f model=deepseek prediction=attack confidence=0.7 latency_s=1.079
+[CALL] record_index=40 record_id=e92da5f66d7b8ea770efc43ede8f1e1a672e17b7b0c6bf8545d79cbacc402e2f model=claude
+[OK] record_index=40 record_id=e92da5f66d7b8ea770efc43ede8f1e1a672e17b7b0c6bf8545d79cbacc402e2f model=claude prediction=normal confidence=0.7 latency_s=1.09
+[RECORD_START] index=41/150 pct=27.3 record_id=aa322df1c8794123aa1f6762b547957577aabc7c4357ff46fdb63f5a67e28c57
+[CALL] record_index=41 record_id=aa322df1c8794123aa1f6762b547957577aabc7c4357ff46fdb63f5a67e28c57 model=chatgpt
+[OK] record_index=41 record_id=aa322df1c8794123aa1f6762b547957577aabc7c4357ff46fdb63f5a67e28c57 model=chatgpt prediction=attack confidence=0.9 latency_s=1.536
+[CALL] record_index=41 record_id=aa322df1c8794123aa1f6762b547957577aabc7c4357ff46fdb63f5a67e28c57 model=deepseek
+[OK] record_index=41 record_id=aa322df1c8794123aa1f6762b547957577aabc7c4357ff46fdb63f5a67e28c57 model=deepseek prediction=attack confidence=0.7 latency_s=0.944
+[CALL] record_index=41 record_id=aa322df1c8794123aa1f6762b547957577aabc7c4357ff46fdb63f5a67e28c57 model=claude
+[OK] record_index=41 record_id=aa322df1c8794123aa1f6762b547957577aabc7c4357ff46fdb63f5a67e28c57 model=claude prediction=attack confidence=0.75 latency_s=1.442
+[RECORD_START] index=42/150 pct=28.0 record_id=69ea48dd023886441c594d963c5a7cdf45fe373340368212a9bd988eae118925
+[CALL] record_index=42 record_id=69ea48dd023886441c594d963c5a7cdf45fe373340368212a9bd988eae118925 model=chatgpt
+[OK] record_index=42 record_id=69ea48dd023886441c594d963c5a7cdf45fe373340368212a9bd988eae118925 model=chatgpt prediction=attack confidence=0.9 latency_s=1.278
+[CALL] record_index=42 record_id=69ea48dd023886441c594d963c5a7cdf45fe373340368212a9bd988eae118925 model=deepseek
+[OK] record_index=42 record_id=69ea48dd023886441c594d963c5a7cdf45fe373340368212a9bd988eae118925 model=deepseek prediction=attack confidence=0.9 latency_s=1.009
+[CALL] record_index=42 record_id=69ea48dd023886441c594d963c5a7cdf45fe373340368212a9bd988eae118925 model=claude
+[OK] record_index=42 record_id=69ea48dd023886441c594d963c5a7cdf45fe373340368212a9bd988eae118925 model=claude prediction=normal confidence=0.7 latency_s=1.609
+[RECORD_START] index=43/150 pct=28.7 record_id=2b8c0ad7165e4e95b9268326e4d6b9841fe51d41f179c0d75cb11915bb3f8cd3
+[CALL] record_index=43 record_id=2b8c0ad7165e4e95b9268326e4d6b9841fe51d41f179c0d75cb11915bb3f8cd3 model=chatgpt
+[OK] record_index=43 record_id=2b8c0ad7165e4e95b9268326e4d6b9841fe51d41f179c0d75cb11915bb3f8cd3 model=chatgpt prediction=attack confidence=0.9 latency_s=1.484
+[CALL] record_index=43 record_id=2b8c0ad7165e4e95b9268326e4d6b9841fe51d41f179c0d75cb11915bb3f8cd3 model=deepseek
+[OK] record_index=43 record_id=2b8c0ad7165e4e95b9268326e4d6b9841fe51d41f179c0d75cb11915bb3f8cd3 model=deepseek prediction=attack confidence=0.9 latency_s=1.169
+[CALL] record_index=43 record_id=2b8c0ad7165e4e95b9268326e4d6b9841fe51d41f179c0d75cb11915bb3f8cd3 model=claude
+[OK] record_index=43 record_id=2b8c0ad7165e4e95b9268326e4d6b9841fe51d41f179c0d75cb11915bb3f8cd3 model=claude prediction=attack confidence=0.75 latency_s=1.015
+[RECORD_START] index=44/150 pct=29.3 record_id=ea3e75caf3d640a437ca768279f8c7ab038f3e01a2ced6f02eceba8b192fa208
+[CALL] record_index=44 record_id=ea3e75caf3d640a437ca768279f8c7ab038f3e01a2ced6f02eceba8b192fa208 model=chatgpt
+[OK] record_index=44 record_id=ea3e75caf3d640a437ca768279f8c7ab038f3e01a2ced6f02eceba8b192fa208 model=chatgpt prediction=attack confidence=0.9 latency_s=1.226
+[CALL] record_index=44 record_id=ea3e75caf3d640a437ca768279f8c7ab038f3e01a2ced6f02eceba8b192fa208 model=deepseek
+[OK] record_index=44 record_id=ea3e75caf3d640a437ca768279f8c7ab038f3e01a2ced6f02eceba8b192fa208 model=deepseek prediction=attack confidence=0.9 latency_s=1.174
+[CALL] record_index=44 record_id=ea3e75caf3d640a437ca768279f8c7ab038f3e01a2ced6f02eceba8b192fa208 model=claude
+[OK] record_index=44 record_id=ea3e75caf3d640a437ca768279f8c7ab038f3e01a2ced6f02eceba8b192fa208 model=claude prediction=normal confidence=0.7 latency_s=1.16
+[RECORD_START] index=45/150 pct=30.0 record_id=28f70556ea429877612a0d71d22f9bca8322939e49abbd67bb7524aab6ac104e
+[CALL] record_index=45 record_id=28f70556ea429877612a0d71d22f9bca8322939e49abbd67bb7524aab6ac104e model=chatgpt
+[OK] record_index=45 record_id=28f70556ea429877612a0d71d22f9bca8322939e49abbd67bb7524aab6ac104e model=chatgpt prediction=attack confidence=0.9 latency_s=1.691
+[CALL] record_index=45 record_id=28f70556ea429877612a0d71d22f9bca8322939e49abbd67bb7524aab6ac104e model=deepseek
+[OK] record_index=45 record_id=28f70556ea429877612a0d71d22f9bca8322939e49abbd67bb7524aab6ac104e model=deepseek prediction=attack confidence=0.7 latency_s=1.042
+[CALL] record_index=45 record_id=28f70556ea429877612a0d71d22f9bca8322939e49abbd67bb7524aab6ac104e model=claude
+[OK] record_index=45 record_id=28f70556ea429877612a0d71d22f9bca8322939e49abbd67bb7524aab6ac104e model=claude prediction=attack confidence=0.75 latency_s=1.251
+[RECORD_START] index=46/150 pct=30.7 record_id=eacd053eb2599d19f2733db241fd2de59c079bd75baf04cde1ae55367a36cd13
+[CALL] record_index=46 record_id=eacd053eb2599d19f2733db241fd2de59c079bd75baf04cde1ae55367a36cd13 model=chatgpt
+[OK] record_index=46 record_id=eacd053eb2599d19f2733db241fd2de59c079bd75baf04cde1ae55367a36cd13 model=chatgpt prediction=attack confidence=0.9 latency_s=1.862
+[CALL] record_index=46 record_id=eacd053eb2599d19f2733db241fd2de59c079bd75baf04cde1ae55367a36cd13 model=deepseek
+[OK] record_index=46 record_id=eacd053eb2599d19f2733db241fd2de59c079bd75baf04cde1ae55367a36cd13 model=deepseek prediction=attack confidence=0.7 latency_s=0.888
+[CALL] record_index=46 record_id=eacd053eb2599d19f2733db241fd2de59c079bd75baf04cde1ae55367a36cd13 model=claude
+[OK] record_index=46 record_id=eacd053eb2599d19f2733db241fd2de59c079bd75baf04cde1ae55367a36cd13 model=claude prediction=attack confidence=0.75 latency_s=1.194
+[RECORD_START] index=47/150 pct=31.3 record_id=097bfd40b8d3e5e94ff8f67fc7c9afdeb1aa98b66737478c83602eeee699f21d
+[CALL] record_index=47 record_id=097bfd40b8d3e5e94ff8f67fc7c9afdeb1aa98b66737478c83602eeee699f21d model=chatgpt
+[OK] record_index=47 record_id=097bfd40b8d3e5e94ff8f67fc7c9afdeb1aa98b66737478c83602eeee699f21d model=chatgpt prediction=attack confidence=0.7 latency_s=1.481
+[CALL] record_index=47 record_id=097bfd40b8d3e5e94ff8f67fc7c9afdeb1aa98b66737478c83602eeee699f21d model=deepseek
+[OK] record_index=47 record_id=097bfd40b8d3e5e94ff8f67fc7c9afdeb1aa98b66737478c83602eeee699f21d model=deepseek prediction=attack confidence=0.9 latency_s=1.017
+[CALL] record_index=47 record_id=097bfd40b8d3e5e94ff8f67fc7c9afdeb1aa98b66737478c83602eeee699f21d model=claude
+[OK] record_index=47 record_id=097bfd40b8d3e5e94ff8f67fc7c9afdeb1aa98b66737478c83602eeee699f21d model=claude prediction=attack confidence=0.75 latency_s=0.978
+[RECORD_START] index=48/150 pct=32.0 record_id=72e580bc9d51a186a81278704d068fee74024e3417923143d82cfcefe4921a29
+[CALL] record_index=48 record_id=72e580bc9d51a186a81278704d068fee74024e3417923143d82cfcefe4921a29 model=chatgpt
+[OK] record_index=48 record_id=72e580bc9d51a186a81278704d068fee74024e3417923143d82cfcefe4921a29 model=chatgpt prediction=attack confidence=0.9 latency_s=1.37
+[CALL] record_index=48 record_id=72e580bc9d51a186a81278704d068fee74024e3417923143d82cfcefe4921a29 model=deepseek
+[OK] record_index=48 record_id=72e580bc9d51a186a81278704d068fee74024e3417923143d82cfcefe4921a29 model=deepseek prediction=attack confidence=0.7 latency_s=1.063
+[CALL] record_index=48 record_id=72e580bc9d51a186a81278704d068fee74024e3417923143d82cfcefe4921a29 model=claude
+[OK] record_index=48 record_id=72e580bc9d51a186a81278704d068fee74024e3417923143d82cfcefe4921a29 model=claude prediction=attack confidence=0.75 latency_s=1.089
+[RECORD_START] index=49/150 pct=32.7 record_id=72507d796b828d2fdf8e35f2034812e51cdbd9ca6af87a87ea9cfbaa63d091c5
+[CALL] record_index=49 record_id=72507d796b828d2fdf8e35f2034812e51cdbd9ca6af87a87ea9cfbaa63d091c5 model=chatgpt
+[OK] record_index=49 record_id=72507d796b828d2fdf8e35f2034812e51cdbd9ca6af87a87ea9cfbaa63d091c5 model=chatgpt prediction=attack confidence=0.9 latency_s=1.886
+[CALL] record_index=49 record_id=72507d796b828d2fdf8e35f2034812e51cdbd9ca6af87a87ea9cfbaa63d091c5 model=deepseek
+[OK] record_index=49 record_id=72507d796b828d2fdf8e35f2034812e51cdbd9ca6af87a87ea9cfbaa63d091c5 model=deepseek prediction=attack confidence=0.9 latency_s=1.258
+[CALL] record_index=49 record_id=72507d796b828d2fdf8e35f2034812e51cdbd9ca6af87a87ea9cfbaa63d091c5 model=claude
+[OK] record_index=49 record_id=72507d796b828d2fdf8e35f2034812e51cdbd9ca6af87a87ea9cfbaa63d091c5 model=claude prediction=attack confidence=0.85 latency_s=1.077
+[RECORD_START] index=50/150 pct=33.3 record_id=e8ffe9cb7fef46b03873bd913aa38096db0fa1a78d321a427a802c5641986747
+[CALL] record_index=50 record_id=e8ffe9cb7fef46b03873bd913aa38096db0fa1a78d321a427a802c5641986747 model=chatgpt
+[OK] record_index=50 record_id=e8ffe9cb7fef46b03873bd913aa38096db0fa1a78d321a427a802c5641986747 model=chatgpt prediction=attack confidence=0.9 latency_s=3.014
+[CALL] record_index=50 record_id=e8ffe9cb7fef46b03873bd913aa38096db0fa1a78d321a427a802c5641986747 model=deepseek
+[OK] record_index=50 record_id=e8ffe9cb7fef46b03873bd913aa38096db0fa1a78d321a427a802c5641986747 model=deepseek prediction=attack confidence=0.9 latency_s=0.995
+[CALL] record_index=50 record_id=e8ffe9cb7fef46b03873bd913aa38096db0fa1a78d321a427a802c5641986747 model=claude
+[OK] record_index=50 record_id=e8ffe9cb7fef46b03873bd913aa38096db0fa1a78d321a427a802c5641986747 model=claude prediction=attack confidence=0.75 latency_s=1.054
+
+====================================================================================================
+CHECKPOINT: 50/150 [█████████░░░░░░░░░░░░░░░░░░░░░] 33.3%
+Elapsed   : 0:03:16
+ETA       : 0:06:33
+----------------------------------------------------------------------------------------------------
+Model            Calls  Errors  Skipped   Attack   Normal  AvgConf      InTok   OutTok    Cost($)   AvgLat
+----------------------------------------------------------------------------------------------------
+chatgpt             50       0        0       49        1    0.884     19,768    1,458   0.003840    1.670
+deepseek            50       0        0       46        4    0.820     21,139    1,328   0.003331    1.056
+claude              50       0        0       34       16    0.742     21,870    2,113   0.025948    1.205
+----------------------------------------------------------------------------------------------------
+Current estimated total cost: $0.033119
+====================================================================================================
+[RECORD_START] index=51/150 pct=34.0 record_id=d5e1b13bedc1fd49e1c183d2dd37964d29440d414ede21ef4777d232b2fc1c75
+[CALL] record_index=51 record_id=d5e1b13bedc1fd49e1c183d2dd37964d29440d414ede21ef4777d232b2fc1c75 model=chatgpt
+[OK] record_index=51 record_id=d5e1b13bedc1fd49e1c183d2dd37964d29440d414ede21ef4777d232b2fc1c75 model=chatgpt prediction=attack confidence=0.9 latency_s=1.834
+[CALL] record_index=51 record_id=d5e1b13bedc1fd49e1c183d2dd37964d29440d414ede21ef4777d232b2fc1c75 model=deepseek
+[OK] record_index=51 record_id=d5e1b13bedc1fd49e1c183d2dd37964d29440d414ede21ef4777d232b2fc1c75 model=deepseek prediction=attack confidence=0.9 latency_s=0.883
+[CALL] record_index=51 record_id=d5e1b13bedc1fd49e1c183d2dd37964d29440d414ede21ef4777d232b2fc1c75 model=claude
+[OK] record_index=51 record_id=d5e1b13bedc1fd49e1c183d2dd37964d29440d414ede21ef4777d232b2fc1c75 model=claude prediction=attack confidence=0.75 latency_s=1.097
+[RECORD_START] index=52/150 pct=34.7 record_id=7c601b27781a53210741874c84b646b6d3b5e333a3b7dee3cffc4a1f6e14701b
+[CALL] record_index=52 record_id=7c601b27781a53210741874c84b646b6d3b5e333a3b7dee3cffc4a1f6e14701b model=chatgpt
+[OK] record_index=52 record_id=7c601b27781a53210741874c84b646b6d3b5e333a3b7dee3cffc4a1f6e14701b model=chatgpt prediction=attack confidence=0.9 latency_s=1.418
+[CALL] record_index=52 record_id=7c601b27781a53210741874c84b646b6d3b5e333a3b7dee3cffc4a1f6e14701b model=deepseek
+[OK] record_index=52 record_id=7c601b27781a53210741874c84b646b6d3b5e333a3b7dee3cffc4a1f6e14701b model=deepseek prediction=attack confidence=0.7 latency_s=1.727
+[CALL] record_index=52 record_id=7c601b27781a53210741874c84b646b6d3b5e333a3b7dee3cffc4a1f6e14701b model=claude
+[OK] record_index=52 record_id=7c601b27781a53210741874c84b646b6d3b5e333a3b7dee3cffc4a1f6e14701b model=claude prediction=attack confidence=0.75 latency_s=1.146
+[RECORD_START] index=53/150 pct=35.3 record_id=0fa29ffac8c2bf5007c8c612b1790a494559f7e6bca2ab6a553123fae2795310
+[CALL] record_index=53 record_id=0fa29ffac8c2bf5007c8c612b1790a494559f7e6bca2ab6a553123fae2795310 model=chatgpt
+[OK] record_index=53 record_id=0fa29ffac8c2bf5007c8c612b1790a494559f7e6bca2ab6a553123fae2795310 model=chatgpt prediction=attack confidence=0.9 latency_s=1.617
+[CALL] record_index=53 record_id=0fa29ffac8c2bf5007c8c612b1790a494559f7e6bca2ab6a553123fae2795310 model=deepseek
+[OK] record_index=53 record_id=0fa29ffac8c2bf5007c8c612b1790a494559f7e6bca2ab6a553123fae2795310 model=deepseek prediction=attack confidence=0.9 latency_s=1.012
+[CALL] record_index=53 record_id=0fa29ffac8c2bf5007c8c612b1790a494559f7e6bca2ab6a553123fae2795310 model=claude
+[OK] record_index=53 record_id=0fa29ffac8c2bf5007c8c612b1790a494559f7e6bca2ab6a553123fae2795310 model=claude prediction=attack confidence=0.75 latency_s=1.15
+[RECORD_START] index=54/150 pct=36.0 record_id=2d1d1d460c7fbbb25e308beca93628c2e55b2d0caad5dcf800d2f051e6d7020b
+[CALL] record_index=54 record_id=2d1d1d460c7fbbb25e308beca93628c2e55b2d0caad5dcf800d2f051e6d7020b model=chatgpt
+[OK] record_index=54 record_id=2d1d1d460c7fbbb25e308beca93628c2e55b2d0caad5dcf800d2f051e6d7020b model=chatgpt prediction=attack confidence=0.9 latency_s=1.446
+[CALL] record_index=54 record_id=2d1d1d460c7fbbb25e308beca93628c2e55b2d0caad5dcf800d2f051e6d7020b model=deepseek
+[OK] record_index=54 record_id=2d1d1d460c7fbbb25e308beca93628c2e55b2d0caad5dcf800d2f051e6d7020b model=deepseek prediction=attack confidence=0.7 latency_s=0.924
+[CALL] record_index=54 record_id=2d1d1d460c7fbbb25e308beca93628c2e55b2d0caad5dcf800d2f051e6d7020b model=claude
+[OK] record_index=54 record_id=2d1d1d460c7fbbb25e308beca93628c2e55b2d0caad5dcf800d2f051e6d7020b model=claude prediction=attack confidence=0.75 latency_s=1.147
+[RECORD_START] index=55/150 pct=36.7 record_id=4c682aa1f554d9e03fcc683f3169652c20b7d3968155ae4aeda8464c2add57ee
+[CALL] record_index=55 record_id=4c682aa1f554d9e03fcc683f3169652c20b7d3968155ae4aeda8464c2add57ee model=chatgpt
+[OK] record_index=55 record_id=4c682aa1f554d9e03fcc683f3169652c20b7d3968155ae4aeda8464c2add57ee model=chatgpt prediction=normal confidence=0.7 latency_s=1.458
+[CALL] record_index=55 record_id=4c682aa1f554d9e03fcc683f3169652c20b7d3968155ae4aeda8464c2add57ee model=deepseek
+[OK] record_index=55 record_id=4c682aa1f554d9e03fcc683f3169652c20b7d3968155ae4aeda8464c2add57ee model=deepseek prediction=normal confidence=0.9 latency_s=0.853
+[CALL] record_index=55 record_id=4c682aa1f554d9e03fcc683f3169652c20b7d3968155ae4aeda8464c2add57ee model=claude
+[OK] record_index=55 record_id=4c682aa1f554d9e03fcc683f3169652c20b7d3968155ae4aeda8464c2add57ee model=claude prediction=normal confidence=0.7 latency_s=0.819
+[RECORD_START] index=56/150 pct=37.3 record_id=42d2da6b68de4cb7d31bc00b87d4d065b1a5ab145034f067a2d2a823cf5c690d
+[CALL] record_index=56 record_id=42d2da6b68de4cb7d31bc00b87d4d065b1a5ab145034f067a2d2a823cf5c690d model=chatgpt
+[OK] record_index=56 record_id=42d2da6b68de4cb7d31bc00b87d4d065b1a5ab145034f067a2d2a823cf5c690d model=chatgpt prediction=attack confidence=0.9 latency_s=1.17
+[CALL] record_index=56 record_id=42d2da6b68de4cb7d31bc00b87d4d065b1a5ab145034f067a2d2a823cf5c690d model=deepseek
+[OK] record_index=56 record_id=42d2da6b68de4cb7d31bc00b87d4d065b1a5ab145034f067a2d2a823cf5c690d model=deepseek prediction=attack confidence=0.7 latency_s=0.956
+[CALL] record_index=56 record_id=42d2da6b68de4cb7d31bc00b87d4d065b1a5ab145034f067a2d2a823cf5c690d model=claude
+[OK] record_index=56 record_id=42d2da6b68de4cb7d31bc00b87d4d065b1a5ab145034f067a2d2a823cf5c690d model=claude prediction=normal confidence=0.7 latency_s=1.048
+[RECORD_START] index=57/150 pct=38.0 record_id=0240f48f334449f45934ced7dc6ef6a1e7274fd77a50cc5bd4edb3bb9526bea5
+[CALL] record_index=57 record_id=0240f48f334449f45934ced7dc6ef6a1e7274fd77a50cc5bd4edb3bb9526bea5 model=chatgpt
+[OK] record_index=57 record_id=0240f48f334449f45934ced7dc6ef6a1e7274fd77a50cc5bd4edb3bb9526bea5 model=chatgpt prediction=attack confidence=0.9 latency_s=1.718
+[CALL] record_index=57 record_id=0240f48f334449f45934ced7dc6ef6a1e7274fd77a50cc5bd4edb3bb9526bea5 model=deepseek
+[OK] record_index=57 record_id=0240f48f334449f45934ced7dc6ef6a1e7274fd77a50cc5bd4edb3bb9526bea5 model=deepseek prediction=attack confidence=0.9 latency_s=0.987
+[CALL] record_index=57 record_id=0240f48f334449f45934ced7dc6ef6a1e7274fd77a50cc5bd4edb3bb9526bea5 model=claude
+[OK] record_index=57 record_id=0240f48f334449f45934ced7dc6ef6a1e7274fd77a50cc5bd4edb3bb9526bea5 model=claude prediction=attack confidence=0.85 latency_s=1.098
+[RECORD_START] index=58/150 pct=38.7 record_id=194e0bf963464822c9134a84b15b37a700ea60a162a25119d79065b1f97c44da
+[CALL] record_index=58 record_id=194e0bf963464822c9134a84b15b37a700ea60a162a25119d79065b1f97c44da model=chatgpt
+[OK] record_index=58 record_id=194e0bf963464822c9134a84b15b37a700ea60a162a25119d79065b1f97c44da model=chatgpt prediction=attack confidence=0.9 latency_s=1.369
+[CALL] record_index=58 record_id=194e0bf963464822c9134a84b15b37a700ea60a162a25119d79065b1f97c44da model=deepseek
+[OK] record_index=58 record_id=194e0bf963464822c9134a84b15b37a700ea60a162a25119d79065b1f97c44da model=deepseek prediction=attack confidence=0.9 latency_s=1.042
+[CALL] record_index=58 record_id=194e0bf963464822c9134a84b15b37a700ea60a162a25119d79065b1f97c44da model=claude
+[OK] record_index=58 record_id=194e0bf963464822c9134a84b15b37a700ea60a162a25119d79065b1f97c44da model=claude prediction=attack confidence=0.75 latency_s=1.118
+[RECORD_START] index=59/150 pct=39.3 record_id=5960ad6c6b7a93bd771a5f3625504995377b1d396496ee93eb509dffb1dd2d41
+[CALL] record_index=59 record_id=5960ad6c6b7a93bd771a5f3625504995377b1d396496ee93eb509dffb1dd2d41 model=chatgpt
+[OK] record_index=59 record_id=5960ad6c6b7a93bd771a5f3625504995377b1d396496ee93eb509dffb1dd2d41 model=chatgpt prediction=attack confidence=0.9 latency_s=1.484
+[CALL] record_index=59 record_id=5960ad6c6b7a93bd771a5f3625504995377b1d396496ee93eb509dffb1dd2d41 model=deepseek
+[OK] record_index=59 record_id=5960ad6c6b7a93bd771a5f3625504995377b1d396496ee93eb509dffb1dd2d41 model=deepseek prediction=attack confidence=0.9 latency_s=0.873
+[CALL] record_index=59 record_id=5960ad6c6b7a93bd771a5f3625504995377b1d396496ee93eb509dffb1dd2d41 model=claude
+[OK] record_index=59 record_id=5960ad6c6b7a93bd771a5f3625504995377b1d396496ee93eb509dffb1dd2d41 model=claude prediction=attack confidence=0.85 latency_s=1.091
+[RECORD_START] index=60/150 pct=40.0 record_id=025a405cfa0a04b6a9d13a56f428fcf0c5157ff84f36917e9118f2be50ed9c27
+[CALL] record_index=60 record_id=025a405cfa0a04b6a9d13a56f428fcf0c5157ff84f36917e9118f2be50ed9c27 model=chatgpt
+[OK] record_index=60 record_id=025a405cfa0a04b6a9d13a56f428fcf0c5157ff84f36917e9118f2be50ed9c27 model=chatgpt prediction=attack confidence=0.9 latency_s=1.524
+[CALL] record_index=60 record_id=025a405cfa0a04b6a9d13a56f428fcf0c5157ff84f36917e9118f2be50ed9c27 model=deepseek
+[OK] record_index=60 record_id=025a405cfa0a04b6a9d13a56f428fcf0c5157ff84f36917e9118f2be50ed9c27 model=deepseek prediction=attack confidence=0.7 latency_s=1.02
+[CALL] record_index=60 record_id=025a405cfa0a04b6a9d13a56f428fcf0c5157ff84f36917e9118f2be50ed9c27 model=claude
+[OK] record_index=60 record_id=025a405cfa0a04b6a9d13a56f428fcf0c5157ff84f36917e9118f2be50ed9c27 model=claude prediction=attack confidence=0.75 latency_s=1.159
+[RECORD_START] index=61/150 pct=40.7 record_id=5eaf9371ab0ee1f44a32ecc4a1ee6eb5d9d4d2941d6efe4c5f606eb7f7fcfa84
+[CALL] record_index=61 record_id=5eaf9371ab0ee1f44a32ecc4a1ee6eb5d9d4d2941d6efe4c5f606eb7f7fcfa84 model=chatgpt
+[OK] record_index=61 record_id=5eaf9371ab0ee1f44a32ecc4a1ee6eb5d9d4d2941d6efe4c5f606eb7f7fcfa84 model=chatgpt prediction=attack confidence=0.9 latency_s=1.293
+[CALL] record_index=61 record_id=5eaf9371ab0ee1f44a32ecc4a1ee6eb5d9d4d2941d6efe4c5f606eb7f7fcfa84 model=deepseek
+[OK] record_index=61 record_id=5eaf9371ab0ee1f44a32ecc4a1ee6eb5d9d4d2941d6efe4c5f606eb7f7fcfa84 model=deepseek prediction=attack confidence=0.9 latency_s=0.82
+[CALL] record_index=61 record_id=5eaf9371ab0ee1f44a32ecc4a1ee6eb5d9d4d2941d6efe4c5f606eb7f7fcfa84 model=claude
+[OK] record_index=61 record_id=5eaf9371ab0ee1f44a32ecc4a1ee6eb5d9d4d2941d6efe4c5f606eb7f7fcfa84 model=claude prediction=attack confidence=0.85 latency_s=1.311
+[RECORD_START] index=62/150 pct=41.3 record_id=079b80f65fd963eaae5929aba903880fc91bd8555cbd50de473207b1b6d38d42
+[CALL] record_index=62 record_id=079b80f65fd963eaae5929aba903880fc91bd8555cbd50de473207b1b6d38d42 model=chatgpt
+[OK] record_index=62 record_id=079b80f65fd963eaae5929aba903880fc91bd8555cbd50de473207b1b6d38d42 model=chatgpt prediction=attack confidence=0.9 latency_s=1.47
+[CALL] record_index=62 record_id=079b80f65fd963eaae5929aba903880fc91bd8555cbd50de473207b1b6d38d42 model=deepseek
+[OK] record_index=62 record_id=079b80f65fd963eaae5929aba903880fc91bd8555cbd50de473207b1b6d38d42 model=deepseek prediction=attack confidence=0.7 latency_s=1.042
+[CALL] record_index=62 record_id=079b80f65fd963eaae5929aba903880fc91bd8555cbd50de473207b1b6d38d42 model=claude
+[OK] record_index=62 record_id=079b80f65fd963eaae5929aba903880fc91bd8555cbd50de473207b1b6d38d42 model=claude prediction=attack confidence=0.75 latency_s=1.126
+[RECORD_START] index=63/150 pct=42.0 record_id=a242d2b6001e3673723d913e233e8c6b892ff2e873942b90db5d31cf67d248f7
+[CALL] record_index=63 record_id=a242d2b6001e3673723d913e233e8c6b892ff2e873942b90db5d31cf67d248f7 model=chatgpt
+[OK] record_index=63 record_id=a242d2b6001e3673723d913e233e8c6b892ff2e873942b90db5d31cf67d248f7 model=chatgpt prediction=attack confidence=0.9 latency_s=1.664
+[CALL] record_index=63 record_id=a242d2b6001e3673723d913e233e8c6b892ff2e873942b90db5d31cf67d248f7 model=deepseek
+[OK] record_index=63 record_id=a242d2b6001e3673723d913e233e8c6b892ff2e873942b90db5d31cf67d248f7 model=deepseek prediction=attack confidence=0.9 latency_s=1.049
+[CALL] record_index=63 record_id=a242d2b6001e3673723d913e233e8c6b892ff2e873942b90db5d31cf67d248f7 model=claude
+[OK] record_index=63 record_id=a242d2b6001e3673723d913e233e8c6b892ff2e873942b90db5d31cf67d248f7 model=claude prediction=attack confidence=0.75 latency_s=0.895
+[RECORD_START] index=64/150 pct=42.7 record_id=fdb1c6801b4b9da18e95f3826b91dfa909203a5520d81aacbd52050464447ce5
+[CALL] record_index=64 record_id=fdb1c6801b4b9da18e95f3826b91dfa909203a5520d81aacbd52050464447ce5 model=chatgpt
+[OK] record_index=64 record_id=fdb1c6801b4b9da18e95f3826b91dfa909203a5520d81aacbd52050464447ce5 model=chatgpt prediction=attack confidence=0.9 latency_s=1.566
+[CALL] record_index=64 record_id=fdb1c6801b4b9da18e95f3826b91dfa909203a5520d81aacbd52050464447ce5 model=deepseek
+[OK] record_index=64 record_id=fdb1c6801b4b9da18e95f3826b91dfa909203a5520d81aacbd52050464447ce5 model=deepseek prediction=attack confidence=0.7 latency_s=0.892
+[CALL] record_index=64 record_id=fdb1c6801b4b9da18e95f3826b91dfa909203a5520d81aacbd52050464447ce5 model=claude
+[OK] record_index=64 record_id=fdb1c6801b4b9da18e95f3826b91dfa909203a5520d81aacbd52050464447ce5 model=claude prediction=attack confidence=0.75 latency_s=1.121
+[RECORD_START] index=65/150 pct=43.3 record_id=c169796cad7a1cba98d6676671b1afab494d3f8e230ead0ee6a0e451c497d241
+[CALL] record_index=65 record_id=c169796cad7a1cba98d6676671b1afab494d3f8e230ead0ee6a0e451c497d241 model=chatgpt
+[OK] record_index=65 record_id=c169796cad7a1cba98d6676671b1afab494d3f8e230ead0ee6a0e451c497d241 model=chatgpt prediction=attack confidence=0.9 latency_s=1.878
+[CALL] record_index=65 record_id=c169796cad7a1cba98d6676671b1afab494d3f8e230ead0ee6a0e451c497d241 model=deepseek
+[OK] record_index=65 record_id=c169796cad7a1cba98d6676671b1afab494d3f8e230ead0ee6a0e451c497d241 model=deepseek prediction=attack confidence=0.9 latency_s=0.935
+[CALL] record_index=65 record_id=c169796cad7a1cba98d6676671b1afab494d3f8e230ead0ee6a0e451c497d241 model=claude
+[OK] record_index=65 record_id=c169796cad7a1cba98d6676671b1afab494d3f8e230ead0ee6a0e451c497d241 model=claude prediction=normal confidence=0.7 latency_s=1.263
+[RECORD_START] index=66/150 pct=44.0 record_id=350eef718dcc0d7362d7ae08088990b8dcb6e65a35da9e74c0803d0f7952c75c
+[CALL] record_index=66 record_id=350eef718dcc0d7362d7ae08088990b8dcb6e65a35da9e74c0803d0f7952c75c model=chatgpt
+[OK] record_index=66 record_id=350eef718dcc0d7362d7ae08088990b8dcb6e65a35da9e74c0803d0f7952c75c model=chatgpt prediction=attack confidence=0.9 latency_s=1.288
+[CALL] record_index=66 record_id=350eef718dcc0d7362d7ae08088990b8dcb6e65a35da9e74c0803d0f7952c75c model=deepseek
+[OK] record_index=66 record_id=350eef718dcc0d7362d7ae08088990b8dcb6e65a35da9e74c0803d0f7952c75c model=deepseek prediction=attack confidence=0.9 latency_s=1.178
+[CALL] record_index=66 record_id=350eef718dcc0d7362d7ae08088990b8dcb6e65a35da9e74c0803d0f7952c75c model=claude
+[OK] record_index=66 record_id=350eef718dcc0d7362d7ae08088990b8dcb6e65a35da9e74c0803d0f7952c75c model=claude prediction=attack confidence=0.75 latency_s=0.991
+[RECORD_START] index=67/150 pct=44.7 record_id=28ad2c1cb595704fa9477cdfa4d57edb312ded4ec55773651015c930ea682888
+[CALL] record_index=67 record_id=28ad2c1cb595704fa9477cdfa4d57edb312ded4ec55773651015c930ea682888 model=chatgpt
+[OK] record_index=67 record_id=28ad2c1cb595704fa9477cdfa4d57edb312ded4ec55773651015c930ea682888 model=chatgpt prediction=attack confidence=0.9 latency_s=1.547
+[CALL] record_index=67 record_id=28ad2c1cb595704fa9477cdfa4d57edb312ded4ec55773651015c930ea682888 model=deepseek
+[OK] record_index=67 record_id=28ad2c1cb595704fa9477cdfa4d57edb312ded4ec55773651015c930ea682888 model=deepseek prediction=attack confidence=0.7 latency_s=1.099
+[CALL] record_index=67 record_id=28ad2c1cb595704fa9477cdfa4d57edb312ded4ec55773651015c930ea682888 model=claude
+[OK] record_index=67 record_id=28ad2c1cb595704fa9477cdfa4d57edb312ded4ec55773651015c930ea682888 model=claude prediction=attack confidence=0.75 latency_s=1.128
+[RECORD_START] index=68/150 pct=45.3 record_id=06b8cfedb5eb00630c03890a7d0e1e43ffe70fad5b60d9c8c7c5da9e9180f0b1
+[CALL] record_index=68 record_id=06b8cfedb5eb00630c03890a7d0e1e43ffe70fad5b60d9c8c7c5da9e9180f0b1 model=chatgpt
+[OK] record_index=68 record_id=06b8cfedb5eb00630c03890a7d0e1e43ffe70fad5b60d9c8c7c5da9e9180f0b1 model=chatgpt prediction=attack confidence=0.9 latency_s=1.414
+[CALL] record_index=68 record_id=06b8cfedb5eb00630c03890a7d0e1e43ffe70fad5b60d9c8c7c5da9e9180f0b1 model=deepseek
+[OK] record_index=68 record_id=06b8cfedb5eb00630c03890a7d0e1e43ffe70fad5b60d9c8c7c5da9e9180f0b1 model=deepseek prediction=attack confidence=0.9 latency_s=0.936
+[CALL] record_index=68 record_id=06b8cfedb5eb00630c03890a7d0e1e43ffe70fad5b60d9c8c7c5da9e9180f0b1 model=claude
+[OK] record_index=68 record_id=06b8cfedb5eb00630c03890a7d0e1e43ffe70fad5b60d9c8c7c5da9e9180f0b1 model=claude prediction=attack confidence=0.75 latency_s=1.243
+[RECORD_START] index=69/150 pct=46.0 record_id=354bbfa11b5bc0d122380e9f3be44e4c26d066d63e37586d4beb58d90d5c6cc5
+[CALL] record_index=69 record_id=354bbfa11b5bc0d122380e9f3be44e4c26d066d63e37586d4beb58d90d5c6cc5 model=chatgpt
+[OK] record_index=69 record_id=354bbfa11b5bc0d122380e9f3be44e4c26d066d63e37586d4beb58d90d5c6cc5 model=chatgpt prediction=attack confidence=0.9 latency_s=2.418
+[CALL] record_index=69 record_id=354bbfa11b5bc0d122380e9f3be44e4c26d066d63e37586d4beb58d90d5c6cc5 model=deepseek
+[OK] record_index=69 record_id=354bbfa11b5bc0d122380e9f3be44e4c26d066d63e37586d4beb58d90d5c6cc5 model=deepseek prediction=attack confidence=0.9 latency_s=0.955
+[CALL] record_index=69 record_id=354bbfa11b5bc0d122380e9f3be44e4c26d066d63e37586d4beb58d90d5c6cc5 model=claude
+[OK] record_index=69 record_id=354bbfa11b5bc0d122380e9f3be44e4c26d066d63e37586d4beb58d90d5c6cc5 model=claude prediction=attack confidence=0.75 latency_s=1.149
+[RECORD_START] index=70/150 pct=46.7 record_id=5c7d6eef56879f9b76ea47c43a37e0d74a83233af25a378765bdfd962f21ffb1
+[CALL] record_index=70 record_id=5c7d6eef56879f9b76ea47c43a37e0d74a83233af25a378765bdfd962f21ffb1 model=chatgpt
+[OK] record_index=70 record_id=5c7d6eef56879f9b76ea47c43a37e0d74a83233af25a378765bdfd962f21ffb1 model=chatgpt prediction=attack confidence=0.9 latency_s=1.396
+[CALL] record_index=70 record_id=5c7d6eef56879f9b76ea47c43a37e0d74a83233af25a378765bdfd962f21ffb1 model=deepseek
+[OK] record_index=70 record_id=5c7d6eef56879f9b76ea47c43a37e0d74a83233af25a378765bdfd962f21ffb1 model=deepseek prediction=attack confidence=0.7 latency_s=0.846
+[CALL] record_index=70 record_id=5c7d6eef56879f9b76ea47c43a37e0d74a83233af25a378765bdfd962f21ffb1 model=claude
+[OK] record_index=70 record_id=5c7d6eef56879f9b76ea47c43a37e0d74a83233af25a378765bdfd962f21ffb1 model=claude prediction=attack confidence=0.75 latency_s=1.616
+[RECORD_START] index=71/150 pct=47.3 record_id=0572f152a413304b4a58e0bc2914767b011896cabe06e259b3476be56c4f2e31
+[CALL] record_index=71 record_id=0572f152a413304b4a58e0bc2914767b011896cabe06e259b3476be56c4f2e31 model=chatgpt
+[OK] record_index=71 record_id=0572f152a413304b4a58e0bc2914767b011896cabe06e259b3476be56c4f2e31 model=chatgpt prediction=attack confidence=0.9 latency_s=1.877
+[CALL] record_index=71 record_id=0572f152a413304b4a58e0bc2914767b011896cabe06e259b3476be56c4f2e31 model=deepseek
+[OK] record_index=71 record_id=0572f152a413304b4a58e0bc2914767b011896cabe06e259b3476be56c4f2e31 model=deepseek prediction=attack confidence=0.7 latency_s=0.94
+[CALL] record_index=71 record_id=0572f152a413304b4a58e0bc2914767b011896cabe06e259b3476be56c4f2e31 model=claude
+[OK] record_index=71 record_id=0572f152a413304b4a58e0bc2914767b011896cabe06e259b3476be56c4f2e31 model=claude prediction=attack confidence=0.85 latency_s=1.031
+[RECORD_START] index=72/150 pct=48.0 record_id=94b196550bcd50b9bac690e5d0ee3e3c899425eb3b227fdb1a9c0d4a57c81912
+[CALL] record_index=72 record_id=94b196550bcd50b9bac690e5d0ee3e3c899425eb3b227fdb1a9c0d4a57c81912 model=chatgpt
+[OK] record_index=72 record_id=94b196550bcd50b9bac690e5d0ee3e3c899425eb3b227fdb1a9c0d4a57c81912 model=chatgpt prediction=attack confidence=0.9 latency_s=1.733
+[CALL] record_index=72 record_id=94b196550bcd50b9bac690e5d0ee3e3c899425eb3b227fdb1a9c0d4a57c81912 model=deepseek
+[OK] record_index=72 record_id=94b196550bcd50b9bac690e5d0ee3e3c899425eb3b227fdb1a9c0d4a57c81912 model=deepseek prediction=attack confidence=0.7 latency_s=1.041
+[CALL] record_index=72 record_id=94b196550bcd50b9bac690e5d0ee3e3c899425eb3b227fdb1a9c0d4a57c81912 model=claude
+[OK] record_index=72 record_id=94b196550bcd50b9bac690e5d0ee3e3c899425eb3b227fdb1a9c0d4a57c81912 model=claude prediction=attack confidence=0.75 latency_s=1.051
+[RECORD_START] index=73/150 pct=48.7 record_id=b50127c85cac1ad10da59e5768cb00c39474492ce3597a21a56e5312dc8da7bc
+[CALL] record_index=73 record_id=b50127c85cac1ad10da59e5768cb00c39474492ce3597a21a56e5312dc8da7bc model=chatgpt
+[OK] record_index=73 record_id=b50127c85cac1ad10da59e5768cb00c39474492ce3597a21a56e5312dc8da7bc model=chatgpt prediction=attack confidence=0.9 latency_s=1.341
+[CALL] record_index=73 record_id=b50127c85cac1ad10da59e5768cb00c39474492ce3597a21a56e5312dc8da7bc model=deepseek
+[OK] record_index=73 record_id=b50127c85cac1ad10da59e5768cb00c39474492ce3597a21a56e5312dc8da7bc model=deepseek prediction=attack confidence=0.9 latency_s=1.073
+[CALL] record_index=73 record_id=b50127c85cac1ad10da59e5768cb00c39474492ce3597a21a56e5312dc8da7bc model=claude
+[OK] record_index=73 record_id=b50127c85cac1ad10da59e5768cb00c39474492ce3597a21a56e5312dc8da7bc model=claude prediction=attack confidence=0.85 latency_s=1.098
+[RECORD_START] index=74/150 pct=49.3 record_id=065eba55e4fe3b2c71c6e4e15f187743a0741e6c914227bb87565a9a3920d58a
+[CALL] record_index=74 record_id=065eba55e4fe3b2c71c6e4e15f187743a0741e6c914227bb87565a9a3920d58a model=chatgpt
+[OK] record_index=74 record_id=065eba55e4fe3b2c71c6e4e15f187743a0741e6c914227bb87565a9a3920d58a model=chatgpt prediction=attack confidence=0.9 latency_s=2.381
+[CALL] record_index=74 record_id=065eba55e4fe3b2c71c6e4e15f187743a0741e6c914227bb87565a9a3920d58a model=deepseek
+[OK] record_index=74 record_id=065eba55e4fe3b2c71c6e4e15f187743a0741e6c914227bb87565a9a3920d58a model=deepseek prediction=attack confidence=0.9 latency_s=0.973
+[CALL] record_index=74 record_id=065eba55e4fe3b2c71c6e4e15f187743a0741e6c914227bb87565a9a3920d58a model=claude
+[OK] record_index=74 record_id=065eba55e4fe3b2c71c6e4e15f187743a0741e6c914227bb87565a9a3920d58a model=claude prediction=attack confidence=0.85 latency_s=1.078
+[RECORD_START] index=75/150 pct=50.0 record_id=93b54aeb08112c0a5e06803920ab730310aa68ef85e57d6ab9b07a689b4ca2c3
+[CALL] record_index=75 record_id=93b54aeb08112c0a5e06803920ab730310aa68ef85e57d6ab9b07a689b4ca2c3 model=chatgpt
+[OK] record_index=75 record_id=93b54aeb08112c0a5e06803920ab730310aa68ef85e57d6ab9b07a689b4ca2c3 model=chatgpt prediction=attack confidence=0.9 latency_s=1.353
+[CALL] record_index=75 record_id=93b54aeb08112c0a5e06803920ab730310aa68ef85e57d6ab9b07a689b4ca2c3 model=deepseek
+[OK] record_index=75 record_id=93b54aeb08112c0a5e06803920ab730310aa68ef85e57d6ab9b07a689b4ca2c3 model=deepseek prediction=attack confidence=0.7 latency_s=0.981
+[CALL] record_index=75 record_id=93b54aeb08112c0a5e06803920ab730310aa68ef85e57d6ab9b07a689b4ca2c3 model=claude
+[OK] record_index=75 record_id=93b54aeb08112c0a5e06803920ab730310aa68ef85e57d6ab9b07a689b4ca2c3 model=claude prediction=attack confidence=0.75 latency_s=1.222
+
+====================================================================================================
+CHECKPOINT: 75/150 [███████████████░░░░░░░░░░░░░░░] 50.0%
+Elapsed   : 0:04:49
+ETA       : 0:04:49
+----------------------------------------------------------------------------------------------------
+Model            Calls  Errors  Skipped   Attack   Normal  AvgConf      InTok   OutTok    Cost($)   AvgLat
+----------------------------------------------------------------------------------------------------
+chatgpt             75       0        0       73        2    0.887     29,693    2,197   0.005772    1.642
+deepseek            75       0        0       70        5    0.817     31,753    1,987   0.005002    1.038
+claude              75       0        0       56       19    0.751     32,842    3,154   0.038890    1.179
+----------------------------------------------------------------------------------------------------
+Current estimated total cost: $0.049664
+====================================================================================================
+[RECORD_START] index=76/150 pct=50.7 record_id=1fa4479316c33ccaf60da3c122db971cd0e4a3e736ab77f3c28949e6a7532d19
+[CALL] record_index=76 record_id=1fa4479316c33ccaf60da3c122db971cd0e4a3e736ab77f3c28949e6a7532d19 model=chatgpt
+[OK] record_index=76 record_id=1fa4479316c33ccaf60da3c122db971cd0e4a3e736ab77f3c28949e6a7532d19 model=chatgpt prediction=attack confidence=0.9 latency_s=1.491
+[CALL] record_index=76 record_id=1fa4479316c33ccaf60da3c122db971cd0e4a3e736ab77f3c28949e6a7532d19 model=deepseek
+[OK] record_index=76 record_id=1fa4479316c33ccaf60da3c122db971cd0e4a3e736ab77f3c28949e6a7532d19 model=deepseek prediction=attack confidence=0.7 latency_s=1.019
+[CALL] record_index=76 record_id=1fa4479316c33ccaf60da3c122db971cd0e4a3e736ab77f3c28949e6a7532d19 model=claude
+[OK] record_index=76 record_id=1fa4479316c33ccaf60da3c122db971cd0e4a3e736ab77f3c28949e6a7532d19 model=claude prediction=attack confidence=0.75 latency_s=1.11
+[RECORD_START] index=77/150 pct=51.3 record_id=47695570dd58a605f07332cdeb8f86dbf16cc2725cf3238cd1d3b45d7b1181fe
+[CALL] record_index=77 record_id=47695570dd58a605f07332cdeb8f86dbf16cc2725cf3238cd1d3b45d7b1181fe model=chatgpt
+[OK] record_index=77 record_id=47695570dd58a605f07332cdeb8f86dbf16cc2725cf3238cd1d3b45d7b1181fe model=chatgpt prediction=attack confidence=0.7 latency_s=1.852
+[CALL] record_index=77 record_id=47695570dd58a605f07332cdeb8f86dbf16cc2725cf3238cd1d3b45d7b1181fe model=deepseek
+[OK] record_index=77 record_id=47695570dd58a605f07332cdeb8f86dbf16cc2725cf3238cd1d3b45d7b1181fe model=deepseek prediction=normal confidence=0.9 latency_s=0.989
+[CALL] record_index=77 record_id=47695570dd58a605f07332cdeb8f86dbf16cc2725cf3238cd1d3b45d7b1181fe model=claude
+[OK] record_index=77 record_id=47695570dd58a605f07332cdeb8f86dbf16cc2725cf3238cd1d3b45d7b1181fe model=claude prediction=normal confidence=0.7 latency_s=1.054
+[RECORD_START] index=78/150 pct=52.0 record_id=6f30401e49796c61d2f33ad7d2831a1caedce2808198e0fe9949c9107cb21f0e
+[CALL] record_index=78 record_id=6f30401e49796c61d2f33ad7d2831a1caedce2808198e0fe9949c9107cb21f0e model=chatgpt
+[OK] record_index=78 record_id=6f30401e49796c61d2f33ad7d2831a1caedce2808198e0fe9949c9107cb21f0e model=chatgpt prediction=attack confidence=0.9 latency_s=2.879
+[CALL] record_index=78 record_id=6f30401e49796c61d2f33ad7d2831a1caedce2808198e0fe9949c9107cb21f0e model=deepseek
+[OK] record_index=78 record_id=6f30401e49796c61d2f33ad7d2831a1caedce2808198e0fe9949c9107cb21f0e model=deepseek prediction=attack confidence=0.9 latency_s=1.138
+[CALL] record_index=78 record_id=6f30401e49796c61d2f33ad7d2831a1caedce2808198e0fe9949c9107cb21f0e model=claude
+[OK] record_index=78 record_id=6f30401e49796c61d2f33ad7d2831a1caedce2808198e0fe9949c9107cb21f0e model=claude prediction=attack confidence=0.75 latency_s=1.201
+[RECORD_START] index=79/150 pct=52.7 record_id=fac41e4b210fc11c52bddd11d47a7b9ce5e4a39fc6e71c97dd1953a34ab415aa
+[CALL] record_index=79 record_id=fac41e4b210fc11c52bddd11d47a7b9ce5e4a39fc6e71c97dd1953a34ab415aa model=chatgpt
+[OK] record_index=79 record_id=fac41e4b210fc11c52bddd11d47a7b9ce5e4a39fc6e71c97dd1953a34ab415aa model=chatgpt prediction=normal confidence=0.7 latency_s=1.024
+[CALL] record_index=79 record_id=fac41e4b210fc11c52bddd11d47a7b9ce5e4a39fc6e71c97dd1953a34ab415aa model=deepseek
+[OK] record_index=79 record_id=fac41e4b210fc11c52bddd11d47a7b9ce5e4a39fc6e71c97dd1953a34ab415aa model=deepseek prediction=normal confidence=0.9 latency_s=1.017
+[CALL] record_index=79 record_id=fac41e4b210fc11c52bddd11d47a7b9ce5e4a39fc6e71c97dd1953a34ab415aa model=claude
+[OK] record_index=79 record_id=fac41e4b210fc11c52bddd11d47a7b9ce5e4a39fc6e71c97dd1953a34ab415aa model=claude prediction=normal confidence=0.75 latency_s=1.114
+[RECORD_START] index=80/150 pct=53.3 record_id=1d3f7cd6bf61cf9418d4721eb4b9f6f9a980700ceaad5a090bb4036d01e09fe3
+[CALL] record_index=80 record_id=1d3f7cd6bf61cf9418d4721eb4b9f6f9a980700ceaad5a090bb4036d01e09fe3 model=chatgpt
+[OK] record_index=80 record_id=1d3f7cd6bf61cf9418d4721eb4b9f6f9a980700ceaad5a090bb4036d01e09fe3 model=chatgpt prediction=attack confidence=0.7 latency_s=1.708
+[CALL] record_index=80 record_id=1d3f7cd6bf61cf9418d4721eb4b9f6f9a980700ceaad5a090bb4036d01e09fe3 model=deepseek
+[OK] record_index=80 record_id=1d3f7cd6bf61cf9418d4721eb4b9f6f9a980700ceaad5a090bb4036d01e09fe3 model=deepseek prediction=normal confidence=0.9 latency_s=1.071
+[CALL] record_index=80 record_id=1d3f7cd6bf61cf9418d4721eb4b9f6f9a980700ceaad5a090bb4036d01e09fe3 model=claude
+[OK] record_index=80 record_id=1d3f7cd6bf61cf9418d4721eb4b9f6f9a980700ceaad5a090bb4036d01e09fe3 model=claude prediction=normal confidence=0.7 latency_s=1.156
+[RECORD_START] index=81/150 pct=54.0 record_id=8d2c24a099d3ad4660aa0a77d55fdcc82dfc0208676a43194f48768bc0980e44
+[CALL] record_index=81 record_id=8d2c24a099d3ad4660aa0a77d55fdcc82dfc0208676a43194f48768bc0980e44 model=chatgpt
+[OK] record_index=81 record_id=8d2c24a099d3ad4660aa0a77d55fdcc82dfc0208676a43194f48768bc0980e44 model=chatgpt prediction=attack confidence=0.9 latency_s=1.654
+[CALL] record_index=81 record_id=8d2c24a099d3ad4660aa0a77d55fdcc82dfc0208676a43194f48768bc0980e44 model=deepseek
+[OK] record_index=81 record_id=8d2c24a099d3ad4660aa0a77d55fdcc82dfc0208676a43194f48768bc0980e44 model=deepseek prediction=attack confidence=0.9 latency_s=0.887
+[CALL] record_index=81 record_id=8d2c24a099d3ad4660aa0a77d55fdcc82dfc0208676a43194f48768bc0980e44 model=claude
+[OK] record_index=81 record_id=8d2c24a099d3ad4660aa0a77d55fdcc82dfc0208676a43194f48768bc0980e44 model=claude prediction=attack confidence=0.75 latency_s=1.155
+[RECORD_START] index=82/150 pct=54.7 record_id=c078e8dc5a3fc997ce524b57adb550f9988af43e1795fe67fa3670c5fc0fe29d
+[CALL] record_index=82 record_id=c078e8dc5a3fc997ce524b57adb550f9988af43e1795fe67fa3670c5fc0fe29d model=chatgpt
+[OK] record_index=82 record_id=c078e8dc5a3fc997ce524b57adb550f9988af43e1795fe67fa3670c5fc0fe29d model=chatgpt prediction=attack confidence=0.9 latency_s=1.622
+[CALL] record_index=82 record_id=c078e8dc5a3fc997ce524b57adb550f9988af43e1795fe67fa3670c5fc0fe29d model=deepseek
+[OK] record_index=82 record_id=c078e8dc5a3fc997ce524b57adb550f9988af43e1795fe67fa3670c5fc0fe29d model=deepseek prediction=attack confidence=0.7 latency_s=1.125
+[CALL] record_index=82 record_id=c078e8dc5a3fc997ce524b57adb550f9988af43e1795fe67fa3670c5fc0fe29d model=claude
+[OK] record_index=82 record_id=c078e8dc5a3fc997ce524b57adb550f9988af43e1795fe67fa3670c5fc0fe29d model=claude prediction=attack confidence=0.75 latency_s=1.541
+[RECORD_START] index=83/150 pct=55.3 record_id=827f03f96b39fa9a560e22954330db1caedb55fe220368dc3a473d3ec4dbe14a
+[CALL] record_index=83 record_id=827f03f96b39fa9a560e22954330db1caedb55fe220368dc3a473d3ec4dbe14a model=chatgpt
+[OK] record_index=83 record_id=827f03f96b39fa9a560e22954330db1caedb55fe220368dc3a473d3ec4dbe14a model=chatgpt prediction=attack confidence=0.9 latency_s=1.651
+[CALL] record_index=83 record_id=827f03f96b39fa9a560e22954330db1caedb55fe220368dc3a473d3ec4dbe14a model=deepseek
+[OK] record_index=83 record_id=827f03f96b39fa9a560e22954330db1caedb55fe220368dc3a473d3ec4dbe14a model=deepseek prediction=attack confidence=0.9 latency_s=1.01
+[CALL] record_index=83 record_id=827f03f96b39fa9a560e22954330db1caedb55fe220368dc3a473d3ec4dbe14a model=claude
+[OK] record_index=83 record_id=827f03f96b39fa9a560e22954330db1caedb55fe220368dc3a473d3ec4dbe14a model=claude prediction=normal confidence=0.7 latency_s=1.166
+[RECORD_START] index=84/150 pct=56.0 record_id=83940abaa479278c75097e509188b3175feb9a98046abdfac79a25078959d5f2
+[CALL] record_index=84 record_id=83940abaa479278c75097e509188b3175feb9a98046abdfac79a25078959d5f2 model=chatgpt
+[OK] record_index=84 record_id=83940abaa479278c75097e509188b3175feb9a98046abdfac79a25078959d5f2 model=chatgpt prediction=attack confidence=0.9 latency_s=1.99
+[CALL] record_index=84 record_id=83940abaa479278c75097e509188b3175feb9a98046abdfac79a25078959d5f2 model=deepseek
+[OK] record_index=84 record_id=83940abaa479278c75097e509188b3175feb9a98046abdfac79a25078959d5f2 model=deepseek prediction=attack confidence=0.7 latency_s=1.023
+[CALL] record_index=84 record_id=83940abaa479278c75097e509188b3175feb9a98046abdfac79a25078959d5f2 model=claude
+[OK] record_index=84 record_id=83940abaa479278c75097e509188b3175feb9a98046abdfac79a25078959d5f2 model=claude prediction=attack confidence=0.75 latency_s=1.085
+[RECORD_START] index=85/150 pct=56.7 record_id=4a3319291ba85d9c7156c1fa4e2b7eff6f3b666809bdecf11e0c722d1abb3272
+[CALL] record_index=85 record_id=4a3319291ba85d9c7156c1fa4e2b7eff6f3b666809bdecf11e0c722d1abb3272 model=chatgpt
+[OK] record_index=85 record_id=4a3319291ba85d9c7156c1fa4e2b7eff6f3b666809bdecf11e0c722d1abb3272 model=chatgpt prediction=normal confidence=0.7 latency_s=1.703
+[CALL] record_index=85 record_id=4a3319291ba85d9c7156c1fa4e2b7eff6f3b666809bdecf11e0c722d1abb3272 model=deepseek
+[OK] record_index=85 record_id=4a3319291ba85d9c7156c1fa4e2b7eff6f3b666809bdecf11e0c722d1abb3272 model=deepseek prediction=attack confidence=0.7 latency_s=0.942
+[CALL] record_index=85 record_id=4a3319291ba85d9c7156c1fa4e2b7eff6f3b666809bdecf11e0c722d1abb3272 model=claude
+[OK] record_index=85 record_id=4a3319291ba85d9c7156c1fa4e2b7eff6f3b666809bdecf11e0c722d1abb3272 model=claude prediction=normal confidence=0.7 latency_s=1.056
+[RECORD_START] index=86/150 pct=57.3 record_id=f68d1c4f34741854544453f432d8d3e8824d5c9b25ba26e816d39d05ae2c4053
+[CALL] record_index=86 record_id=f68d1c4f34741854544453f432d8d3e8824d5c9b25ba26e816d39d05ae2c4053 model=chatgpt
+[OK] record_index=86 record_id=f68d1c4f34741854544453f432d8d3e8824d5c9b25ba26e816d39d05ae2c4053 model=chatgpt prediction=attack confidence=0.9 latency_s=1.45
+[CALL] record_index=86 record_id=f68d1c4f34741854544453f432d8d3e8824d5c9b25ba26e816d39d05ae2c4053 model=deepseek
+[OK] record_index=86 record_id=f68d1c4f34741854544453f432d8d3e8824d5c9b25ba26e816d39d05ae2c4053 model=deepseek prediction=attack confidence=0.7 latency_s=0.919
+[CALL] record_index=86 record_id=f68d1c4f34741854544453f432d8d3e8824d5c9b25ba26e816d39d05ae2c4053 model=claude
+[OK] record_index=86 record_id=f68d1c4f34741854544453f432d8d3e8824d5c9b25ba26e816d39d05ae2c4053 model=claude prediction=attack confidence=0.75 latency_s=1.223
+[RECORD_START] index=87/150 pct=58.0 record_id=37d4d2f1069a9f3d405bfd98a5c15d65c617be36389c9833901abe6680addb1a
+[CALL] record_index=87 record_id=37d4d2f1069a9f3d405bfd98a5c15d65c617be36389c9833901abe6680addb1a model=chatgpt
+[OK] record_index=87 record_id=37d4d2f1069a9f3d405bfd98a5c15d65c617be36389c9833901abe6680addb1a model=chatgpt prediction=attack confidence=0.9 latency_s=1.563
+[CALL] record_index=87 record_id=37d4d2f1069a9f3d405bfd98a5c15d65c617be36389c9833901abe6680addb1a model=deepseek
+[OK] record_index=87 record_id=37d4d2f1069a9f3d405bfd98a5c15d65c617be36389c9833901abe6680addb1a model=deepseek prediction=attack confidence=0.9 latency_s=1.04
+[CALL] record_index=87 record_id=37d4d2f1069a9f3d405bfd98a5c15d65c617be36389c9833901abe6680addb1a model=claude
+[OK] record_index=87 record_id=37d4d2f1069a9f3d405bfd98a5c15d65c617be36389c9833901abe6680addb1a model=claude prediction=attack confidence=0.75 latency_s=1.172
+[RECORD_START] index=88/150 pct=58.7 record_id=5ef4ffe12e3145db63a86fb07ed1376c97fd56133006ed720e87c1c6413e7850
+[CALL] record_index=88 record_id=5ef4ffe12e3145db63a86fb07ed1376c97fd56133006ed720e87c1c6413e7850 model=chatgpt
+[OK] record_index=88 record_id=5ef4ffe12e3145db63a86fb07ed1376c97fd56133006ed720e87c1c6413e7850 model=chatgpt prediction=attack confidence=0.9 latency_s=1.593
+[CALL] record_index=88 record_id=5ef4ffe12e3145db63a86fb07ed1376c97fd56133006ed720e87c1c6413e7850 model=deepseek
+[OK] record_index=88 record_id=5ef4ffe12e3145db63a86fb07ed1376c97fd56133006ed720e87c1c6413e7850 model=deepseek prediction=attack confidence=0.9 latency_s=1.067
+[CALL] record_index=88 record_id=5ef4ffe12e3145db63a86fb07ed1376c97fd56133006ed720e87c1c6413e7850 model=claude
+[OK] record_index=88 record_id=5ef4ffe12e3145db63a86fb07ed1376c97fd56133006ed720e87c1c6413e7850 model=claude prediction=attack confidence=0.85 latency_s=1.102
+[RECORD_START] index=89/150 pct=59.3 record_id=7e1f602365e1a5cfbebe64ec8ee897bd1bfe5c9856079eed0783ab565f8a23c4
+[CALL] record_index=89 record_id=7e1f602365e1a5cfbebe64ec8ee897bd1bfe5c9856079eed0783ab565f8a23c4 model=chatgpt
+[OK] record_index=89 record_id=7e1f602365e1a5cfbebe64ec8ee897bd1bfe5c9856079eed0783ab565f8a23c4 model=chatgpt prediction=attack confidence=0.9 latency_s=1.455
+[CALL] record_index=89 record_id=7e1f602365e1a5cfbebe64ec8ee897bd1bfe5c9856079eed0783ab565f8a23c4 model=deepseek
+[OK] record_index=89 record_id=7e1f602365e1a5cfbebe64ec8ee897bd1bfe5c9856079eed0783ab565f8a23c4 model=deepseek prediction=attack confidence=0.9 latency_s=1.028
+[CALL] record_index=89 record_id=7e1f602365e1a5cfbebe64ec8ee897bd1bfe5c9856079eed0783ab565f8a23c4 model=claude
+[OK] record_index=89 record_id=7e1f602365e1a5cfbebe64ec8ee897bd1bfe5c9856079eed0783ab565f8a23c4 model=claude prediction=attack confidence=0.75 latency_s=1.067
+[RECORD_START] index=90/150 pct=60.0 record_id=330289ad00703b928565585aeaf69cfb5034ec2df5391c622c51d71be5903cb1
+[CALL] record_index=90 record_id=330289ad00703b928565585aeaf69cfb5034ec2df5391c622c51d71be5903cb1 model=chatgpt
+[OK] record_index=90 record_id=330289ad00703b928565585aeaf69cfb5034ec2df5391c622c51d71be5903cb1 model=chatgpt prediction=attack confidence=0.9 latency_s=1.394
+[CALL] record_index=90 record_id=330289ad00703b928565585aeaf69cfb5034ec2df5391c622c51d71be5903cb1 model=deepseek
+[OK] record_index=90 record_id=330289ad00703b928565585aeaf69cfb5034ec2df5391c622c51d71be5903cb1 model=deepseek prediction=attack confidence=0.9 latency_s=0.989
+[CALL] record_index=90 record_id=330289ad00703b928565585aeaf69cfb5034ec2df5391c622c51d71be5903cb1 model=claude
+[OK] record_index=90 record_id=330289ad00703b928565585aeaf69cfb5034ec2df5391c622c51d71be5903cb1 model=claude prediction=attack confidence=0.75 latency_s=1.163
+[RECORD_START] index=91/150 pct=60.7 record_id=1b76d6b0a2cb0e4fa1a6071bb472bfbfc1979948d0a69834e7c6fbc12eb5758b
+[CALL] record_index=91 record_id=1b76d6b0a2cb0e4fa1a6071bb472bfbfc1979948d0a69834e7c6fbc12eb5758b model=chatgpt
+[OK] record_index=91 record_id=1b76d6b0a2cb0e4fa1a6071bb472bfbfc1979948d0a69834e7c6fbc12eb5758b model=chatgpt prediction=attack confidence=0.9 latency_s=1.504
+[CALL] record_index=91 record_id=1b76d6b0a2cb0e4fa1a6071bb472bfbfc1979948d0a69834e7c6fbc12eb5758b model=deepseek
+[OK] record_index=91 record_id=1b76d6b0a2cb0e4fa1a6071bb472bfbfc1979948d0a69834e7c6fbc12eb5758b model=deepseek prediction=attack confidence=0.9 latency_s=1.071
+[CALL] record_index=91 record_id=1b76d6b0a2cb0e4fa1a6071bb472bfbfc1979948d0a69834e7c6fbc12eb5758b model=claude
+[OK] record_index=91 record_id=1b76d6b0a2cb0e4fa1a6071bb472bfbfc1979948d0a69834e7c6fbc12eb5758b model=claude prediction=attack confidence=0.85 latency_s=1.204
+[RECORD_START] index=92/150 pct=61.3 record_id=9b92668f623cab22f1087fe6dced8a13e92a3a09ef6db241cf401585548eecfe
+[CALL] record_index=92 record_id=9b92668f623cab22f1087fe6dced8a13e92a3a09ef6db241cf401585548eecfe model=chatgpt
+[OK] record_index=92 record_id=9b92668f623cab22f1087fe6dced8a13e92a3a09ef6db241cf401585548eecfe model=chatgpt prediction=attack confidence=0.9 latency_s=1.604
+[CALL] record_index=92 record_id=9b92668f623cab22f1087fe6dced8a13e92a3a09ef6db241cf401585548eecfe model=deepseek
+[OK] record_index=92 record_id=9b92668f623cab22f1087fe6dced8a13e92a3a09ef6db241cf401585548eecfe model=deepseek prediction=attack confidence=0.7 latency_s=1.007
+[CALL] record_index=92 record_id=9b92668f623cab22f1087fe6dced8a13e92a3a09ef6db241cf401585548eecfe model=claude
+[OK] record_index=92 record_id=9b92668f623cab22f1087fe6dced8a13e92a3a09ef6db241cf401585548eecfe model=claude prediction=attack confidence=0.75 latency_s=1.19
+[RECORD_START] index=93/150 pct=62.0 record_id=86a5e85c57abc24c88030643c8b61879d616f96c65cd4478358f6999376d052f
+[CALL] record_index=93 record_id=86a5e85c57abc24c88030643c8b61879d616f96c65cd4478358f6999376d052f model=chatgpt
+[OK] record_index=93 record_id=86a5e85c57abc24c88030643c8b61879d616f96c65cd4478358f6999376d052f model=chatgpt prediction=attack confidence=0.9 latency_s=1.851
+[CALL] record_index=93 record_id=86a5e85c57abc24c88030643c8b61879d616f96c65cd4478358f6999376d052f model=deepseek
+[OK] record_index=93 record_id=86a5e85c57abc24c88030643c8b61879d616f96c65cd4478358f6999376d052f model=deepseek prediction=attack confidence=0.7 latency_s=0.969
+[CALL] record_index=93 record_id=86a5e85c57abc24c88030643c8b61879d616f96c65cd4478358f6999376d052f model=claude
+[OK] record_index=93 record_id=86a5e85c57abc24c88030643c8b61879d616f96c65cd4478358f6999376d052f model=claude prediction=attack confidence=0.75 latency_s=1.825
+[RECORD_START] index=94/150 pct=62.7 record_id=4aebbf4b6375dad492f779b3174080745940c776c81a97e5348c0a4458f965fb
+[CALL] record_index=94 record_id=4aebbf4b6375dad492f779b3174080745940c776c81a97e5348c0a4458f965fb model=chatgpt
+[OK] record_index=94 record_id=4aebbf4b6375dad492f779b3174080745940c776c81a97e5348c0a4458f965fb model=chatgpt prediction=attack confidence=0.9 latency_s=1.579
+[CALL] record_index=94 record_id=4aebbf4b6375dad492f779b3174080745940c776c81a97e5348c0a4458f965fb model=deepseek
+[OK] record_index=94 record_id=4aebbf4b6375dad492f779b3174080745940c776c81a97e5348c0a4458f965fb model=deepseek prediction=attack confidence=0.9 latency_s=0.924
+[CALL] record_index=94 record_id=4aebbf4b6375dad492f779b3174080745940c776c81a97e5348c0a4458f965fb model=claude
+[OK] record_index=94 record_id=4aebbf4b6375dad492f779b3174080745940c776c81a97e5348c0a4458f965fb model=claude prediction=attack confidence=0.75 latency_s=1.156
+[RECORD_START] index=95/150 pct=63.3 record_id=cb0fe3bbb85591e2f7de561e5b8eb0f1bb5f5cff70b631d75dcff705b473a036
+[CALL] record_index=95 record_id=cb0fe3bbb85591e2f7de561e5b8eb0f1bb5f5cff70b631d75dcff705b473a036 model=chatgpt
+[OK] record_index=95 record_id=cb0fe3bbb85591e2f7de561e5b8eb0f1bb5f5cff70b631d75dcff705b473a036 model=chatgpt prediction=attack confidence=0.9 latency_s=1.408
+[CALL] record_index=95 record_id=cb0fe3bbb85591e2f7de561e5b8eb0f1bb5f5cff70b631d75dcff705b473a036 model=deepseek
+[OK] record_index=95 record_id=cb0fe3bbb85591e2f7de561e5b8eb0f1bb5f5cff70b631d75dcff705b473a036 model=deepseek prediction=attack confidence=0.7 latency_s=0.986
+[CALL] record_index=95 record_id=cb0fe3bbb85591e2f7de561e5b8eb0f1bb5f5cff70b631d75dcff705b473a036 model=claude
+[OK] record_index=95 record_id=cb0fe3bbb85591e2f7de561e5b8eb0f1bb5f5cff70b631d75dcff705b473a036 model=claude prediction=attack confidence=0.85 latency_s=1.161
+[RECORD_START] index=96/150 pct=64.0 record_id=617a6b26c8db4241e7e8a76a2270f31367ab1ce4c0e79fba9f69d7ed34882880
+[CALL] record_index=96 record_id=617a6b26c8db4241e7e8a76a2270f31367ab1ce4c0e79fba9f69d7ed34882880 model=chatgpt
+[OK] record_index=96 record_id=617a6b26c8db4241e7e8a76a2270f31367ab1ce4c0e79fba9f69d7ed34882880 model=chatgpt prediction=attack confidence=0.85 latency_s=1.665
+[CALL] record_index=96 record_id=617a6b26c8db4241e7e8a76a2270f31367ab1ce4c0e79fba9f69d7ed34882880 model=deepseek
+[OK] record_index=96 record_id=617a6b26c8db4241e7e8a76a2270f31367ab1ce4c0e79fba9f69d7ed34882880 model=deepseek prediction=attack confidence=0.7 latency_s=0.953
+[CALL] record_index=96 record_id=617a6b26c8db4241e7e8a76a2270f31367ab1ce4c0e79fba9f69d7ed34882880 model=claude
+[OK] record_index=96 record_id=617a6b26c8db4241e7e8a76a2270f31367ab1ce4c0e79fba9f69d7ed34882880 model=claude prediction=attack confidence=0.75 latency_s=1.08
+[RECORD_START] index=97/150 pct=64.7 record_id=186fe4836a68d2ea438b8a2080e4fae0c29cbb7b2410c680a66934eb2c6b5498
+[CALL] record_index=97 record_id=186fe4836a68d2ea438b8a2080e4fae0c29cbb7b2410c680a66934eb2c6b5498 model=chatgpt
+[OK] record_index=97 record_id=186fe4836a68d2ea438b8a2080e4fae0c29cbb7b2410c680a66934eb2c6b5498 model=chatgpt prediction=attack confidence=0.9 latency_s=1.598
+[CALL] record_index=97 record_id=186fe4836a68d2ea438b8a2080e4fae0c29cbb7b2410c680a66934eb2c6b5498 model=deepseek
+[OK] record_index=97 record_id=186fe4836a68d2ea438b8a2080e4fae0c29cbb7b2410c680a66934eb2c6b5498 model=deepseek prediction=attack confidence=0.7 latency_s=1.026
+[CALL] record_index=97 record_id=186fe4836a68d2ea438b8a2080e4fae0c29cbb7b2410c680a66934eb2c6b5498 model=claude
+[OK] record_index=97 record_id=186fe4836a68d2ea438b8a2080e4fae0c29cbb7b2410c680a66934eb2c6b5498 model=claude prediction=attack confidence=0.75 latency_s=1.091
+[RECORD_START] index=98/150 pct=65.3 record_id=1a560ddd91a0f1b41edde80512dd20519e4f5c25b8bb399baa77f365b827a353
+[CALL] record_index=98 record_id=1a560ddd91a0f1b41edde80512dd20519e4f5c25b8bb399baa77f365b827a353 model=chatgpt
+[OK] record_index=98 record_id=1a560ddd91a0f1b41edde80512dd20519e4f5c25b8bb399baa77f365b827a353 model=chatgpt prediction=normal confidence=0.7 latency_s=1.66
+[CALL] record_index=98 record_id=1a560ddd91a0f1b41edde80512dd20519e4f5c25b8bb399baa77f365b827a353 model=deepseek
+[OK] record_index=98 record_id=1a560ddd91a0f1b41edde80512dd20519e4f5c25b8bb399baa77f365b827a353 model=deepseek prediction=normal confidence=0.9 latency_s=1.027
+[CALL] record_index=98 record_id=1a560ddd91a0f1b41edde80512dd20519e4f5c25b8bb399baa77f365b827a353 model=claude
+[OK] record_index=98 record_id=1a560ddd91a0f1b41edde80512dd20519e4f5c25b8bb399baa77f365b827a353 model=claude prediction=normal confidence=0.75 latency_s=1.067
+[RECORD_START] index=99/150 pct=66.0 record_id=29bce55ca628f1f0fa00742bcef46305f0eb49fbf26d86e6e84cf9fa6af6d609
+[CALL] record_index=99 record_id=29bce55ca628f1f0fa00742bcef46305f0eb49fbf26d86e6e84cf9fa6af6d609 model=chatgpt
+[OK] record_index=99 record_id=29bce55ca628f1f0fa00742bcef46305f0eb49fbf26d86e6e84cf9fa6af6d609 model=chatgpt prediction=normal confidence=0.7 latency_s=1.204
+[CALL] record_index=99 record_id=29bce55ca628f1f0fa00742bcef46305f0eb49fbf26d86e6e84cf9fa6af6d609 model=deepseek
+[OK] record_index=99 record_id=29bce55ca628f1f0fa00742bcef46305f0eb49fbf26d86e6e84cf9fa6af6d609 model=deepseek prediction=normal confidence=0.9 latency_s=0.888
+[CALL] record_index=99 record_id=29bce55ca628f1f0fa00742bcef46305f0eb49fbf26d86e6e84cf9fa6af6d609 model=claude
+[OK] record_index=99 record_id=29bce55ca628f1f0fa00742bcef46305f0eb49fbf26d86e6e84cf9fa6af6d609 model=claude prediction=normal confidence=0.7 latency_s=1.028
+[RECORD_START] index=100/150 pct=66.7 record_id=d988bd9943327e7728b4712952eb32e7dc3ddbaafe6f22b0982eecd2596e3f77
+[CALL] record_index=100 record_id=d988bd9943327e7728b4712952eb32e7dc3ddbaafe6f22b0982eecd2596e3f77 model=chatgpt
+[OK] record_index=100 record_id=d988bd9943327e7728b4712952eb32e7dc3ddbaafe6f22b0982eecd2596e3f77 model=chatgpt prediction=attack confidence=0.9 latency_s=1.195
+[CALL] record_index=100 record_id=d988bd9943327e7728b4712952eb32e7dc3ddbaafe6f22b0982eecd2596e3f77 model=deepseek
+[OK] record_index=100 record_id=d988bd9943327e7728b4712952eb32e7dc3ddbaafe6f22b0982eecd2596e3f77 model=deepseek prediction=attack confidence=0.7 latency_s=1.366
+[CALL] record_index=100 record_id=d988bd9943327e7728b4712952eb32e7dc3ddbaafe6f22b0982eecd2596e3f77 model=claude
+[OK] record_index=100 record_id=d988bd9943327e7728b4712952eb32e7dc3ddbaafe6f22b0982eecd2596e3f77 model=claude prediction=normal confidence=0.7 latency_s=1.3
+
+====================================================================================================
+CHECKPOINT: 100/150 [███████████████████░░░░░░░░░░░] 66.7%
+Elapsed   : 0:06:24
+ETA       : 0:03:12
+----------------------------------------------------------------------------------------------------
+Model            Calls  Errors  Skipped   Attack   Normal  AvgConf      InTok   OutTok    Cost($)   AvgLat
+----------------------------------------------------------------------------------------------------
+chatgpt            100       0        0       94        6    0.878     39,607    2,934   0.007701    1.635
+deepseek           100       0        0       90       10    0.816     42,350    2,626   0.006664    1.033
+claude             100       0        0       73       27    0.751     43,805    4,202   0.051852    1.179
+----------------------------------------------------------------------------------------------------
+Current estimated total cost: $0.066217
+====================================================================================================
+[RECORD_START] index=101/150 pct=67.3 record_id=5cf7e667b0c4185d3129cd7c912b079c7e7efc2ba0fdda99a68525902a971a9d
+[CALL] record_index=101 record_id=5cf7e667b0c4185d3129cd7c912b079c7e7efc2ba0fdda99a68525902a971a9d model=chatgpt
+[OK] record_index=101 record_id=5cf7e667b0c4185d3129cd7c912b079c7e7efc2ba0fdda99a68525902a971a9d model=chatgpt prediction=attack confidence=0.9 latency_s=1.565
+[CALL] record_index=101 record_id=5cf7e667b0c4185d3129cd7c912b079c7e7efc2ba0fdda99a68525902a971a9d model=deepseek
+[OK] record_index=101 record_id=5cf7e667b0c4185d3129cd7c912b079c7e7efc2ba0fdda99a68525902a971a9d model=deepseek prediction=attack confidence=0.7 latency_s=0.856
+[CALL] record_index=101 record_id=5cf7e667b0c4185d3129cd7c912b079c7e7efc2ba0fdda99a68525902a971a9d model=claude
+[OK] record_index=101 record_id=5cf7e667b0c4185d3129cd7c912b079c7e7efc2ba0fdda99a68525902a971a9d model=claude prediction=normal confidence=0.7 latency_s=1.218
+[RECORD_START] index=102/150 pct=68.0 record_id=2a855db4cd67a3d1058d1f7649dded46d4697494e42c627face5982fd4096506
+[CALL] record_index=102 record_id=2a855db4cd67a3d1058d1f7649dded46d4697494e42c627face5982fd4096506 model=chatgpt
+[OK] record_index=102 record_id=2a855db4cd67a3d1058d1f7649dded46d4697494e42c627face5982fd4096506 model=chatgpt prediction=attack confidence=0.9 latency_s=1.578
+[CALL] record_index=102 record_id=2a855db4cd67a3d1058d1f7649dded46d4697494e42c627face5982fd4096506 model=deepseek
+[OK] record_index=102 record_id=2a855db4cd67a3d1058d1f7649dded46d4697494e42c627face5982fd4096506 model=deepseek prediction=attack confidence=0.7 latency_s=1.142
+[CALL] record_index=102 record_id=2a855db4cd67a3d1058d1f7649dded46d4697494e42c627face5982fd4096506 model=claude
+[OK] record_index=102 record_id=2a855db4cd67a3d1058d1f7649dded46d4697494e42c627face5982fd4096506 model=claude prediction=attack confidence=0.75 latency_s=0.965
+[RECORD_START] index=103/150 pct=68.7 record_id=3855773c0af10f2e3a308ec55544c5d51f0e8e7e05632bc40ceacd76d4ccb9d9
+[CALL] record_index=103 record_id=3855773c0af10f2e3a308ec55544c5d51f0e8e7e05632bc40ceacd76d4ccb9d9 model=chatgpt
+[OK] record_index=103 record_id=3855773c0af10f2e3a308ec55544c5d51f0e8e7e05632bc40ceacd76d4ccb9d9 model=chatgpt prediction=attack confidence=0.9 latency_s=1.605
+[CALL] record_index=103 record_id=3855773c0af10f2e3a308ec55544c5d51f0e8e7e05632bc40ceacd76d4ccb9d9 model=deepseek
+[OK] record_index=103 record_id=3855773c0af10f2e3a308ec55544c5d51f0e8e7e05632bc40ceacd76d4ccb9d9 model=deepseek prediction=attack confidence=0.7 latency_s=1.003
+[CALL] record_index=103 record_id=3855773c0af10f2e3a308ec55544c5d51f0e8e7e05632bc40ceacd76d4ccb9d9 model=claude
+[OK] record_index=103 record_id=3855773c0af10f2e3a308ec55544c5d51f0e8e7e05632bc40ceacd76d4ccb9d9 model=claude prediction=attack confidence=0.75 latency_s=1.232
+[RECORD_START] index=104/150 pct=69.3 record_id=47fc095306767ebe15a4bdfd76e22fa491cd0d6017ed4f4093159938214f5429
+[CALL] record_index=104 record_id=47fc095306767ebe15a4bdfd76e22fa491cd0d6017ed4f4093159938214f5429 model=chatgpt
+[OK] record_index=104 record_id=47fc095306767ebe15a4bdfd76e22fa491cd0d6017ed4f4093159938214f5429 model=chatgpt prediction=attack confidence=0.9 latency_s=1.509
+[CALL] record_index=104 record_id=47fc095306767ebe15a4bdfd76e22fa491cd0d6017ed4f4093159938214f5429 model=deepseek
+[OK] record_index=104 record_id=47fc095306767ebe15a4bdfd76e22fa491cd0d6017ed4f4093159938214f5429 model=deepseek prediction=attack confidence=0.7 latency_s=1.018
+[CALL] record_index=104 record_id=47fc095306767ebe15a4bdfd76e22fa491cd0d6017ed4f4093159938214f5429 model=claude
+[OK] record_index=104 record_id=47fc095306767ebe15a4bdfd76e22fa491cd0d6017ed4f4093159938214f5429 model=claude prediction=attack confidence=0.75 latency_s=1.157
+[RECORD_START] index=105/150 pct=70.0 record_id=5c377d9ea410a5619a049b4f009dbe9ee04729e167d13a0453b9a7f525783372
+[CALL] record_index=105 record_id=5c377d9ea410a5619a049b4f009dbe9ee04729e167d13a0453b9a7f525783372 model=chatgpt
+[OK] record_index=105 record_id=5c377d9ea410a5619a049b4f009dbe9ee04729e167d13a0453b9a7f525783372 model=chatgpt prediction=attack confidence=0.9 latency_s=1.474
+[CALL] record_index=105 record_id=5c377d9ea410a5619a049b4f009dbe9ee04729e167d13a0453b9a7f525783372 model=deepseek
+[OK] record_index=105 record_id=5c377d9ea410a5619a049b4f009dbe9ee04729e167d13a0453b9a7f525783372 model=deepseek prediction=attack confidence=0.9 latency_s=0.954
+[CALL] record_index=105 record_id=5c377d9ea410a5619a049b4f009dbe9ee04729e167d13a0453b9a7f525783372 model=claude
+[OK] record_index=105 record_id=5c377d9ea410a5619a049b4f009dbe9ee04729e167d13a0453b9a7f525783372 model=claude prediction=attack confidence=0.75 latency_s=1.004
+[RECORD_START] index=106/150 pct=70.7 record_id=6df289e0d01d3f0c382b2f488ed3f0060ebb707dda0d1ed463db6b8e4bed20f3
+[CALL] record_index=106 record_id=6df289e0d01d3f0c382b2f488ed3f0060ebb707dda0d1ed463db6b8e4bed20f3 model=chatgpt
+[OK] record_index=106 record_id=6df289e0d01d3f0c382b2f488ed3f0060ebb707dda0d1ed463db6b8e4bed20f3 model=chatgpt prediction=normal confidence=0.7 latency_s=2.401
+[CALL] record_index=106 record_id=6df289e0d01d3f0c382b2f488ed3f0060ebb707dda0d1ed463db6b8e4bed20f3 model=deepseek
+[OK] record_index=106 record_id=6df289e0d01d3f0c382b2f488ed3f0060ebb707dda0d1ed463db6b8e4bed20f3 model=deepseek prediction=normal confidence=0.9 latency_s=1.028
+[CALL] record_index=106 record_id=6df289e0d01d3f0c382b2f488ed3f0060ebb707dda0d1ed463db6b8e4bed20f3 model=claude
+[OK] record_index=106 record_id=6df289e0d01d3f0c382b2f488ed3f0060ebb707dda0d1ed463db6b8e4bed20f3 model=claude prediction=normal confidence=0.7 latency_s=0.984
+[RECORD_START] index=107/150 pct=71.3 record_id=5fc1bd61c8ea037d18378dd366043ac9f9579bda10f6fa84df7ce63f79a5a668
+[CALL] record_index=107 record_id=5fc1bd61c8ea037d18378dd366043ac9f9579bda10f6fa84df7ce63f79a5a668 model=chatgpt
+[OK] record_index=107 record_id=5fc1bd61c8ea037d18378dd366043ac9f9579bda10f6fa84df7ce63f79a5a668 model=chatgpt prediction=attack confidence=0.9 latency_s=1.6
+[CALL] record_index=107 record_id=5fc1bd61c8ea037d18378dd366043ac9f9579bda10f6fa84df7ce63f79a5a668 model=deepseek
+[OK] record_index=107 record_id=5fc1bd61c8ea037d18378dd366043ac9f9579bda10f6fa84df7ce63f79a5a668 model=deepseek prediction=attack confidence=0.9 latency_s=1.059
+[CALL] record_index=107 record_id=5fc1bd61c8ea037d18378dd366043ac9f9579bda10f6fa84df7ce63f79a5a668 model=claude
+[OK] record_index=107 record_id=5fc1bd61c8ea037d18378dd366043ac9f9579bda10f6fa84df7ce63f79a5a668 model=claude prediction=attack confidence=0.75 latency_s=1.144
+[RECORD_START] index=108/150 pct=72.0 record_id=b274e0db5740330a13cf287ba95ca8fd31297098ec0e0ed633815edd353d4fde
+[CALL] record_index=108 record_id=b274e0db5740330a13cf287ba95ca8fd31297098ec0e0ed633815edd353d4fde model=chatgpt
+[OK] record_index=108 record_id=b274e0db5740330a13cf287ba95ca8fd31297098ec0e0ed633815edd353d4fde model=chatgpt prediction=normal confidence=0.7 latency_s=1.308
+[CALL] record_index=108 record_id=b274e0db5740330a13cf287ba95ca8fd31297098ec0e0ed633815edd353d4fde model=deepseek
+[OK] record_index=108 record_id=b274e0db5740330a13cf287ba95ca8fd31297098ec0e0ed633815edd353d4fde model=deepseek prediction=normal confidence=0.9 latency_s=0.917
+[CALL] record_index=108 record_id=b274e0db5740330a13cf287ba95ca8fd31297098ec0e0ed633815edd353d4fde model=claude
+[OK] record_index=108 record_id=b274e0db5740330a13cf287ba95ca8fd31297098ec0e0ed633815edd353d4fde model=claude prediction=normal confidence=0.7 latency_s=1.03
+[RECORD_START] index=109/150 pct=72.7 record_id=c163bf3fb9f9fee8b10badb7dbd93de30248d4a27db7a25d1221f12a0699136d
+[CALL] record_index=109 record_id=c163bf3fb9f9fee8b10badb7dbd93de30248d4a27db7a25d1221f12a0699136d model=chatgpt
+[OK] record_index=109 record_id=c163bf3fb9f9fee8b10badb7dbd93de30248d4a27db7a25d1221f12a0699136d model=chatgpt prediction=attack confidence=0.9 latency_s=1.547
+[CALL] record_index=109 record_id=c163bf3fb9f9fee8b10badb7dbd93de30248d4a27db7a25d1221f12a0699136d model=deepseek
+[OK] record_index=109 record_id=c163bf3fb9f9fee8b10badb7dbd93de30248d4a27db7a25d1221f12a0699136d model=deepseek prediction=attack confidence=0.9 latency_s=1.114
+[CALL] record_index=109 record_id=c163bf3fb9f9fee8b10badb7dbd93de30248d4a27db7a25d1221f12a0699136d model=claude
+[OK] record_index=109 record_id=c163bf3fb9f9fee8b10badb7dbd93de30248d4a27db7a25d1221f12a0699136d model=claude prediction=attack confidence=0.85 latency_s=1.062
+[RECORD_START] index=110/150 pct=73.3 record_id=4868baf2efd389c87ecc7ce2eb2a199dca7377f0ad41d2d7d4f8cc924972f23e
+[CALL] record_index=110 record_id=4868baf2efd389c87ecc7ce2eb2a199dca7377f0ad41d2d7d4f8cc924972f23e model=chatgpt
+[OK] record_index=110 record_id=4868baf2efd389c87ecc7ce2eb2a199dca7377f0ad41d2d7d4f8cc924972f23e model=chatgpt prediction=attack confidence=0.7 latency_s=1.405
+[CALL] record_index=110 record_id=4868baf2efd389c87ecc7ce2eb2a199dca7377f0ad41d2d7d4f8cc924972f23e model=deepseek
+[OK] record_index=110 record_id=4868baf2efd389c87ecc7ce2eb2a199dca7377f0ad41d2d7d4f8cc924972f23e model=deepseek prediction=normal confidence=0.9 latency_s=0.961
+[CALL] record_index=110 record_id=4868baf2efd389c87ecc7ce2eb2a199dca7377f0ad41d2d7d4f8cc924972f23e model=claude
+[OK] record_index=110 record_id=4868baf2efd389c87ecc7ce2eb2a199dca7377f0ad41d2d7d4f8cc924972f23e model=claude prediction=normal confidence=0.7 latency_s=1.003
+[RECORD_START] index=111/150 pct=74.0 record_id=003a9856ace97e8a70b3355554945ffcf9fa48e5fdb187659d387ba30269783c
+[CALL] record_index=111 record_id=003a9856ace97e8a70b3355554945ffcf9fa48e5fdb187659d387ba30269783c model=chatgpt
+[OK] record_index=111 record_id=003a9856ace97e8a70b3355554945ffcf9fa48e5fdb187659d387ba30269783c model=chatgpt prediction=attack confidence=0.9 latency_s=1.204
+[CALL] record_index=111 record_id=003a9856ace97e8a70b3355554945ffcf9fa48e5fdb187659d387ba30269783c model=deepseek
+[OK] record_index=111 record_id=003a9856ace97e8a70b3355554945ffcf9fa48e5fdb187659d387ba30269783c model=deepseek prediction=attack confidence=0.9 latency_s=1.068
+[CALL] record_index=111 record_id=003a9856ace97e8a70b3355554945ffcf9fa48e5fdb187659d387ba30269783c model=claude
+[OK] record_index=111 record_id=003a9856ace97e8a70b3355554945ffcf9fa48e5fdb187659d387ba30269783c model=claude prediction=attack confidence=0.85 latency_s=1.189
+[RECORD_START] index=112/150 pct=74.7 record_id=bec3ee765a1b89f03353a918f0bd8aa5f0378043dcf61cff7934f1311a66ac99
+[CALL] record_index=112 record_id=bec3ee765a1b89f03353a918f0bd8aa5f0378043dcf61cff7934f1311a66ac99 model=chatgpt
+[OK] record_index=112 record_id=bec3ee765a1b89f03353a918f0bd8aa5f0378043dcf61cff7934f1311a66ac99 model=chatgpt prediction=attack confidence=0.9 latency_s=1.691
+[CALL] record_index=112 record_id=bec3ee765a1b89f03353a918f0bd8aa5f0378043dcf61cff7934f1311a66ac99 model=deepseek
+[OK] record_index=112 record_id=bec3ee765a1b89f03353a918f0bd8aa5f0378043dcf61cff7934f1311a66ac99 model=deepseek prediction=attack confidence=0.9 latency_s=1.007
+[CALL] record_index=112 record_id=bec3ee765a1b89f03353a918f0bd8aa5f0378043dcf61cff7934f1311a66ac99 model=claude
+[OK] record_index=112 record_id=bec3ee765a1b89f03353a918f0bd8aa5f0378043dcf61cff7934f1311a66ac99 model=claude prediction=attack confidence=0.75 latency_s=1.016
+[RECORD_START] index=113/150 pct=75.3 record_id=bf0a52af9929c9ed66857122fbdcbd43352133a6dcd936476884c0b2bfb1696d
+[CALL] record_index=113 record_id=bf0a52af9929c9ed66857122fbdcbd43352133a6dcd936476884c0b2bfb1696d model=chatgpt
+[OK] record_index=113 record_id=bf0a52af9929c9ed66857122fbdcbd43352133a6dcd936476884c0b2bfb1696d model=chatgpt prediction=attack confidence=0.9 latency_s=1.161
+[CALL] record_index=113 record_id=bf0a52af9929c9ed66857122fbdcbd43352133a6dcd936476884c0b2bfb1696d model=deepseek
+[OK] record_index=113 record_id=bf0a52af9929c9ed66857122fbdcbd43352133a6dcd936476884c0b2bfb1696d model=deepseek prediction=attack confidence=0.9 latency_s=1.057
+[CALL] record_index=113 record_id=bf0a52af9929c9ed66857122fbdcbd43352133a6dcd936476884c0b2bfb1696d model=claude
+[OK] record_index=113 record_id=bf0a52af9929c9ed66857122fbdcbd43352133a6dcd936476884c0b2bfb1696d model=claude prediction=attack confidence=0.85 latency_s=1.166
+[RECORD_START] index=114/150 pct=76.0 record_id=1db4bd0bb8ef0e82b4804271720a1b6e85fd0124060dd50ddbe0368be7972f77
+[CALL] record_index=114 record_id=1db4bd0bb8ef0e82b4804271720a1b6e85fd0124060dd50ddbe0368be7972f77 model=chatgpt
+[OK] record_index=114 record_id=1db4bd0bb8ef0e82b4804271720a1b6e85fd0124060dd50ddbe0368be7972f77 model=chatgpt prediction=attack confidence=0.7 latency_s=2.263
+[CALL] record_index=114 record_id=1db4bd0bb8ef0e82b4804271720a1b6e85fd0124060dd50ddbe0368be7972f77 model=deepseek
+[OK] record_index=114 record_id=1db4bd0bb8ef0e82b4804271720a1b6e85fd0124060dd50ddbe0368be7972f77 model=deepseek prediction=normal confidence=0.9 latency_s=1.037
+[CALL] record_index=114 record_id=1db4bd0bb8ef0e82b4804271720a1b6e85fd0124060dd50ddbe0368be7972f77 model=claude
+[OK] record_index=114 record_id=1db4bd0bb8ef0e82b4804271720a1b6e85fd0124060dd50ddbe0368be7972f77 model=claude prediction=attack confidence=0.75 latency_s=0.879
+[RECORD_START] index=115/150 pct=76.7 record_id=ff8a726838872162d60d5572d657f32b31e78cdb673c8ffac25b4b26f782234e
+[CALL] record_index=115 record_id=ff8a726838872162d60d5572d657f32b31e78cdb673c8ffac25b4b26f782234e model=chatgpt
+[OK] record_index=115 record_id=ff8a726838872162d60d5572d657f32b31e78cdb673c8ffac25b4b26f782234e model=chatgpt prediction=normal confidence=0.7 latency_s=1.29
+[CALL] record_index=115 record_id=ff8a726838872162d60d5572d657f32b31e78cdb673c8ffac25b4b26f782234e model=deepseek
+[OK] record_index=115 record_id=ff8a726838872162d60d5572d657f32b31e78cdb673c8ffac25b4b26f782234e model=deepseek prediction=normal confidence=0.9 latency_s=1.244
+[CALL] record_index=115 record_id=ff8a726838872162d60d5572d657f32b31e78cdb673c8ffac25b4b26f782234e model=claude
+[OK] record_index=115 record_id=ff8a726838872162d60d5572d657f32b31e78cdb673c8ffac25b4b26f782234e model=claude prediction=normal confidence=0.7 latency_s=1.142
+[RECORD_START] index=116/150 pct=77.3 record_id=2f19f4770186bf3c025d83aa11e1a1eb9a1db862d671846ffbbdf0206d67b110
+[CALL] record_index=116 record_id=2f19f4770186bf3c025d83aa11e1a1eb9a1db862d671846ffbbdf0206d67b110 model=chatgpt
+[OK] record_index=116 record_id=2f19f4770186bf3c025d83aa11e1a1eb9a1db862d671846ffbbdf0206d67b110 model=chatgpt prediction=attack confidence=0.9 latency_s=1.6
+[CALL] record_index=116 record_id=2f19f4770186bf3c025d83aa11e1a1eb9a1db862d671846ffbbdf0206d67b110 model=deepseek
+[OK] record_index=116 record_id=2f19f4770186bf3c025d83aa11e1a1eb9a1db862d671846ffbbdf0206d67b110 model=deepseek prediction=attack confidence=0.9 latency_s=0.965
+[CALL] record_index=116 record_id=2f19f4770186bf3c025d83aa11e1a1eb9a1db862d671846ffbbdf0206d67b110 model=claude
+[OK] record_index=116 record_id=2f19f4770186bf3c025d83aa11e1a1eb9a1db862d671846ffbbdf0206d67b110 model=claude prediction=attack confidence=0.85 latency_s=1.262
+[RECORD_START] index=117/150 pct=78.0 record_id=4dea41d839f286871889cb1a8bf16fa30c43883c18d88c03c0cd11cff3085d80
+[CALL] record_index=117 record_id=4dea41d839f286871889cb1a8bf16fa30c43883c18d88c03c0cd11cff3085d80 model=chatgpt
+[OK] record_index=117 record_id=4dea41d839f286871889cb1a8bf16fa30c43883c18d88c03c0cd11cff3085d80 model=chatgpt prediction=attack confidence=0.9 latency_s=1.424
+[CALL] record_index=117 record_id=4dea41d839f286871889cb1a8bf16fa30c43883c18d88c03c0cd11cff3085d80 model=deepseek
+[OK] record_index=117 record_id=4dea41d839f286871889cb1a8bf16fa30c43883c18d88c03c0cd11cff3085d80 model=deepseek prediction=attack confidence=0.7 latency_s=0.957
+[CALL] record_index=117 record_id=4dea41d839f286871889cb1a8bf16fa30c43883c18d88c03c0cd11cff3085d80 model=claude
+[OK] record_index=117 record_id=4dea41d839f286871889cb1a8bf16fa30c43883c18d88c03c0cd11cff3085d80 model=claude prediction=normal confidence=0.7 latency_s=1.572
+[RECORD_START] index=118/150 pct=78.7 record_id=153a146c6ba740ea80f3658848721134b10ea612e9db34d43799cb8a51a0ecb0
+[CALL] record_index=118 record_id=153a146c6ba740ea80f3658848721134b10ea612e9db34d43799cb8a51a0ecb0 model=chatgpt
+[OK] record_index=118 record_id=153a146c6ba740ea80f3658848721134b10ea612e9db34d43799cb8a51a0ecb0 model=chatgpt prediction=attack confidence=0.9 latency_s=1.619
+[CALL] record_index=118 record_id=153a146c6ba740ea80f3658848721134b10ea612e9db34d43799cb8a51a0ecb0 model=deepseek
+[OK] record_index=118 record_id=153a146c6ba740ea80f3658848721134b10ea612e9db34d43799cb8a51a0ecb0 model=deepseek prediction=normal confidence=0.9 latency_s=1.119
+[CALL] record_index=118 record_id=153a146c6ba740ea80f3658848721134b10ea612e9db34d43799cb8a51a0ecb0 model=claude
+[OK] record_index=118 record_id=153a146c6ba740ea80f3658848721134b10ea612e9db34d43799cb8a51a0ecb0 model=claude prediction=attack confidence=0.75 latency_s=1.192
+[RECORD_START] index=119/150 pct=79.3 record_id=aecbed61cc4bc48b19dbef4e67831f1fe1958fad5130a1fab0d06a2235ae80d8
+[CALL] record_index=119 record_id=aecbed61cc4bc48b19dbef4e67831f1fe1958fad5130a1fab0d06a2235ae80d8 model=chatgpt
+[OK] record_index=119 record_id=aecbed61cc4bc48b19dbef4e67831f1fe1958fad5130a1fab0d06a2235ae80d8 model=chatgpt prediction=attack confidence=0.9 latency_s=1.92
+[CALL] record_index=119 record_id=aecbed61cc4bc48b19dbef4e67831f1fe1958fad5130a1fab0d06a2235ae80d8 model=deepseek
+[OK] record_index=119 record_id=aecbed61cc4bc48b19dbef4e67831f1fe1958fad5130a1fab0d06a2235ae80d8 model=deepseek prediction=attack confidence=0.9 latency_s=0.909
+[CALL] record_index=119 record_id=aecbed61cc4bc48b19dbef4e67831f1fe1958fad5130a1fab0d06a2235ae80d8 model=claude
+[OK] record_index=119 record_id=aecbed61cc4bc48b19dbef4e67831f1fe1958fad5130a1fab0d06a2235ae80d8 model=claude prediction=attack confidence=0.85 latency_s=1.141
+[RECORD_START] index=120/150 pct=80.0 record_id=3d29ad0d056bcb3e897ff6f22269a0f2297afe8a3f056483012bf2d81b9d0d63
+[CALL] record_index=120 record_id=3d29ad0d056bcb3e897ff6f22269a0f2297afe8a3f056483012bf2d81b9d0d63 model=chatgpt
+[OK] record_index=120 record_id=3d29ad0d056bcb3e897ff6f22269a0f2297afe8a3f056483012bf2d81b9d0d63 model=chatgpt prediction=attack confidence=0.9 latency_s=1.464
+[CALL] record_index=120 record_id=3d29ad0d056bcb3e897ff6f22269a0f2297afe8a3f056483012bf2d81b9d0d63 model=deepseek
+[OK] record_index=120 record_id=3d29ad0d056bcb3e897ff6f22269a0f2297afe8a3f056483012bf2d81b9d0d63 model=deepseek prediction=attack confidence=0.7 latency_s=1.074
+[CALL] record_index=120 record_id=3d29ad0d056bcb3e897ff6f22269a0f2297afe8a3f056483012bf2d81b9d0d63 model=claude
+[OK] record_index=120 record_id=3d29ad0d056bcb3e897ff6f22269a0f2297afe8a3f056483012bf2d81b9d0d63 model=claude prediction=attack confidence=0.75 latency_s=0.96
+[RECORD_START] index=121/150 pct=80.7 record_id=e6664e79a50a64e937654cb3a4e49736d480c9956eecbccf2be37cb1049d6a6e
+[CALL] record_index=121 record_id=e6664e79a50a64e937654cb3a4e49736d480c9956eecbccf2be37cb1049d6a6e model=chatgpt
+[OK] record_index=121 record_id=e6664e79a50a64e937654cb3a4e49736d480c9956eecbccf2be37cb1049d6a6e model=chatgpt prediction=attack confidence=0.9 latency_s=1.389
+[CALL] record_index=121 record_id=e6664e79a50a64e937654cb3a4e49736d480c9956eecbccf2be37cb1049d6a6e model=deepseek
+[OK] record_index=121 record_id=e6664e79a50a64e937654cb3a4e49736d480c9956eecbccf2be37cb1049d6a6e model=deepseek prediction=attack confidence=0.7 latency_s=1.049
+[CALL] record_index=121 record_id=e6664e79a50a64e937654cb3a4e49736d480c9956eecbccf2be37cb1049d6a6e model=claude
+[OK] record_index=121 record_id=e6664e79a50a64e937654cb3a4e49736d480c9956eecbccf2be37cb1049d6a6e model=claude prediction=attack confidence=0.75 latency_s=1.111
+[RECORD_START] index=122/150 pct=81.3 record_id=ce0a81277163ed932256fc53e51df3f6e556479938455c19609471f0fcee22c0
+[CALL] record_index=122 record_id=ce0a81277163ed932256fc53e51df3f6e556479938455c19609471f0fcee22c0 model=chatgpt
+[OK] record_index=122 record_id=ce0a81277163ed932256fc53e51df3f6e556479938455c19609471f0fcee22c0 model=chatgpt prediction=normal confidence=0.7 latency_s=1.659
+[CALL] record_index=122 record_id=ce0a81277163ed932256fc53e51df3f6e556479938455c19609471f0fcee22c0 model=deepseek
+[OK] record_index=122 record_id=ce0a81277163ed932256fc53e51df3f6e556479938455c19609471f0fcee22c0 model=deepseek prediction=normal confidence=0.9 latency_s=0.987
+[CALL] record_index=122 record_id=ce0a81277163ed932256fc53e51df3f6e556479938455c19609471f0fcee22c0 model=claude
+[OK] record_index=122 record_id=ce0a81277163ed932256fc53e51df3f6e556479938455c19609471f0fcee22c0 model=claude prediction=normal confidence=0.7 latency_s=1.069
+[RECORD_START] index=123/150 pct=82.0 record_id=63c3b5ba5b81ce7314f128ca8433854a571d4fa00d01b7d92034cff18a2d7595
+[CALL] record_index=123 record_id=63c3b5ba5b81ce7314f128ca8433854a571d4fa00d01b7d92034cff18a2d7595 model=chatgpt
+[OK] record_index=123 record_id=63c3b5ba5b81ce7314f128ca8433854a571d4fa00d01b7d92034cff18a2d7595 model=chatgpt prediction=attack confidence=0.9 latency_s=1.305
+[CALL] record_index=123 record_id=63c3b5ba5b81ce7314f128ca8433854a571d4fa00d01b7d92034cff18a2d7595 model=deepseek
+[OK] record_index=123 record_id=63c3b5ba5b81ce7314f128ca8433854a571d4fa00d01b7d92034cff18a2d7595 model=deepseek prediction=attack confidence=0.7 latency_s=0.989
+[CALL] record_index=123 record_id=63c3b5ba5b81ce7314f128ca8433854a571d4fa00d01b7d92034cff18a2d7595 model=claude
+[OK] record_index=123 record_id=63c3b5ba5b81ce7314f128ca8433854a571d4fa00d01b7d92034cff18a2d7595 model=claude prediction=attack confidence=0.75 latency_s=1.031
+[RECORD_START] index=124/150 pct=82.7 record_id=3d58c3002a52e1fe7e61fecfaf6e73b015fe583e9302b7e37da000e3f41f08dc
+[CALL] record_index=124 record_id=3d58c3002a52e1fe7e61fecfaf6e73b015fe583e9302b7e37da000e3f41f08dc model=chatgpt
+[OK] record_index=124 record_id=3d58c3002a52e1fe7e61fecfaf6e73b015fe583e9302b7e37da000e3f41f08dc model=chatgpt prediction=attack confidence=0.9 latency_s=1.405
+[CALL] record_index=124 record_id=3d58c3002a52e1fe7e61fecfaf6e73b015fe583e9302b7e37da000e3f41f08dc model=deepseek
+[OK] record_index=124 record_id=3d58c3002a52e1fe7e61fecfaf6e73b015fe583e9302b7e37da000e3f41f08dc model=deepseek prediction=attack confidence=0.9 latency_s=1.081
+[CALL] record_index=124 record_id=3d58c3002a52e1fe7e61fecfaf6e73b015fe583e9302b7e37da000e3f41f08dc model=claude
+[OK] record_index=124 record_id=3d58c3002a52e1fe7e61fecfaf6e73b015fe583e9302b7e37da000e3f41f08dc model=claude prediction=attack confidence=0.75 latency_s=3.331
+[RECORD_START] index=125/150 pct=83.3 record_id=a7cfd301fc3a2eae3cb9ec95ca67c6a4775267142c6449226d420f816658ee63
+[CALL] record_index=125 record_id=a7cfd301fc3a2eae3cb9ec95ca67c6a4775267142c6449226d420f816658ee63 model=chatgpt
+[OK] record_index=125 record_id=a7cfd301fc3a2eae3cb9ec95ca67c6a4775267142c6449226d420f816658ee63 model=chatgpt prediction=normal confidence=0.7 latency_s=1.662
+[CALL] record_index=125 record_id=a7cfd301fc3a2eae3cb9ec95ca67c6a4775267142c6449226d420f816658ee63 model=deepseek
+[OK] record_index=125 record_id=a7cfd301fc3a2eae3cb9ec95ca67c6a4775267142c6449226d420f816658ee63 model=deepseek prediction=normal confidence=0.9 latency_s=0.93
+[CALL] record_index=125 record_id=a7cfd301fc3a2eae3cb9ec95ca67c6a4775267142c6449226d420f816658ee63 model=claude
+[OK] record_index=125 record_id=a7cfd301fc3a2eae3cb9ec95ca67c6a4775267142c6449226d420f816658ee63 model=claude prediction=normal confidence=0.75 latency_s=1.149
+
+====================================================================================================
+CHECKPOINT: 125/150 [█████████████████████████░░░░░] 83.3%
+Elapsed   : 0:07:59
+ETA       : 0:01:35
+----------------------------------------------------------------------------------------------------
+Model            Calls  Errors  Skipped   Attack   Normal  AvgConf      InTok   OutTok    Cost($)   AvgLat
+----------------------------------------------------------------------------------------------------
+chatgpt            125       0        0      114       11    0.871     49,497    3,666   0.009624    1.620
+deepseek           125       0        0      107       18    0.820     52,932    3,266   0.008325    1.031
+claude             125       0        0       90       35    0.752     54,749    5,233   0.064731    1.183
+----------------------------------------------------------------------------------------------------
+Current estimated total cost: $0.082680
+====================================================================================================
+[RECORD_START] index=126/150 pct=84.0 record_id=ac3a6572790e70b6d6d21a07b62f6dcc7f9ef04f5ec933f7d929fd774c28de91
+[CALL] record_index=126 record_id=ac3a6572790e70b6d6d21a07b62f6dcc7f9ef04f5ec933f7d929fd774c28de91 model=chatgpt
+[OK] record_index=126 record_id=ac3a6572790e70b6d6d21a07b62f6dcc7f9ef04f5ec933f7d929fd774c28de91 model=chatgpt prediction=attack confidence=0.9 latency_s=1.236
+[CALL] record_index=126 record_id=ac3a6572790e70b6d6d21a07b62f6dcc7f9ef04f5ec933f7d929fd774c28de91 model=deepseek
+[OK] record_index=126 record_id=ac3a6572790e70b6d6d21a07b62f6dcc7f9ef04f5ec933f7d929fd774c28de91 model=deepseek prediction=attack confidence=0.9 latency_s=1.144
+[CALL] record_index=126 record_id=ac3a6572790e70b6d6d21a07b62f6dcc7f9ef04f5ec933f7d929fd774c28de91 model=claude
+[OK] record_index=126 record_id=ac3a6572790e70b6d6d21a07b62f6dcc7f9ef04f5ec933f7d929fd774c28de91 model=claude prediction=attack confidence=0.75 latency_s=1.217
+[RECORD_START] index=127/150 pct=84.7 record_id=cec0ceeb42a0ad41d0e12a493947a3d8789dad0003a75a9520d8b126a233243b
+[CALL] record_index=127 record_id=cec0ceeb42a0ad41d0e12a493947a3d8789dad0003a75a9520d8b126a233243b model=chatgpt
+[OK] record_index=127 record_id=cec0ceeb42a0ad41d0e12a493947a3d8789dad0003a75a9520d8b126a233243b model=chatgpt prediction=attack confidence=0.9 latency_s=1.573
+[CALL] record_index=127 record_id=cec0ceeb42a0ad41d0e12a493947a3d8789dad0003a75a9520d8b126a233243b model=deepseek
+[OK] record_index=127 record_id=cec0ceeb42a0ad41d0e12a493947a3d8789dad0003a75a9520d8b126a233243b model=deepseek prediction=attack confidence=0.7 latency_s=0.949
+[CALL] record_index=127 record_id=cec0ceeb42a0ad41d0e12a493947a3d8789dad0003a75a9520d8b126a233243b model=claude
+[OK] record_index=127 record_id=cec0ceeb42a0ad41d0e12a493947a3d8789dad0003a75a9520d8b126a233243b model=claude prediction=attack confidence=0.75 latency_s=1.223
+[RECORD_START] index=128/150 pct=85.3 record_id=2773deb782f90349d2a41f24f4f413fe001cbdf81e06309c374e9a9c9f08be2e
+[CALL] record_index=128 record_id=2773deb782f90349d2a41f24f4f413fe001cbdf81e06309c374e9a9c9f08be2e model=chatgpt
+[OK] record_index=128 record_id=2773deb782f90349d2a41f24f4f413fe001cbdf81e06309c374e9a9c9f08be2e model=chatgpt prediction=attack confidence=0.9 latency_s=1.55
+[CALL] record_index=128 record_id=2773deb782f90349d2a41f24f4f413fe001cbdf81e06309c374e9a9c9f08be2e model=deepseek
+[OK] record_index=128 record_id=2773deb782f90349d2a41f24f4f413fe001cbdf81e06309c374e9a9c9f08be2e model=deepseek prediction=attack confidence=0.9 latency_s=1.105
+[CALL] record_index=128 record_id=2773deb782f90349d2a41f24f4f413fe001cbdf81e06309c374e9a9c9f08be2e model=claude
+[OK] record_index=128 record_id=2773deb782f90349d2a41f24f4f413fe001cbdf81e06309c374e9a9c9f08be2e model=claude prediction=attack confidence=0.85 latency_s=1.085
+[RECORD_START] index=129/150 pct=86.0 record_id=7522e66ad06c9f9b247c1a743fa5959567ca3d8dc17153592e4259d62f14251b
+[CALL] record_index=129 record_id=7522e66ad06c9f9b247c1a743fa5959567ca3d8dc17153592e4259d62f14251b model=chatgpt
+[OK] record_index=129 record_id=7522e66ad06c9f9b247c1a743fa5959567ca3d8dc17153592e4259d62f14251b model=chatgpt prediction=attack confidence=0.9 latency_s=1.559
+[CALL] record_index=129 record_id=7522e66ad06c9f9b247c1a743fa5959567ca3d8dc17153592e4259d62f14251b model=deepseek
+[OK] record_index=129 record_id=7522e66ad06c9f9b247c1a743fa5959567ca3d8dc17153592e4259d62f14251b model=deepseek prediction=attack confidence=0.9 latency_s=0.959
+[CALL] record_index=129 record_id=7522e66ad06c9f9b247c1a743fa5959567ca3d8dc17153592e4259d62f14251b model=claude
+[OK] record_index=129 record_id=7522e66ad06c9f9b247c1a743fa5959567ca3d8dc17153592e4259d62f14251b model=claude prediction=attack confidence=0.75 latency_s=1.162
+[RECORD_START] index=130/150 pct=86.7 record_id=9dc601df5315273cf44c695e5f7329cd71d5b9adcac969ba20ab80a7e7556f41
+[CALL] record_index=130 record_id=9dc601df5315273cf44c695e5f7329cd71d5b9adcac969ba20ab80a7e7556f41 model=chatgpt
+[OK] record_index=130 record_id=9dc601df5315273cf44c695e5f7329cd71d5b9adcac969ba20ab80a7e7556f41 model=chatgpt prediction=attack confidence=0.9 latency_s=1.987
+[CALL] record_index=130 record_id=9dc601df5315273cf44c695e5f7329cd71d5b9adcac969ba20ab80a7e7556f41 model=deepseek
+[OK] record_index=130 record_id=9dc601df5315273cf44c695e5f7329cd71d5b9adcac969ba20ab80a7e7556f41 model=deepseek prediction=attack confidence=0.9 latency_s=0.919
+[CALL] record_index=130 record_id=9dc601df5315273cf44c695e5f7329cd71d5b9adcac969ba20ab80a7e7556f41 model=claude
+[OK] record_index=130 record_id=9dc601df5315273cf44c695e5f7329cd71d5b9adcac969ba20ab80a7e7556f41 model=claude prediction=attack confidence=0.85 latency_s=1.182
+[RECORD_START] index=131/150 pct=87.3 record_id=e3f991b9750fa8a70beca7e1329ea9996b9830785d222da8e3d536009f6dca10
+[CALL] record_index=131 record_id=e3f991b9750fa8a70beca7e1329ea9996b9830785d222da8e3d536009f6dca10 model=chatgpt
+[OK] record_index=131 record_id=e3f991b9750fa8a70beca7e1329ea9996b9830785d222da8e3d536009f6dca10 model=chatgpt prediction=attack confidence=0.9 latency_s=1.751
+[CALL] record_index=131 record_id=e3f991b9750fa8a70beca7e1329ea9996b9830785d222da8e3d536009f6dca10 model=deepseek
+[OK] record_index=131 record_id=e3f991b9750fa8a70beca7e1329ea9996b9830785d222da8e3d536009f6dca10 model=deepseek prediction=attack confidence=0.9 latency_s=0.98
+[CALL] record_index=131 record_id=e3f991b9750fa8a70beca7e1329ea9996b9830785d222da8e3d536009f6dca10 model=claude
+[OK] record_index=131 record_id=e3f991b9750fa8a70beca7e1329ea9996b9830785d222da8e3d536009f6dca10 model=claude prediction=attack confidence=0.75 latency_s=1.08
+[RECORD_START] index=132/150 pct=88.0 record_id=0d559b5f90dc31e9b201eb99809d90a299ad448f42f45a2421b5ca90dcb07e20
+[CALL] record_index=132 record_id=0d559b5f90dc31e9b201eb99809d90a299ad448f42f45a2421b5ca90dcb07e20 model=chatgpt
+[OK] record_index=132 record_id=0d559b5f90dc31e9b201eb99809d90a299ad448f42f45a2421b5ca90dcb07e20 model=chatgpt prediction=attack confidence=0.9 latency_s=1.281
+[CALL] record_index=132 record_id=0d559b5f90dc31e9b201eb99809d90a299ad448f42f45a2421b5ca90dcb07e20 model=deepseek
+[OK] record_index=132 record_id=0d559b5f90dc31e9b201eb99809d90a299ad448f42f45a2421b5ca90dcb07e20 model=deepseek prediction=attack confidence=0.9 latency_s=1.106
+[CALL] record_index=132 record_id=0d559b5f90dc31e9b201eb99809d90a299ad448f42f45a2421b5ca90dcb07e20 model=claude
+[OK] record_index=132 record_id=0d559b5f90dc31e9b201eb99809d90a299ad448f42f45a2421b5ca90dcb07e20 model=claude prediction=attack confidence=0.75 latency_s=1.12
+[RECORD_START] index=133/150 pct=88.7 record_id=9518c8c9a99bac47ed9e7eaf2b050da96f904e472530357582a46a9a1d4670b4
+[CALL] record_index=133 record_id=9518c8c9a99bac47ed9e7eaf2b050da96f904e472530357582a46a9a1d4670b4 model=chatgpt
+[OK] record_index=133 record_id=9518c8c9a99bac47ed9e7eaf2b050da96f904e472530357582a46a9a1d4670b4 model=chatgpt prediction=attack confidence=0.9 latency_s=1.322
+[CALL] record_index=133 record_id=9518c8c9a99bac47ed9e7eaf2b050da96f904e472530357582a46a9a1d4670b4 model=deepseek
+[OK] record_index=133 record_id=9518c8c9a99bac47ed9e7eaf2b050da96f904e472530357582a46a9a1d4670b4 model=deepseek prediction=attack confidence=0.9 latency_s=1.048
+[CALL] record_index=133 record_id=9518c8c9a99bac47ed9e7eaf2b050da96f904e472530357582a46a9a1d4670b4 model=claude
+[OK] record_index=133 record_id=9518c8c9a99bac47ed9e7eaf2b050da96f904e472530357582a46a9a1d4670b4 model=claude prediction=attack confidence=0.75 latency_s=1.247
+[RECORD_START] index=134/150 pct=89.3 record_id=168f2d629ac9e9220d170e8bf7b4869064646b69add2822acea51362213f8997
+[CALL] record_index=134 record_id=168f2d629ac9e9220d170e8bf7b4869064646b69add2822acea51362213f8997 model=chatgpt
+[OK] record_index=134 record_id=168f2d629ac9e9220d170e8bf7b4869064646b69add2822acea51362213f8997 model=chatgpt prediction=attack confidence=0.7 latency_s=1.527
+[CALL] record_index=134 record_id=168f2d629ac9e9220d170e8bf7b4869064646b69add2822acea51362213f8997 model=deepseek
+[OK] record_index=134 record_id=168f2d629ac9e9220d170e8bf7b4869064646b69add2822acea51362213f8997 model=deepseek prediction=normal confidence=0.9 latency_s=0.97
+[CALL] record_index=134 record_id=168f2d629ac9e9220d170e8bf7b4869064646b69add2822acea51362213f8997 model=claude
+[OK] record_index=134 record_id=168f2d629ac9e9220d170e8bf7b4869064646b69add2822acea51362213f8997 model=claude prediction=normal confidence=0.7 latency_s=1.556
+[RECORD_START] index=135/150 pct=90.0 record_id=17f804091b2e638698a08977cada4463e706dbfcc8c52086f18f3daee02302d9
+[CALL] record_index=135 record_id=17f804091b2e638698a08977cada4463e706dbfcc8c52086f18f3daee02302d9 model=chatgpt
+[OK] record_index=135 record_id=17f804091b2e638698a08977cada4463e706dbfcc8c52086f18f3daee02302d9 model=chatgpt prediction=attack confidence=0.7 latency_s=1.223
+[CALL] record_index=135 record_id=17f804091b2e638698a08977cada4463e706dbfcc8c52086f18f3daee02302d9 model=deepseek
+[OK] record_index=135 record_id=17f804091b2e638698a08977cada4463e706dbfcc8c52086f18f3daee02302d9 model=deepseek prediction=normal confidence=0.9 latency_s=1.031
+[CALL] record_index=135 record_id=17f804091b2e638698a08977cada4463e706dbfcc8c52086f18f3daee02302d9 model=claude
+[OK] record_index=135 record_id=17f804091b2e638698a08977cada4463e706dbfcc8c52086f18f3daee02302d9 model=claude prediction=normal confidence=0.7 latency_s=2.006
+[RECORD_START] index=136/150 pct=90.7 record_id=68d279177117e0d327662584c45d0e77689b3cbce2fa60fa0fb3cd5d07cd62eb
+[CALL] record_index=136 record_id=68d279177117e0d327662584c45d0e77689b3cbce2fa60fa0fb3cd5d07cd62eb model=chatgpt
+[OK] record_index=136 record_id=68d279177117e0d327662584c45d0e77689b3cbce2fa60fa0fb3cd5d07cd62eb model=chatgpt prediction=attack confidence=0.9 latency_s=1.591
+[CALL] record_index=136 record_id=68d279177117e0d327662584c45d0e77689b3cbce2fa60fa0fb3cd5d07cd62eb model=deepseek
+[OK] record_index=136 record_id=68d279177117e0d327662584c45d0e77689b3cbce2fa60fa0fb3cd5d07cd62eb model=deepseek prediction=attack confidence=0.9 latency_s=0.842
+[CALL] record_index=136 record_id=68d279177117e0d327662584c45d0e77689b3cbce2fa60fa0fb3cd5d07cd62eb model=claude
+[OK] record_index=136 record_id=68d279177117e0d327662584c45d0e77689b3cbce2fa60fa0fb3cd5d07cd62eb model=claude prediction=attack confidence=0.75 latency_s=1.364
+[RECORD_START] index=137/150 pct=91.3 record_id=45c0c217b02feeb9e9c9a2d81fc3e45572dfd5c959ee78d5331fbb4ff596ce15
+[CALL] record_index=137 record_id=45c0c217b02feeb9e9c9a2d81fc3e45572dfd5c959ee78d5331fbb4ff596ce15 model=chatgpt
+[OK] record_index=137 record_id=45c0c217b02feeb9e9c9a2d81fc3e45572dfd5c959ee78d5331fbb4ff596ce15 model=chatgpt prediction=attack confidence=0.9 latency_s=1.203
+[CALL] record_index=137 record_id=45c0c217b02feeb9e9c9a2d81fc3e45572dfd5c959ee78d5331fbb4ff596ce15 model=deepseek
+[OK] record_index=137 record_id=45c0c217b02feeb9e9c9a2d81fc3e45572dfd5c959ee78d5331fbb4ff596ce15 model=deepseek prediction=normal confidence=0.9 latency_s=0.99
+[CALL] record_index=137 record_id=45c0c217b02feeb9e9c9a2d81fc3e45572dfd5c959ee78d5331fbb4ff596ce15 model=claude
+[OK] record_index=137 record_id=45c0c217b02feeb9e9c9a2d81fc3e45572dfd5c959ee78d5331fbb4ff596ce15 model=claude prediction=normal confidence=0.7 latency_s=1.068
+[RECORD_START] index=138/150 pct=92.0 record_id=c7d46bc192cfebd0d6c505d204a6bb4833c3769bc17e8fd3400c23027776e94e
+[CALL] record_index=138 record_id=c7d46bc192cfebd0d6c505d204a6bb4833c3769bc17e8fd3400c23027776e94e model=chatgpt
+[OK] record_index=138 record_id=c7d46bc192cfebd0d6c505d204a6bb4833c3769bc17e8fd3400c23027776e94e model=chatgpt prediction=normal confidence=0.7 latency_s=1.798
+[CALL] record_index=138 record_id=c7d46bc192cfebd0d6c505d204a6bb4833c3769bc17e8fd3400c23027776e94e model=deepseek
+[OK] record_index=138 record_id=c7d46bc192cfebd0d6c505d204a6bb4833c3769bc17e8fd3400c23027776e94e model=deepseek prediction=normal confidence=0.9 latency_s=0.93
+[CALL] record_index=138 record_id=c7d46bc192cfebd0d6c505d204a6bb4833c3769bc17e8fd3400c23027776e94e model=claude
+[OK] record_index=138 record_id=c7d46bc192cfebd0d6c505d204a6bb4833c3769bc17e8fd3400c23027776e94e model=claude prediction=normal confidence=0.75 latency_s=1.354
+[RECORD_START] index=139/150 pct=92.7 record_id=e3bd076693f9e1338bc5798ec7c1955edc96cb427df4af50d86e0fc9f9a53efe
+[CALL] record_index=139 record_id=e3bd076693f9e1338bc5798ec7c1955edc96cb427df4af50d86e0fc9f9a53efe model=chatgpt
+[OK] record_index=139 record_id=e3bd076693f9e1338bc5798ec7c1955edc96cb427df4af50d86e0fc9f9a53efe model=chatgpt prediction=attack confidence=0.9 latency_s=1.55
+[CALL] record_index=139 record_id=e3bd076693f9e1338bc5798ec7c1955edc96cb427df4af50d86e0fc9f9a53efe model=deepseek
+[OK] record_index=139 record_id=e3bd076693f9e1338bc5798ec7c1955edc96cb427df4af50d86e0fc9f9a53efe model=deepseek prediction=attack confidence=0.7 latency_s=1.044
+[CALL] record_index=139 record_id=e3bd076693f9e1338bc5798ec7c1955edc96cb427df4af50d86e0fc9f9a53efe model=claude
+[OK] record_index=139 record_id=e3bd076693f9e1338bc5798ec7c1955edc96cb427df4af50d86e0fc9f9a53efe model=claude prediction=attack confidence=0.75 latency_s=1.107
+[RECORD_START] index=140/150 pct=93.3 record_id=d72853fd6b0174f719ace462276d074d584cd3f65cdcf73a58b06e7f3c845ba5
+[CALL] record_index=140 record_id=d72853fd6b0174f719ace462276d074d584cd3f65cdcf73a58b06e7f3c845ba5 model=chatgpt
+[OK] record_index=140 record_id=d72853fd6b0174f719ace462276d074d584cd3f65cdcf73a58b06e7f3c845ba5 model=chatgpt prediction=normal confidence=0.7 latency_s=1.568
+[CALL] record_index=140 record_id=d72853fd6b0174f719ace462276d074d584cd3f65cdcf73a58b06e7f3c845ba5 model=deepseek
+[OK] record_index=140 record_id=d72853fd6b0174f719ace462276d074d584cd3f65cdcf73a58b06e7f3c845ba5 model=deepseek prediction=normal confidence=0.9 latency_s=0.998
+[CALL] record_index=140 record_id=d72853fd6b0174f719ace462276d074d584cd3f65cdcf73a58b06e7f3c845ba5 model=claude
+[OK] record_index=140 record_id=d72853fd6b0174f719ace462276d074d584cd3f65cdcf73a58b06e7f3c845ba5 model=claude prediction=normal confidence=0.7 latency_s=1.593
+[RECORD_START] index=141/150 pct=94.0 record_id=9fad26b5c4b45e6334163c77f9aa22becc59af150804381d16dca98a3b882b07
+[CALL] record_index=141 record_id=9fad26b5c4b45e6334163c77f9aa22becc59af150804381d16dca98a3b882b07 model=chatgpt
+[OK] record_index=141 record_id=9fad26b5c4b45e6334163c77f9aa22becc59af150804381d16dca98a3b882b07 model=chatgpt prediction=attack confidence=0.9 latency_s=2.208
+[CALL] record_index=141 record_id=9fad26b5c4b45e6334163c77f9aa22becc59af150804381d16dca98a3b882b07 model=deepseek
+[OK] record_index=141 record_id=9fad26b5c4b45e6334163c77f9aa22becc59af150804381d16dca98a3b882b07 model=deepseek prediction=attack confidence=0.7 latency_s=1.033
+[CALL] record_index=141 record_id=9fad26b5c4b45e6334163c77f9aa22becc59af150804381d16dca98a3b882b07 model=claude
+[OK] record_index=141 record_id=9fad26b5c4b45e6334163c77f9aa22becc59af150804381d16dca98a3b882b07 model=claude prediction=attack confidence=0.75 latency_s=1.014
+[RECORD_START] index=142/150 pct=94.7 record_id=9b1eef32c69fecba419eee8ff2d9d7b44f69c1c8f6d45f36306a408dbeb680b8
+[CALL] record_index=142 record_id=9b1eef32c69fecba419eee8ff2d9d7b44f69c1c8f6d45f36306a408dbeb680b8 model=chatgpt
+[OK] record_index=142 record_id=9b1eef32c69fecba419eee8ff2d9d7b44f69c1c8f6d45f36306a408dbeb680b8 model=chatgpt prediction=attack confidence=0.9 latency_s=1.592
+[CALL] record_index=142 record_id=9b1eef32c69fecba419eee8ff2d9d7b44f69c1c8f6d45f36306a408dbeb680b8 model=deepseek
+[OK] record_index=142 record_id=9b1eef32c69fecba419eee8ff2d9d7b44f69c1c8f6d45f36306a408dbeb680b8 model=deepseek prediction=attack confidence=0.9 latency_s=1.137
+[CALL] record_index=142 record_id=9b1eef32c69fecba419eee8ff2d9d7b44f69c1c8f6d45f36306a408dbeb680b8 model=claude
+[OK] record_index=142 record_id=9b1eef32c69fecba419eee8ff2d9d7b44f69c1c8f6d45f36306a408dbeb680b8 model=claude prediction=attack confidence=0.85 latency_s=1.23
+[RECORD_START] index=143/150 pct=95.3 record_id=6bd9392e22b2580b7a94c293c0d57986c8339f9e27f8cab3cd95a9157bff1055
+[CALL] record_index=143 record_id=6bd9392e22b2580b7a94c293c0d57986c8339f9e27f8cab3cd95a9157bff1055 model=chatgpt
+[OK] record_index=143 record_id=6bd9392e22b2580b7a94c293c0d57986c8339f9e27f8cab3cd95a9157bff1055 model=chatgpt prediction=normal confidence=0.7 latency_s=1.219
+[CALL] record_index=143 record_id=6bd9392e22b2580b7a94c293c0d57986c8339f9e27f8cab3cd95a9157bff1055 model=deepseek
+[OK] record_index=143 record_id=6bd9392e22b2580b7a94c293c0d57986c8339f9e27f8cab3cd95a9157bff1055 model=deepseek prediction=normal confidence=0.9 latency_s=0.941
+[CALL] record_index=143 record_id=6bd9392e22b2580b7a94c293c0d57986c8339f9e27f8cab3cd95a9157bff1055 model=claude
+[OK] record_index=143 record_id=6bd9392e22b2580b7a94c293c0d57986c8339f9e27f8cab3cd95a9157bff1055 model=claude prediction=normal confidence=0.7 latency_s=1.19
+[RECORD_START] index=144/150 pct=96.0 record_id=fd31ec23107edaa9111c66a4eed81fb666b70359f1100c2004e6b97234f3ec0d
+[CALL] record_index=144 record_id=fd31ec23107edaa9111c66a4eed81fb666b70359f1100c2004e6b97234f3ec0d model=chatgpt
+[OK] record_index=144 record_id=fd31ec23107edaa9111c66a4eed81fb666b70359f1100c2004e6b97234f3ec0d model=chatgpt prediction=attack confidence=0.9 latency_s=1.335
+[CALL] record_index=144 record_id=fd31ec23107edaa9111c66a4eed81fb666b70359f1100c2004e6b97234f3ec0d model=deepseek
+[OK] record_index=144 record_id=fd31ec23107edaa9111c66a4eed81fb666b70359f1100c2004e6b97234f3ec0d model=deepseek prediction=attack confidence=0.7 latency_s=1.202
+[CALL] record_index=144 record_id=fd31ec23107edaa9111c66a4eed81fb666b70359f1100c2004e6b97234f3ec0d model=claude
+[OK] record_index=144 record_id=fd31ec23107edaa9111c66a4eed81fb666b70359f1100c2004e6b97234f3ec0d model=claude prediction=attack confidence=0.75 latency_s=1.214
+[RECORD_START] index=145/150 pct=96.7 record_id=474cd084e7011c25b0a3404cd1e2071c3b618277c63a29c50a6d3612e6b3b68e
+[CALL] record_index=145 record_id=474cd084e7011c25b0a3404cd1e2071c3b618277c63a29c50a6d3612e6b3b68e model=chatgpt
+[OK] record_index=145 record_id=474cd084e7011c25b0a3404cd1e2071c3b618277c63a29c50a6d3612e6b3b68e model=chatgpt prediction=attack confidence=0.9 latency_s=1.778
+[CALL] record_index=145 record_id=474cd084e7011c25b0a3404cd1e2071c3b618277c63a29c50a6d3612e6b3b68e model=deepseek
+[OK] record_index=145 record_id=474cd084e7011c25b0a3404cd1e2071c3b618277c63a29c50a6d3612e6b3b68e model=deepseek prediction=normal confidence=0.9 latency_s=0.82
+[CALL] record_index=145 record_id=474cd084e7011c25b0a3404cd1e2071c3b618277c63a29c50a6d3612e6b3b68e model=claude
+[OK] record_index=145 record_id=474cd084e7011c25b0a3404cd1e2071c3b618277c63a29c50a6d3612e6b3b68e model=claude prediction=normal confidence=0.7 latency_s=1.023
+[RECORD_START] index=146/150 pct=97.3 record_id=f15e0e9cf15685b9d9361a538c858d9eca9f5015d8101ac4a74af697be6a3fee
+[CALL] record_index=146 record_id=f15e0e9cf15685b9d9361a538c858d9eca9f5015d8101ac4a74af697be6a3fee model=chatgpt
+[OK] record_index=146 record_id=f15e0e9cf15685b9d9361a538c858d9eca9f5015d8101ac4a74af697be6a3fee model=chatgpt prediction=attack confidence=0.9 latency_s=1.484
+[CALL] record_index=146 record_id=f15e0e9cf15685b9d9361a538c858d9eca9f5015d8101ac4a74af697be6a3fee model=deepseek
+[OK] record_index=146 record_id=f15e0e9cf15685b9d9361a538c858d9eca9f5015d8101ac4a74af697be6a3fee model=deepseek prediction=attack confidence=0.7 latency_s=1.01
+[CALL] record_index=146 record_id=f15e0e9cf15685b9d9361a538c858d9eca9f5015d8101ac4a74af697be6a3fee model=claude
+[OK] record_index=146 record_id=f15e0e9cf15685b9d9361a538c858d9eca9f5015d8101ac4a74af697be6a3fee model=claude prediction=attack confidence=0.75 latency_s=1.02
+[RECORD_START] index=147/150 pct=98.0 record_id=0afe7d4ad80ef82afdb113936958454b7f9fce590f6a5ea78bebefe9486467bb
+[CALL] record_index=147 record_id=0afe7d4ad80ef82afdb113936958454b7f9fce590f6a5ea78bebefe9486467bb model=chatgpt
+[OK] record_index=147 record_id=0afe7d4ad80ef82afdb113936958454b7f9fce590f6a5ea78bebefe9486467bb model=chatgpt prediction=attack confidence=0.9 latency_s=1.357
+[CALL] record_index=147 record_id=0afe7d4ad80ef82afdb113936958454b7f9fce590f6a5ea78bebefe9486467bb model=deepseek
+[OK] record_index=147 record_id=0afe7d4ad80ef82afdb113936958454b7f9fce590f6a5ea78bebefe9486467bb model=deepseek prediction=attack confidence=0.9 latency_s=0.982
+[CALL] record_index=147 record_id=0afe7d4ad80ef82afdb113936958454b7f9fce590f6a5ea78bebefe9486467bb model=claude
+[OK] record_index=147 record_id=0afe7d4ad80ef82afdb113936958454b7f9fce590f6a5ea78bebefe9486467bb model=claude prediction=attack confidence=0.75 latency_s=1.15
+[RECORD_START] index=148/150 pct=98.7 record_id=2b767905b8359c51824266110798d58bcae8c7b87f05b227ba06758892e44827
+[CALL] record_index=148 record_id=2b767905b8359c51824266110798d58bcae8c7b87f05b227ba06758892e44827 model=chatgpt
+[OK] record_index=148 record_id=2b767905b8359c51824266110798d58bcae8c7b87f05b227ba06758892e44827 model=chatgpt prediction=attack confidence=0.9 latency_s=1.331
+[CALL] record_index=148 record_id=2b767905b8359c51824266110798d58bcae8c7b87f05b227ba06758892e44827 model=deepseek
+[OK] record_index=148 record_id=2b767905b8359c51824266110798d58bcae8c7b87f05b227ba06758892e44827 model=deepseek prediction=attack confidence=0.9 latency_s=1.227
+[CALL] record_index=148 record_id=2b767905b8359c51824266110798d58bcae8c7b87f05b227ba06758892e44827 model=claude
+[OK] record_index=148 record_id=2b767905b8359c51824266110798d58bcae8c7b87f05b227ba06758892e44827 model=claude prediction=attack confidence=0.85 latency_s=1.06
+[RECORD_START] index=149/150 pct=99.3 record_id=ad0d9e674da65fe297dd827e57a4ad959a2668807eb8e97a6b8e63fc03ee0624
+[CALL] record_index=149 record_id=ad0d9e674da65fe297dd827e57a4ad959a2668807eb8e97a6b8e63fc03ee0624 model=chatgpt
+[OK] record_index=149 record_id=ad0d9e674da65fe297dd827e57a4ad959a2668807eb8e97a6b8e63fc03ee0624 model=chatgpt prediction=normal confidence=0.7 latency_s=1.285
+[CALL] record_index=149 record_id=ad0d9e674da65fe297dd827e57a4ad959a2668807eb8e97a6b8e63fc03ee0624 model=deepseek
+[OK] record_index=149 record_id=ad0d9e674da65fe297dd827e57a4ad959a2668807eb8e97a6b8e63fc03ee0624 model=deepseek prediction=normal confidence=0.9 latency_s=0.968
+[CALL] record_index=149 record_id=ad0d9e674da65fe297dd827e57a4ad959a2668807eb8e97a6b8e63fc03ee0624 model=claude
+[OK] record_index=149 record_id=ad0d9e674da65fe297dd827e57a4ad959a2668807eb8e97a6b8e63fc03ee0624 model=claude prediction=normal confidence=0.7 latency_s=1.123
+[RECORD_START] index=150/150 pct=100.0 record_id=cf354ed1d5b5e65869fcf569b8e169d4c91e8becfdfb23b594243957c35eb4c0
+[CALL] record_index=150 record_id=cf354ed1d5b5e65869fcf569b8e169d4c91e8becfdfb23b594243957c35eb4c0 model=chatgpt
+[OK] record_index=150 record_id=cf354ed1d5b5e65869fcf569b8e169d4c91e8becfdfb23b594243957c35eb4c0 model=chatgpt prediction=attack confidence=0.9 latency_s=1.769
+[CALL] record_index=150 record_id=cf354ed1d5b5e65869fcf569b8e169d4c91e8becfdfb23b594243957c35eb4c0 model=deepseek
+[OK] record_index=150 record_id=cf354ed1d5b5e65869fcf569b8e169d4c91e8becfdfb23b594243957c35eb4c0 model=deepseek prediction=attack confidence=0.9 latency_s=1.02
+[CALL] record_index=150 record_id=cf354ed1d5b5e65869fcf569b8e169d4c91e8becfdfb23b594243957c35eb4c0 model=claude
+[OK] record_index=150 record_id=cf354ed1d5b5e65869fcf569b8e169d4c91e8becfdfb23b594243957c35eb4c0 model=claude prediction=normal confidence=0.7 latency_s=1.099
+
+====================================================================================================
+CHECKPOINT: 150/150 [██████████████████████████████] 100.0%
+Elapsed   : 0:09:33
+ETA       : 0:00:00
+----------------------------------------------------------------------------------------------------
+Model            Calls  Errors  Skipped   Attack   Normal  AvgConf      InTok   OutTok    Cost($)   AvgLat
+----------------------------------------------------------------------------------------------------
+chatgpt            150       0        0      135       15    0.868     59,407    4,413   0.011559    1.604
+deepseek           150       0        0      124       26    0.827     63,526    3,903   0.009986    1.028
+claude             150       0        0      106       44    0.751     65,706    6,272   0.077653    1.189
+----------------------------------------------------------------------------------------------------
+Current estimated total cost: $0.099198
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Finished at : 2026-05-03T16:52:17
+JSON report : /data/ugr16/llm_eval_results_150/samples_evaluation_report_150.json
+TXT report  : /data/ugr16/llm_eval_results_150/samples_evaluation_report_150.txt
+Errors file : /data/ugr16/llm_eval_results_150/samples_errors_150.jsonl
+Evaluation complete.

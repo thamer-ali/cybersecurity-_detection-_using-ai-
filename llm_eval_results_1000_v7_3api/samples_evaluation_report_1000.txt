@@ -1,0 +1,142 @@
+UGR16 Multi-Model LLM Evaluation Report — Final Stable Version V6
+================================================================================
+
+Generated at       : 2026-05-03T21:28:00
+Task               : Binary classification attack/normal
+Base sample size   : 1000
+Processed records  : 1000
+API input file     : /data/ugr16/llm_samples_v10/sample_1000_api.jsonl
+Eval file          : /data/ugr16/llm_samples_v10/sample_1000_eval.jsonl
+Output directory   : /data/ugr16/llm_eval_results_1000_v7_3api
+Monitoring log     : /data/ugr16/llm_eval_results_1000_v7_3api/samples_monitoring_1000.log
+Models             : chatgpt, deepseek, claude
+Total runtime      : 1:11:33
+Ground truth attack: 73
+Ground truth normal: 927
+
+Method summary
+--------------------------------------------------------------------------------
+Each JSONL record was sent independently to the selected pretrained LLM APIs. The prompt asked for a binary classification using only the provided NetFlow-style features. The model response was required to be JSON with label, confidence, and reason. A robust parser extracted valid JSON even when a model returned extra text or Markdown formatting. Predictions were joined with the evaluation JSONL file using record_id.
+
+Per-API behaviour and processing summary
+--------------------------------------------------------------------------------
+
+CHATGPT
+  Model ID               : gpt-4.1-mini
+  Environment key        : OPENAI_API_KEY
+  Successful calls        : 1000
+  Errors                  : 0
+  Skipped by resume       : 0
+  Attack predictions      : 384
+  Normal predictions      : 616
+  Invalid/Error rows      : 0
+  Average confidence      : 0.6851
+  Low confidence (<0.50)  : 0
+  Input tokens            : 510884
+  Output tokens           : 29549
+  Avg latency             : 1.588 seconds
+  Min latency             : 1.055 seconds
+  Max latency             : 9.077 seconds
+  Estimated cost          : $0.094362
+
+DEEPSEEK
+  Model ID               : deepseek-chat
+  Environment key        : DEEPSEEK_API_KEY
+  Successful calls        : 1000
+  Errors                  : 0
+  Skipped by resume       : 0
+  Attack predictions      : 218
+  Normal predictions      : 782
+  Invalid/Error rows      : 0
+  Average confidence      : 0.7181
+  Low confidence (<0.50)  : 173
+  Input tokens            : 538398
+  Output tokens           : 24086
+  Avg latency             : 0.913 seconds
+  Min latency             : 0.699 seconds
+  Max latency             : 1.361 seconds
+  Estimated cost          : $0.082120
+
+CLAUDE
+  Model ID               : claude-haiku-4-5-20251001
+  Environment key        : ANTHROPIC_API_KEY
+  Successful calls        : 1000
+  Errors                  : 0
+  Skipped by resume       : 0
+  Attack predictions      : 709
+  Normal predictions      : 291
+  Invalid/Error rows      : 0
+  Average confidence      : 0.7434
+  Low confidence (<0.50)  : 0
+  Input tokens            : 562854
+  Output tokens           : 42996
+  Avg latency             : 1.189 seconds
+  Min latency             : 0.851 seconds
+  Max latency             : 4.719 seconds
+  Estimated cost          : $0.622267
+
+Evaluation metrics by API
+--------------------------------------------------------------------------------
+
+CHATGPT
+  TP                      : 9
+  FP                      : 375
+  TN                      : 552
+  FN                      : 64
+  total_valid             : 1000
+  missing_truth           : 0
+  invalid_prediction      : 0
+  precision               : 0.023438
+  recall_sensitivity      : 0.123288
+  specificity             : 0.595469
+  f1                      : 0.039387
+  false_positive_rate     : 0.404531
+  false_negative_rate     : 0.876712
+  accuracy                : 0.561
+
+DEEPSEEK
+  TP                      : 10
+  FP                      : 208
+  TN                      : 719
+  FN                      : 63
+  total_valid             : 1000
+  missing_truth           : 0
+  invalid_prediction      : 0
+  precision               : 0.045872
+  recall_sensitivity      : 0.136986
+  specificity             : 0.77562
+  f1                      : 0.068729
+  false_positive_rate     : 0.22438
+  false_negative_rate     : 0.863014
+  accuracy                : 0.729
+
+CLAUDE
+  TP                      : 13
+  FP                      : 696
+  TN                      : 231
+  FN                      : 60
+  total_valid             : 1000
+  missing_truth           : 0
+  invalid_prediction      : 0
+  precision               : 0.018336
+  recall_sensitivity      : 0.178082
+  specificity             : 0.249191
+  f1                      : 0.033248
+  false_positive_rate     : 0.750809
+  false_negative_rate     : 0.821918
+  accuracy                : 0.244
+
+Comparison summary
+--------------------------------------------------------------------------------
+  Best F1 score        : deepseek
+  Best precision       : deepseek
+  Best recall          : claude
+  Best accuracy        : deepseek
+  Best specificity     : deepseek
+  Lowest FPR           : deepseek
+  Lowest FNR           : claude
+  Fastest model        : deepseek
+  Lowest cost          : deepseek
+  Fewest errors        : chatgpt
+  Most conservative    : deepseek  (most normal predictions)
+  Most aggressive      : claude  (most attack predictions)

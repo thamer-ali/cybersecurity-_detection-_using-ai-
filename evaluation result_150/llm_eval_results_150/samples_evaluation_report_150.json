@@ -1,0 +1,155 @@
+{
+  "script": "ugr16_llm_eval_v6_final.py",
+  "version": "V6-final-stable-with-comparison-section",
+  "generated_at": "2026-05-03T16:52:17",
+  "task": "binary_classification_attack_normal",
+  "method": {
+    "description": "Independent per-record LLM classification using pretrained APIs. Predictions are joined with ground truth by record_id. A robust parser extracts valid JSON from clean JSON, prefixed JSON, or Markdown fenced JSON.",
+    "label_mapping": {
+      "background": "normal",
+      "blacklist": "attack",
+      "anomaly-sshscan": "attack",
+      "other": "attack"
+    },
+    "prompt_style": "JSON output with label, confidence, and reason",
+    "resume_enabled": true
+  },
+  "input_files": {
+    "api_file": "/data/ugr16/llm_samples_v10/sample_1000_api.jsonl",
+    "eval_file": "/data/ugr16/llm_samples_v10/sample_1000_eval.jsonl"
+  },
+  "base_sample_size": 1000,
+  "processed_records": 150,
+  "limit_records": 150,
+  "models": {
+    "chatgpt": {
+      "model_id": "gpt-4.1-mini",
+      "provider": "openai"
+    },
+    "deepseek": {
+      "model_id": "deepseek-chat",
+      "provider": "deepseek"
+    },
+    "claude": {
+      "model_id": "claude-haiku-4-5-20251001",
+      "provider": "anthropic"
+    }
+  },
+  "ground_truth_aligned": {
+    "attack": 13,
+    "normal": 137,
+    "matched_eval_records": 150
+  },
+  "runtime": {
+    "total_seconds": 573.61,
+    "total_hms": "0:09:33"
+  },
+  "model_stats": {
+    "chatgpt": {
+      "calls": 150,
+      "errors": 0,
+      "skipped_resume": 0,
+      "input_tokens": 59407,
+      "output_tokens": 4413,
+      "total_latency": 240.59300000000005,
+      "min_latency": 1.024,
+      "max_latency": 3.014,
+      "model_id": "gpt-4.1-mini",
+      "env_key": "OPENAI_API_KEY",
+      "pred_attack": 135,
+      "pred_normal": 15,
+      "pred_error": 0,
+      "confidence_sum": 130.1500000000003,
+      "confidence_count": 150,
+      "low_confidence": 0
+    },
+    "deepseek": {
+      "calls": 150,
+      "errors": 0,
+      "skipped_resume": 0,
+      "input_tokens": 63526,
+      "output_tokens": 3903,
+      "total_latency": 154.19100000000006,
+      "min_latency": 0.779,
+      "max_latency": 1.727,
+      "model_id": "deepseek-chat",
+      "env_key": "DEEPSEEK_API_KEY",
+      "pred_attack": 124,
+      "pred_normal": 26,
+      "pred_error": 0,
+      "confidence_sum": 124.00000000000034,
+      "confidence_count": 150,
+      "low_confidence": 0
+    },
+    "claude": {
+      "calls": 150,
+      "errors": 0,
+      "skipped_resume": 0,
+      "input_tokens": 65706,
+      "output_tokens": 6272,
+      "total_latency": 178.42100000000002,
+      "min_latency": 0.819,
+      "max_latency": 3.331,
+      "model_id": "claude-haiku-4-5-20251001",
+      "env_key": "ANTHROPIC_API_KEY",
+      "pred_attack": 106,
+      "pred_normal": 44,
+      "pred_error": 0,
+      "confidence_sum": 112.7,
+      "confidence_count": 150,
+      "low_confidence": 0
+    }
+  },
+  "metrics": {
+    "chatgpt": {
+      "TP": 10,
+      "FP": 125,
+      "TN": 12,
+      "FN": 3,
+      "total_valid": 150,
+      "missing_truth": 0,
+      "invalid_prediction": 0,
+      "precision": 0.074074,
+      "recall_sensitivity": 0.769231,
+      "specificity": 0.087591,
+      "f1": 0.135135,
+      "false_positive_rate": 0.912409,
+      "false_negative_rate": 0.230769,
+      "accuracy": 0.146667
+    },
+    "deepseek": {
+      "TP": 7,
+      "FP": 117,
+      "TN": 20,
+      "FN": 6,
+      "total_valid": 150,
+      "missing_truth": 0,
+      "invalid_prediction": 0,
+      "precision": 0.056452,
+      "recall_sensitivity": 0.538462,
+      "specificity": 0.145985,
+      "f1": 0.10219,
+      "false_positive_rate": 0.854015,
+      "false_negative_rate": 0.461538,
+      "accuracy": 0.18
+    },
+    "claude": {
+      "TP": 6,
+      "FP": 100,
+      "TN": 37,
+      "FN": 7,
+      "total_valid": 150,
+      "missing_truth": 0,
+      "invalid_prediction": 0,
+      "precision": 0.056604,
+      "recall_sensitivity": 0.461538,
+      "specificity": 0.270073,
+      "f1": 0.10084,
+      "false_positive_rate": 0.729927,
+      "false_negative_rate": 0.538462,
+      "accuracy": 0.286667
+    }
+  },
+  "monitoring_log": "/data/ugr16/llm_eval_results_150/samples_monitoring_150.log",
+  "cost_note": "Cost values are estimates only. Update prices from official provider pages before thesis submission."
+}
