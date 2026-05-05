@@ -441,5 +441,5 @@ Maciá-Fernández, G., Camacho, J., Magán-Carrión, R., García-Teodoro, P., & 
 ## Contact
 
 **Thamer Aldraiwa**
-PhD Candidate — University of Granada
+PhD Student — University of Granada
 Email: thamer@correo.ugr.es
