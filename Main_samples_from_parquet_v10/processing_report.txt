@@ -1,0 +1,148 @@
+UGR16 Spark Sampling — Processing Report (v10)
+======================================================
+
+Job name        : UGR16_Reproducible_Sampling_v10
+Version         : 10.0
+Start time      : 2026-05-02T19:37:36.583608
+End time        : 2026-05-02T19:42:58.078889
+Processing time : 5.36 minutes
+
+Infrastructure
+----------------------------------------
+  Spark version      : 3.5.1
+  Default parallelism: 8
+  Shuffle partitions : 24
+  Random seed        : 42
+
+Dataset summary
+----------------------------------------
+  Total records      : 862,526,861
+  Suspect records    : 108,139,105 (12.5375%)
+  Final sample       : 4,994
+
+Full dataset label distribution
+----------------------------------------
+  background                    :  854,170,414  (99.03%)
+  anomaly-spam                  :    5,287,316  (0.61%)
+  blacklist                     :    3,069,118  (0.36%)
+  anomaly-sshscan               :           12  (0.00%)
+  126                           :            1  (0.00%)
+
+Suspect pool label distribution
+----------------------------------------
+  background                    :  108,118,786  (99.98%)
+  blacklist                     :       20,315  (0.02%)
+  anomaly-sshscan               :            4  (0.00%)
+
+Stratified sample — label distribution
+----------------------------------------
+  Sampling strategy: stratified by label class
+  background target : 4,700
+  blacklist target  : 290
+  sshscan target    : all available (4)
+
+  background                    :  4,700  (94.11%)
+  blacklist                     :    290  (5.81%)
+  anomaly-sshscan               :      4  (0.08%)
+
+Nested sample label distributions
+----------------------------------------
+  sample_1000:
+    background                  :    927  (92.70%)
+    blacklist                   :     73  (7.30%)
+  sample_3000:
+    background                  :  2,812  (93.73%)
+    blacklist                   :    185  (6.17%)
+    anomaly-sshscan             :      3  (0.10%)
+  sample_5000:
+    background                  :  4,700  (94.11%)
+    blacklist                   :    290  (5.81%)
+    anomaly-sshscan             :      4  (0.08%)
+
+Rule contribution (single pass, full dataset)
+----------------------------------------
+  high_packet_count        :    1,376,391  (0.1596%)
+  high_bytes               :      867,298  (0.1006%)
+  sensitive_port           :   95,972,228  (11.1269%)
+  icmp_traffic             :   10,606,661  (1.2297%)
+
+Rule overlap distribution
+----------------------------------------
+  sensitive_port                               : 95,966,655  (88.74%)
+  icmp_traffic                                 : 10,605,192  (9.81%)
+  high_packet_count                            :    695,981  (0.64%)
+  high_packet_count,high_bytes                 :    673,410  (0.62%)
+  high_bytes                                   :    190,825  (0.18%)
+  high_packet_count,high_bytes,sensitive_port  :      3,021  (0.00%)
+  high_packet_count,sensitive_port             :      2,510  (0.00%)
+  high_packet_count,icmp_traffic               :      1,469  (0.00%)
+  high_bytes,sensitive_port                    :         42  (0.00%)
+
+Timestamp range (sample_5000)
+----------------------------------------
+  First: 2016-08-22 00:13:09
+  Last : 2016-08-29 00:08:52
+
+Sample size confidence intervals
+----------------------------------------
+  n=1000 : ±±3.1% (95% CI)
+  n=3000 : ±±1.79% (95% CI)
+  n=5000 : ±±1.39% (95% CI)
+
+Stratified sampling rationale
+----------------------------------------
+  Pure random sampling (v9) drew 5,000 records from a suspect pool that is 99.98% background, producing 4,999 background and 1 blacklist record. With 1 attack record, per-class precision, recall, and F1 are not computable. v10 applies stratified sampling by label class to ensure minimum attack class representation while preserving background dominance. Background constitutes 94.1% of the stratified sample, consistent with its real-world prevalence. Oversampling of minority attack classes is declared explicitly as a methodological choice required for valid evaluation.
+
+Declared limitations
+----------------------------------------
+  1. Temporal stratification: random sampling applied without time-window stratification. Declared as threat to external validity.
+
+  2. anomaly-spam absent: spam flows do not trigger any of the four suspect rules. Spam detection is excluded from evaluation scope.
+
+  3. anomaly-sshscan: only 4 records available in suspect pool. Statistical conclusions about sshscan detection are not possible.
+
+  4. Threshold selection: thresholds chosen as design decisions, not derived from computed percentiles. Sensitivity analysis recommended.
+
+  5. Minority class oversampling: blacklist and sshscan are overrepresented relative to their natural prevalence. Results reflect evaluation performance, not real-world detection rates.
+
+Integrity checks
+----------------------------------------
+  record_id uniqueness : 4,994 unique — PASSED
+  Line-count validation: PASSED
+
+Stage processing times
+----------------------------------------
+  load_and_rename                              : 3.74 s
+  full_label_distribution                      : 9.08 s
+  rule_contributions                           : 37.48 s
+  suspect_filter_and_count                     : 36.12 s
+  suspect_label_distribution                   : 38.77 s
+  rule_overlap                                 : 40.53 s
+  stratified_sampling                          : 146.11 s
+  record_id_uniqueness_check                   : 0.12 s
+  nested_samples                               : 0.36 s
+  timestamp_range                              : 0.09 s
+  write_files                                  : 0.67 s
+  build_report                                 : 0.01 s
+
+Output files
+----------------------------------------
+  sample_1000_api.jsonl
+    Lines   : 1,000
+    Size MB : 0.3228
+  sample_3000_api.jsonl
+    Lines   : 3,000
+    Size MB : 0.9706
+  sample_5000_api.jsonl
+    Lines   : 4,994
+    Size MB : 1.6162
+  sample_1000_eval.jsonl
+    Lines   : 1,000
+    Size MB : 0.375
+  sample_3000_eval.jsonl
+    Lines   : 3,000
+    Size MB : 1.1276
+  sample_5000_eval.jsonl
+    Lines   : 4,994
+    Size MB : 1.8776
+
