@@ -28,8 +28,9 @@ The research investigates whether general-purpose LLMs — **Claude**, **ChatGPT
 | Total records | 862,526,861 network flow records |
 | Label classes | background, anomaly-spam, blacklist, anomaly-sshscan |
 
-> **Note:** The dataset is not included in this repository due to its size (14 GB Parquet / 77.6 GB CSV). Use the download URL above and follow the acquisition steps in Section 3 below.
-
+> **Note:** The dataset is not included in this repository due to its size (14 GB Parquet / 77.6 GB CSV). Use the download URL in below  and follow the acquisition steps in Section 3 below.
+> https://drive.google.com/drive/folders/1i3LDIFw8ePCq2R0BYvG5QHVQBiuucOPo?usp=sharing
+> 
 ---
 
 ## Repository Structure
