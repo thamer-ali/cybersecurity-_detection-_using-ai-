@@ -1,4 +1,4 @@
-# Intelligent Threat Detection Using Large Language Models
+# Threat Detection Using Large Language Models
 ## in Apache Spark-Based Distributed Computing Environments
 
 **PhD Research — University of Granada**
